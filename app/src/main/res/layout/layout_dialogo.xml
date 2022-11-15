@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainDialogo">
+
+    <ImageView
+        android:id="@+id/fondoIV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/nave_alien_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/personaje1IV"
+        android:layout_width="260dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/nave_frontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@drawable/ali_3" />
+
+    <ImageView
+        android:id="@+id/personaje2IV"
+        android:layout_width="260dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/nave_frontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:srcCompat="@drawable/ali_2" />
+
+    <ImageView
+        android:id="@+id/bocadilloIV"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/bocadillo_1" />
+
+    <TextView
+        android:id="@+id/textoTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bocadilloIV"
+        app:layout_constraintEnd_toEndOf="@+id/bocadilloIV"
+        app:layout_constraintStart_toStartOf="@+id/bocadilloIV"
+        app:layout_constraintTop_toTopOf="@+id/bocadilloIV"
+        tools:text="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" />
+
+    <Button
+        android:id="@+id/siguienteBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/purple_500"
+        android:text="Hurrengoa"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
