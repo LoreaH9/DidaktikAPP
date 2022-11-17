@@ -6,17 +6,18 @@
 
     <group
         android:checkableBehavior="single">
-
+        <item
+            android:id="@+id/nav_mapa"
+            android:icon="@drawable/ic_mapa"
+            android:title="@string/nav_mapa"/>
         <item
             android:id="@+id/nav_profesor"
             android:icon="@drawable/ic_profesor"
             android:title="@string/nav_profesor"/>
-
         <item
             android:id="@+id/nav_idioma"
             android:icon="@drawable/ic_idioma"
             android:title="@string/nav_idioma"/>
-
         <item
             android:id="@+id/nav_informacion"
             android:icon="@drawable/ic_informacion"

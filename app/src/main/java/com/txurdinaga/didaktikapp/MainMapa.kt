@@ -46,6 +46,7 @@ class MainMapa : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         when (item.itemId) {
             R.id.nav_profesor -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentProfesor()).commit()
+
             R.id.nav_idioma -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentIdioma()).commit()
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
