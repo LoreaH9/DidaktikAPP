@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/fondoIV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="1000dp"
         android:src="@drawable/nave_alien_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +20,9 @@
     <ImageView
         android:id="@+id/personaje1IV"
         android:layout_width="260dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="20dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="1dp"
         android:src="@drawable/nave_frontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,39 +31,42 @@
     <ImageView
         android:id="@+id/personaje2IV"
         android:layout_width="260dp"
-        android:layout_height="300dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="280dp"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/nave_frontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@drawable/ali_2" />
+        tools:srcCompat="@drawable/ali_2"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/bocadilloIV"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="110dp"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="160dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/bocadillo_1" />
+        tools:srcCompat="@drawable/bocadillo_1"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textoTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/bocadilloIV"
         app:layout_constraintEnd_toEndOf="@+id/bocadilloIV"
         app:layout_constraintStart_toStartOf="@+id/bocadilloIV"
         app:layout_constraintTop_toTopOf="@+id/bocadilloIV"
-        tools:text="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" />
+        tools:text="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/siguienteBT"
@@ -75,6 +79,7 @@
         android:textSize="22sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

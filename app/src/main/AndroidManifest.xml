@@ -16,7 +16,8 @@
         <activity
             android:name=".MainDialogo"
             android:exported="true"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

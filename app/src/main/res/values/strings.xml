@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DidaktikAPP</string>
+
+<!--DIALOGO 0-->
+    <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
+    <string name="dialogo0_2">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
+    <string name="dialogo0_3">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
+    <string name="dialogo0_4">¡Venga, montaos en mi nave!</string>
 </resources>
