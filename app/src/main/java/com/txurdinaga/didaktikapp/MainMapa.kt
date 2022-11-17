@@ -1,15 +1,20 @@
 package com.txurdinaga.didaktikapp
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.txurdinaga.didaktikapp.databinding.ActivityMainMapaBinding
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainMapa : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -44,8 +49,9 @@ class MainMapa : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_profesor -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentProfesor()).commit()
+            R.id.nav_profesor ->
+                showBasicDialog()
+
 
             R.id.nav_idioma -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentIdioma()).commit()
@@ -55,6 +61,21 @@ class MainMapa : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun showBasicDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Login profesor")
+            .setPositiveButton("Aceptar",
+                DialogInterface.OnClickListener { dialog, id ->
+                })
+            .setNegativeButton("Cancelar",
+                DialogInterface.OnClickListener { _, id ->
+
+                })
+            .setCancelable(false)
+            .create()
+            .show()
     }
 
     override fun onBackPressed() {
