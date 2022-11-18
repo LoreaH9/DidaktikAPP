@@ -22,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainInicio"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
+
+        <activity
+            android:name=".MainInfoModos"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
     </application>
 
 </manifest>

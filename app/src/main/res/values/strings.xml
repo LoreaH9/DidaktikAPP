@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">DidaktikAPP</string>
+    <string name="app_name">Ali y sus aventuras en Portu</string>
+
+<!--DIALOGO 0-->
+    <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
+    <string name="dialogo0_2">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
+    <string name="dialogo0_3">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
+    <string name="dialogo0_4">¡Venga, montaos en mi nave!</string>
+    <string name="Modos"><u>Información de los modos</u></string>
+    <string name="Info_modos">MODO GUIADO:
+                                Este trata de jugar siguiendo una ruta definida. Solo se podrá jugar el punto que esté activado y para acceder a él tendremos que estar al menos a 50m del lugar. La partida se guardará en el último punto al que juguemos.
+
+                              MODO LIBRE:
+                                Este trata de jugar en el orden que queramos, la única condición para acceder a ellos es estar a menos de 50m del lugar. Estas partidas no serán guardadas, por lo cual el progreso se perderá.
+
+                              MODO PROFESOR/A:
+                                El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.
+</string>
+    <string name="Titulo_guiado">MODO GUIADO</string>
+    <string name="Titulo_libre">MODO LIBRE</string>
+    <string name="Titulo_profe">MODO PROFESOR</string>
+
+    <string name="MODO_GUIADO">Este trata de jugar siguiendo una ruta definida. Solo se podrá jugar el punto que esté activado y para acceder a él tendremos que estar al menos a 50m del lugar.
+                               La partida se guardará en el último punto al que juguemos.</string>
+
+    <string name="MODO_LIBRE"> Este trata de jugar en el orden que queramos, la única condición para acceder a ellos es estar a menos de 50m del lugar.
+                               Estas partidas no serán guardadas, por lo cual el progreso se perderá.</string>
+
+    <string name="MODO_PROFE"> El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.</string>
+
 </resources>
