@@ -22,7 +22,7 @@ class MainInicio : AppCompatActivity(){
         }
 
         binding.btLibre.setOnClickListener {
-            val intent= Intent(this,MainMapa::class.java)
+            val intent= Intent(this,MainMenu::class.java)
             startActivity(intent)
         }
     }
