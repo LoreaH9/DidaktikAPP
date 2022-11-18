@@ -3,7 +3,6 @@ package com.txurdinaga.didaktikapp
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
@@ -11,18 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import com.txurdinaga.didaktikapp.databinding.ActivityMainMapaBinding
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat
-import com.google.android.material.snackbar.Snackbar
+import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
 
 
 class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var drawerLayout: DrawerLayout? = null
-    lateinit var binding: ActivityMainMapaBinding
+    lateinit var binding: LayoutMenuBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainMapaBinding.inflate(layoutInflater)
+        binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val toolbar: Toolbar = binding.toolbar //Ignore red line errors
         setSupportActionBar(toolbar)

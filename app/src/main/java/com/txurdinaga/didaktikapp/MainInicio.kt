@@ -20,5 +20,10 @@ class MainInicio : AppCompatActivity(){
            val intent= Intent(this,MainInfoModos::class.java)
             startActivity(intent)
         }
+
+        binding.btLibre.setOnClickListener {
+            val intent= Intent(this,MainMenu::class.java)
+            startActivity(intent)
+        }
     }
 }
