@@ -19,11 +19,18 @@ import com.google.android.material.snackbar.Snackbar
 
 class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var drawerLayout: DrawerLayout? = null
-    lateinit var binding: ActivityMainMapaBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainMapaBinding.inflate(layoutInflater)
+
+        binding = LayoutMapaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        fusedLocation = LocationServices.getFusedLocationProviderClient(this)
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
         val toolbar: Toolbar = binding.toolbar //Ignore red line errors
         setSupportActionBar(toolbar)
         drawerLayout = binding.drawerLayout
@@ -43,42 +50,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
             navigationView.setCheckedItem(R.id.nav_informacion)
         }
-    }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_profesor ->
-                showBasicDialog()
-            R.id.nav_idioma ->
-                showBasicDialog()
-            R.id.nav_informacion -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentInformacion()).commit()
-            R.id.nav_desconectar -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
-        }
-        drawerLayout!!.closeDrawer(GravityCompat.START)
-        return true
-    }
-
-    private fun showBasicDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Login profesor")
-            .setPositiveButton("Aceptar",
-                DialogInterface.OnClickListener { dialog, id ->
-                })
-            .setNegativeButton("Cancelar",
-                DialogInterface.OnClickListener { _, id ->
-
-                })
-            .setCancelable(false)
-            .create()
-            .show()
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout!!.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout!!.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
     }
 }

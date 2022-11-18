@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.txurdinaga.didaktikapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DidaktikAPP"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDcvUph5k-H9h0WntaBe__x4PvJJDKODtg"/>
+
+
         <activity
             android:name=".MainMenu"
             android:exported="true"
@@ -47,6 +56,27 @@
             android:exported="true"
             android:theme="@style/Theme.DidaktikAPP">
         </activity>
+
+        <activity
+            android:name=".MainInicio"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
+
+        <activity
+            android:name=".MainInfoModos"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
+
+        <activity
+            android:name=".MainMapa"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
+
+
+
     </application>
 
 </manifest>
