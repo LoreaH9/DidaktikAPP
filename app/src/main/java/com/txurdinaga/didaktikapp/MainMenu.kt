@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 
 
-class MainMapa : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var drawerLayout: DrawerLayout? = null
     lateinit var binding: ActivityMainMapaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
