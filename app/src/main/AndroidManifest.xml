@@ -14,15 +14,26 @@
         android:theme="@style/Theme.DidaktikAPP"
         tools:targetApi="31">
         <activity
-            android:name=".MainDialogo"
+            android:name=".MainMapa"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainDialogo"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
         </activity>
     </application>
 

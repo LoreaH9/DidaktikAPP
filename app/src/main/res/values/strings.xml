@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">DidaktikAPP</string>
 
+<!--NAVIGATION DRAWER-->
+    <string name="open_nav">Abrir</string>
+    <string name="close_nav">Cerrar</string>
+    <string name="nav_mapa">Mapa</string>
+    <string name="nav_profesor">Modo profesor</string>
+    <string name="nav_idioma">Cambiar idioma</string>
+    <string name="nav_informacion">Acerda De</string>
+    <string name="nav_desconectar">Desconectar</string>
+
 <!--DIALOGO 0-->
     <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
     <string name="dialogo0_2">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
