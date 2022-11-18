@@ -25,14 +25,8 @@
         <activity
             android:name=".MainMenu"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -41,27 +35,21 @@
             android:name=".MainDialogo"
             android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainInicio"
             android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP"></activity>
+            android:theme="@style/Theme.DidaktikAPP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainInfoModos"
             android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP"></activity>
-        <activity
-            android:name=".MainInicio"
-            android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP"></activity>
-        <activity
-            android:name=".MainInfoModos"
-            android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP"></activity>
-        <activity
-            android:name=".MainMapa"
-            android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP"></activity>
+            android:theme="@style/Theme.DidaktikAPP" />
     </application>
 
 </manifest>
