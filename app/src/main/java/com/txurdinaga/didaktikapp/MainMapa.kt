@@ -61,8 +61,10 @@ class MainMapa: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnNaviga
         when (item.itemId) {
             R.id.nav_profesor ->
                 showBasicDialog()
-            R.id.nav_idioma ->
-                showBasicDialog()
+
+
+            R.id.nav_idioma -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentIdioma()).commit()
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
             R.id.nav_desconectar -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
