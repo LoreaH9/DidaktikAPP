@@ -11,7 +11,7 @@
         android:id="@+id/fondoIV"
         android:layout_width="match_parent"
         android:layout_height="1000dp"
-        android:src="@drawable/nave_alien_0"
+        android:src="@drawable/fondo_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
