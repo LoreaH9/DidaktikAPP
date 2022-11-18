@@ -35,6 +35,18 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
+
+        <activity
+            android:name=".MainInicio"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
+
+        <activity
+            android:name=".MainInfoModos"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP">
+        </activity>
     </application>
 
 </manifest>
