@@ -45,8 +45,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         }
     }
 
-
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_profesor ->
