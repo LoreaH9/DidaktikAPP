@@ -26,7 +26,6 @@ class FragmentMapa : Fragment() {
     private val callback = OnMapReadyCallback { googleMap ->
 
         googleMap.addMarker(MarkerOptions().position(BasilicaStaMaria).title("Basilica Sta Maria"))
-
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BasilicaStaMaria,15.5f))
 
         googleMap.addMarker(MarkerOptions().position(PlazaSRoque).title("Plaza San Roque"))
