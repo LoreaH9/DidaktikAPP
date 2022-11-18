@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Ali y sus aventuras en Portu</string>
+    <string name="app_version">v0.0.1</string>
 
 <!--NAVIGATION DRAWER-->
     <string name="open_nav">Abrir</string>
@@ -9,6 +10,19 @@
     <string name="nav_idioma">Cambiar idioma</string>
     <string name="nav_informacion">Acerda De</string>
     <string name="nav_desconectar">Desconectar</string>
+<!--ACERCA DE-->
+    <string name="acerca_desa">
+    "Desarrolladores"
+    </string>
+    <string name="acerca_desa_nombres">
+    "Martín Caño, Javier Andia, Lorea Hernandez y Noemí Márquez."\n
+    </string>
+    <string name="acerca_dise">
+    "Diseñadores"
+    </string>
+    <string name="acerca_dise_nombres">
+    "Haizea Ruiz, Oihane Vaamonde y Oihane Vaamonde."\n
+    </string>
 
 <!--DIALOGO 0-->
     <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
