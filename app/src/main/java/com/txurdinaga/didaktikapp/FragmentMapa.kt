@@ -15,20 +15,37 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class FragmentMapa : Fragment() {
+    var BasilicaStaMaria = LatLng(43.319806, -3.016722)
+    var PlazaSRoque = LatLng(43.3179121, -3.020576198034128)
+    var TorreSalazar = LatLng(43.32024476997707, -3.0171418190002446)
+    val Mercado = LatLng( 43.32164439841235, -3.0177814777832044)
+    val Cascoviejo = LatLng(  43.3207146004226, -3.0178300457686014)
+    val Zunzunegui = LatLng(  43.32254620046105, -3.0185475097471284)
+    val puente = LatLng(  43.323242893062826, -3.017147915508491)
 
     private val callback = OnMapReadyCallback { googleMap ->
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+        googleMap.addMarker(MarkerOptions().position(BasilicaStaMaria).title("Basilica Sta Maria"))
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BasilicaStaMaria,15.5f))
+
+        googleMap.addMarker(MarkerOptions().position(PlazaSRoque).title("Plaza San Roque"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(PlazaSRoque))
+
+        googleMap.addMarker(MarkerOptions().position(TorreSalazar).title("Torre Salazar"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(TorreSalazar))
+
+        googleMap.addMarker(MarkerOptions().position(Mercado).title("Mercado"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Mercado))
+
+        googleMap.addMarker(MarkerOptions().position(Cascoviejo).title("Casco Viejo"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Cascoviejo))
+
+        googleMap.addMarker(MarkerOptions().position(Zunzunegui).title("Zunzunegui"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Zunzunegui))
+
+        googleMap.addMarker(MarkerOptions().position(puente).title("Puente"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(puente))
     }
 
     override fun onCreateView(
