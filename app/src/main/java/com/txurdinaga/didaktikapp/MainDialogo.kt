@@ -1,5 +1,6 @@
 package com.txurdinaga.didaktikapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,22 +25,24 @@ class MainDialogo : AppCompatActivity() {
         }
 
         binding.siguienteBT.setOnClickListener{
-            finish()
+            startActivity(Intent(this, MainContrasena::class.java)
+                .putExtra("set", set)
+            )
         }
 
     }
 
     private fun setDialogo(set: Int, line: Int){
         when(set){
-            0 -> {dialogo_0(line)}
-            1 -> {dialogo_1(line)}
-            2 -> {dialogo_2(line)}
-            3 -> {dialogo_3(line)}
-            4 -> {dialogo_4(line)}
-            5 -> {dialogo_5(line)}
-            6 -> {dialogo_6(line)}
-            7 -> {dialogo_7(line)}
-            8 -> {dialogo_8(line)}
+            0 -> dialogo_0(line)
+            1 -> dialogo_1(line)
+            2 -> dialogo_2(line)
+            3 -> dialogo_3(line)
+            4 -> dialogo_4(line)
+            5 -> dialogo_5(line)
+            6 -> dialogo_6(line)
+            7 -> dialogo_7(line)
+            8 -> dialogo_8(line)
         }
     }
 
