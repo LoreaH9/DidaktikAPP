@@ -6,4 +6,74 @@
     <string name="dialogo0_2">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
     <string name="dialogo0_3">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
     <string name="dialogo0_4">¡Venga, montaos en mi nave!</string>
+
+<!--DIALOGO 1-->
+    <string name="dialogo1_1">Vaya… Parece que se me ha roto la nave… ¿Qué hacemos ahora? ¿Cómo voy a llegar a Getxo?</string>
+    <string name="dialogo1_2">Toma, puedes usar este mapa.</string>
+    <string name="dialogo1_3">Pero… ¿Quién eres tú? ¿De dónde has salido?</string>
+    <string name="dialogo1_4">Me llamo María Díaz de Haro, pero también me conocen como Señora de Vizcaya, y hace exactamente 700 años fundé este pueblo en el que has aterrizado, Portugalete.</string>
+    <string name="dialogo1_5">¡Ala! ¿En serio? ¿Y este mapa que me has dado, me ayudará a llegar a mi destino?</string>
+    <string name="dialogo1_6">Si, pero me temo que no va a ser tan fácil. He marcado varios puntos en este mapa, y en cada uno podrás ganar una pista. Cuando consigas todas, descubrirás cómo llegar.</string>
+    <string name="dialogo1_7">¡Genial! ¿Por dónde empiezo?</string>
+    <string name="dialogo1_8">Puedes empezar por aquí, haz click en los elementos y encuentra la contraseña:</string>
+
+<!--DIALOGO 2-->
+    <string name="dialogo2_1">Creo que he llegado a la segunda parada de la ruta. ¿Será esta la Plaza San Roque?</string>
+    <string name="dialogo2_2">Oh, buenos días viajero. Veo que estás siguiendo el famoso mapa de María Díaz de Haro para llegar hasta Getxo. ¿Es eso cierto?</string>
+    <string name="dialogo2_3">Si, así es. Y tú. ¿Quién eres?</string>
+    <string name="dialogo2_4">Me llamo San Roque, como la plaza en la que te encuentras, y soy el protagonista de las fiestas patronales de Portugalete.</string>
+    <string name="dialogo2_5">Nací en el siglo XIII, y era hijo de uno de los más importantes caballeros del rey. A los 20 años, decidí viajar a Roma.</string>
+    <string name="dialogo2_6">Y en el camino ayudé a mucha gente que había enfermado por la peste negra.</string>
+    <string name="dialogo2_7">Es por ello que gracias a mis cuidados y ayudas las personas me tienen un gran aprecio y construyeron ermitas y de más en mi nombre.</string>
+    <string name="dialogo2_8">Así hasta el día de hoy, en el que hay una fiesta en mi honor.</string>
+    <string name="dialogo2_9">Y esa fiesta, ¿cuándo se celebra?</string>
+    <string name="dialogo2_10">Escucha atentamente. Ahora te informaré sobre mis fiestas patronales, y si estás atento, encontrarás la palabra que tenga 4 vocales.</string>
+
+<!--DIALOGO 3-->
+    <string name="dialogo3_1">¡¡Hola!! Tú debes ser el alien que está realizando la ruta a Getxo, ¿no es eso cierto?</string>
+    <string name="dialogo3_2">Sí. Pero ¿Cómo te llamas?</string>
+    <string name="dialogo3_3">Me llamo Lope García de Salazar, y este castillo que ves detrás de mí lo construyó mi padre, Ochoa García de Salazar en 1379.</string>
+    <string name="dialogo3_4">Yo lo heredé cuando él murió. Seguro que has oído hablar de mi, el famoso cronista que luchó con valentía contras sus enemigos en las tierras de Bizkaia.</string>
+    <string name="dialogo3_5">La verdad que no, pero ¿y si me cuentas más y así consigo la pieza del puzzle que necesito para llegar al final?</string>
+    <string name="dialogo3_6">Está bien. Escucha atentamente y conseguirás las pistas necesarias para completar la prueba que te dará esa pieza. Un consejo: fijate bien en los número que no deberían estar en el texto.</string>
+
+<!--DIALOGO 4-->
+    <string name="dialogo4_1">Ufff, qué viaje tan movidito.</string>
+    <string name="dialogo4_2">¡Pero si solo es la 4º parada!</string>
+    <string name="dialogo4_3">Ui, y tú…¿quién eres?</string>
+    <string name="dialogo4_4">Me llamo la Virgen de la Guía, y soy la encargada de ayudarte a conseguir la 4º pieza del puzzle final.</string>
+    <string name="dialogo4_5">¿La Virgen de la Guía?</string>
+    <string name="dialogo4_6">¡Pues claro! ¿Es que no has oído hablar de mi? Verás, soy la protagonista de una de las fiestas más esperadas por todos los habitantes de Portugalete.</string>
+    <string name="dialogo4_7">Y, esas fiestas, ¿cuándo son?</string>
+    <string name="dialogo4_8">Atento Ali. Necesitarás tener los ojos y los oídos bien abiertos para encontrar las pistas que te llevarán a esa preciada pieza de puzzle.</string>
+
+<!--DIALOGO 5-->
+    <string name="dialogo5_1">¡Que rápido has llegado!</string>
+    <string name="dialogo5_2">¡Qué susto! Todavía no me acostumbro… ¿Cómo te llamas?</string>
+    <string name="dialogo5_3">Me llamo Víctor Chávarri, y se puede decir que me conocen por mis negocios y contribuciones a la metalurgia y construcciones de Vizcaya.</string>
+    <string name="dialogo5_4">¿Metalurgia? ¿Qué es eso?</string>
+    <string name="dialogo5_5">La metalurgia… es extraer metales a partir de minerales. Pero la siguiente prueba no va sobre eso. ¿Sabéis donde estamos?</string>
+    <string name="dialogo5_6">Parecen calles antiguas.</string>
+    <string name="dialogo5_7">Eso es, estamos en el Casco Viejo de Portugalete. Si pinchas en los siguientes elementos, podrás aprender un poco más sobre esta zona tan importante.</string>
+    <string name="dialogo5_8">Presta mucha atención para poder responder a la pregunta final. ¡Suerte!</string>
+
+<!--DIALOGO 6-->
+    <string name="dialogo6_1">Estoy muy muy cansado, no sé cuántas paradas me quedan todavía…</string>
+    <string name="dialogo6_2">¡Amigo! No te preocupes, ya estás llegando a tu destino. Esta es la penúltima parada.</string>
+    <string name="dialogo6_3">Ai, que bien. Por cierto, creo que no te conozco.</string>
+    <string name="dialogo6_4">¡Es verdad! Se me ha olvidado presentarme. Soy Juan Antonio de Zunzunegi y fui un novelista vasco, también miembro de la Real Academia Española.</string>
+    <string name="dialogo6_5">¿Eso es un diccionario, verdad?</string>
+    <string name="dialogo6_6">Sí, también, pero es mucho más que eso. Clica sobre los elementos, y vete averiguando más información sobre mí.</string>
+
+<!--DIALOGO 7-->
+    <string name="dialogo7_1">Por fín, ¡última parada del mapa! ¡Y es un puente! Por aquí podré llegar a Getxo, pero… necesitaré un ticket para pasar, ¿no?</string>
+    <string name="dialogo7_2">¡Eso es! Yo me llamo Alberto de Palacios, y fui el diseñador de este puente que estás viendo aquí. Fue el primer puente transbordador construido en el mundo de estructura metálica, y se inauguró en 1893.</string>
+    <string name="dialogo7_3">¿Impresionante no? Y sí, yo tengo la última pieza que necesitas para conseguir ese ticket del que hablas.</string>
+    <string name="dialogo7_4">¿Cómo lo consigo?</string>
+    <string name="dialogo7_5">Aquí tienes la última prueba… Para hallar la contraseña tendréis que buscar los números amarillos.</string>
+
+<!--DIALOGO 8-->
+    <string name="dialogo8_1">¡MUCHÍSIMAS GRACIAS AMIGOS POR HABERME AYUDADO TANTO! ESPERO QUE HAYÁIS APRENDIDO MUCHO, ¡NOS VEMOS EN LA PRÓXIMA MISIÓN!</string>
+    <string name="dialogo8_2">¡AGUUUR!</string>
+
 </resources>
