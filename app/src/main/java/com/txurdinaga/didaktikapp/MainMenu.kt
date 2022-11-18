@@ -37,13 +37,15 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentInformacion()).commit()
-            navigationView.setCheckedItem(R.id.nav_informacion)
+                .replace(R.id.fragment_container, FragmentMapa()).commit()
+            navigationView.setCheckedItem(R.id.nav_mapa)
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.nav_mapa ->supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
                 showBasicDialog()
             R.id.nav_idioma ->

@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,20 +20,13 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDcvUph5k-H9h0WntaBe__x4PvJJDKODtg"/>
-
+            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".MainMenu"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -41,42 +35,21 @@
             android:name=".MainDialogo"
             android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainInicio"
             android:exported="true"
             android:theme="@style/Theme.DidaktikAPP">
-        </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainInfoModos"
             android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP">
-        </activity>
-
-        <activity
-            android:name=".MainInicio"
-            android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP">
-        </activity>
-
-        <activity
-            android:name=".MainInfoModos"
-            android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP">
-        </activity>
-
-        <activity
-            android:name=".MainMapa"
-            android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP">
-        </activity>
-
-
-
+            android:theme="@style/Theme.DidaktikAPP" />
     </application>
 
 </manifest>
