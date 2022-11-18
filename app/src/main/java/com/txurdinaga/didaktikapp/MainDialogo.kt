@@ -13,7 +13,8 @@ class MainDialogo : AppCompatActivity() {
         binding = LayoutDialogoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var set = 4
+        var set = 1
+
         var line = 1
         setDialogo(set, 0)
 
@@ -35,10 +36,10 @@ class MainDialogo : AppCompatActivity() {
             2 -> {dialogo_2(line)}
             3 -> {dialogo_3(line)}
             4 -> {dialogo_4(line)}
-            5 -> {dialogo_3(line)}
-            6 -> {dialogo_3(line)}
-            7 -> {dialogo_3(line)}
-            8 -> {dialogo_3(line)}
+            5 -> {dialogo_5(line)}
+            6 -> {dialogo_6(line)}
+            7 -> {dialogo_7(line)}
+            8 -> {dialogo_8(line)}
         }
     }
 
@@ -358,6 +359,51 @@ class MainDialogo : AppCompatActivity() {
                 binding.personaje1IV.setImageResource(R.drawable.ali_1)
                 binding.personaje2IV.setImageResource(R.drawable.perso_5)
             }
+            1 -> {      // bocadillo visible
+                binding.bocadilloIV.visibility = View.VISIBLE
+                binding.textoTV.visibility = View.VISIBLE
+                // texto
+                binding.textoTV.text = getString(R.string.dialogo5_1)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            2 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo5_2)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_3)
+            }
+            3 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo5_3)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            4 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo5_4)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_3)
+            }
+            5 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo5_5)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            6 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo5_6)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_2)
+            }
+            7 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo5_7)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
             8 -> {      // texto
                 binding.textoTV.text = getString(R.string.dialogo5_8)
                 binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
@@ -379,6 +425,39 @@ class MainDialogo : AppCompatActivity() {
                 binding.fondoIV.setImageResource(R.drawable.fondo_6)
                 binding.personaje1IV.setImageResource(R.drawable.ali_1)
                 binding.personaje2IV.setImageResource(R.drawable.perso_6)
+            }
+            1 -> {      // bocadillo visible
+                binding.bocadilloIV.visibility = View.VISIBLE
+                binding.textoTV.visibility = View.VISIBLE
+                // texto
+                binding.textoTV.text = getString(R.string.dialogo6_1)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            2 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo6_2)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            3 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo6_3)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            4 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo6_4)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            5 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo6_5)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_3)
             }
             6 -> {      // texto
                 binding.textoTV.text = getString(R.string.dialogo6_6)
@@ -402,6 +481,33 @@ class MainDialogo : AppCompatActivity() {
                 binding.personaje1IV.setImageResource(R.drawable.ali_1)
                 binding.personaje2IV.setImageResource(R.drawable.perso_7)
             }
+            1 -> {      // bocadillo visible
+                binding.bocadilloIV.visibility = View.VISIBLE
+                binding.textoTV.visibility = View.VISIBLE
+                // texto
+                binding.textoTV.text = getString(R.string.dialogo7_1)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            2 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo7_2)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            3 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo7_3)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+            }
+            4 -> {      // texto
+                binding.textoTV.text = getString(R.string.dialogo7_4)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_3)
+            }
             5 -> {      // texto
                 binding.textoTV.text = getString(R.string.dialogo7_5)
                 binding.bocadilloIV.setImageResource(R.drawable.bocadillo_2)
@@ -424,11 +530,20 @@ class MainDialogo : AppCompatActivity() {
                 binding.fondoIV.setImageResource(R.drawable.fondo_0)
                 binding.personaje1IV.setImageResource(R.drawable.ali_1)
             }
+            1 -> {      // bocadillo visible
+                binding.bocadilloIV.visibility = View.VISIBLE
+                binding.textoTV.visibility = View.VISIBLE
+                // texto
+                binding.textoTV.text = getString(R.string.dialogo8_1)
+                binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
+                // ali
+                binding.personaje1IV.setImageResource(R.drawable.ali_3)
+            }
             2 -> {      // texto
                 binding.textoTV.text = getString(R.string.dialogo8_2)
                 binding.bocadilloIV.setImageResource(R.drawable.bocadillo_1)
                 // ali
-                binding.personaje1IV.setImageResource(R.drawable.ali_1)
+                binding.personaje1IV.setImageResource(R.drawable.ali_2)
                 // siguiente visible
                 binding.siguienteBT.visibility = View.VISIBLE
             }
