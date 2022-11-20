@@ -1,9 +1,12 @@
 package com.txurdinaga.didaktikapp
 
+import DialogRegistro
+import android.Manifest
 import android.content.DialogInterface
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +14,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
+import kotlin.system.exitProcess
 
 
 class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -21,6 +26,10 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         super.onCreate(savedInstanceState)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1)
+        }
         val toolbar: Toolbar = binding.toolbar //Ignore red line errors
         setSupportActionBar(toolbar)
         drawerLayout = binding.drawerLayout
@@ -47,26 +56,30 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_mapa ->supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
-                showBasicDialog()
+                DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
+
             R.id.nav_idioma ->
                 showBasicDialog()
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
-            R.id.nav_desconectar -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
-        }
+            R.id.nav_desconectar ->
+                showBasicDialog()
+                }//alertDialog        }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
 
     private fun showBasicDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Login profesor")
-            .setPositiveButton("Aceptar",
+            .setTitle(R.string.salir)
+            .setMessage(R.string.seguro_salir)
+            .setPositiveButton(R.string.si,
                 DialogInterface.OnClickListener { dialog, id ->
+                    finishAffinity()
+                    exitProcess(0)
                 })
-            .setNegativeButton("Cancelar",
+            .setNegativeButton(R.string.no,
                 DialogInterface.OnClickListener { _, id ->
-
                 })
             .setCancelable(false)
             .create()
