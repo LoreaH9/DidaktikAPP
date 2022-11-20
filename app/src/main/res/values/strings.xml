@@ -10,10 +10,12 @@
     <string name="nav_idioma">Cambiar idioma</string>
     <string name="nav_informacion">Acerda De</string>
     <string name="nav_desconectar">Desconectar</string>
+    <string name="nav_logout">Cerrar sesión</string>
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
     <string name="si">Si</string>
     <string name="no">No</string>
+    <string name="invitado">Invitado</string>
 
     <!--ACERCA DE-->
     <string name="descripcion">Esta aplicación ha sido desarrollada por alumnos de la Universidad del País Vasco y de CIFP Txurdinaga con el fin de ayudar a los profesores de E.P y a sus alumnas y alumnos a conocer Portugalete mediante juegos didácticos de manera que aprendan divirtiéndose.</string>
