@@ -55,12 +55,11 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             navigationView.setCheckedItem(R.id.nav_mapa)
         }
-        if (SharesPrefs.users.user == ""){
 
+        if (SharesPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = ""
-
         }
     }
 
