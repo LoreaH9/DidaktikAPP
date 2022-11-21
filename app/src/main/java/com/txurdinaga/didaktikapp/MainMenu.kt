@@ -31,16 +31,18 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Comprueba los permisos de navegación
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1)
 
-        val toolbar: Toolbar = binding.toolbar //Ignore red line errors
+        val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
         drawerLayout = binding.drawerLayout
         val navigationView = binding.navView
         menu = navigationView.menu
 
+        //Inserta navbar con sus opciones
         navigationView.setNavigationItemSelectedListener(this)
         var toggle: ActionBarDrawerToggle? =ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
 
@@ -56,6 +58,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             navigationView.setCheckedItem(R.id.nav_mapa)
         }
 
+        //En caso de no haber usuario pone el invitado por defecto
         if (SharesPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
@@ -69,14 +72,13 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
                 DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
-
             R.id.nav_idioma ->
                 showBasicDialog()
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
             R.id.nav_desconectar ->
                 showBasicDialog()
-                }//alertDialog        }
+                }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
