@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_mapa"
+            android:icon="@drawable/ic_mapa"
+            android:title="@string/nav_mapa"/>
+        <item
+            android:id="@+id/nav_profesor"
+            android:icon="@drawable/ic_profesor"
+            android:title="@string/nav_profesor"/>
+        <item
+            android:id="@+id/nav_idioma"
+            android:icon="@drawable/ic_idioma"
+            android:title="@string/nav_idioma"/>
+        <item
+            android:id="@+id/nav_informacion"
+            android:icon="@drawable/ic_informacion"
+            android:title="@string/nav_informacion"/>
+    </group>
+    <item
+        android:title="Sesion">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/nav_logout"/>
+            <item
+                android:id="@+id/nav_desconectar"
+                android:icon="@drawable/ic_desconectar"
+                android:title="@string/nav_desconectar"/>
+        </menu>
+
+    </item>
+
+</menu>
