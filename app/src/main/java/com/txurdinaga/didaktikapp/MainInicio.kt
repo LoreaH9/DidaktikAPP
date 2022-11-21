@@ -35,7 +35,7 @@ class MainInicio : AppCompatActivity(){
         }
 
         binding.btGuiado.setOnClickListener {
-            SharedPrefs.modolibre.modo = true
+            SharedPrefs.modolibre.modo = false
             val intent= Intent(this,MainMenu::class.java)
             startActivity(intent)
         }
