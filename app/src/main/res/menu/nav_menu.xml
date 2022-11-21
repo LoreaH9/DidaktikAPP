@@ -24,8 +24,12 @@
             android:title="@string/nav_informacion"/>
     </group>
     <item
-        android:title="">
+        android:title="Sesion">
         <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/nav_logout"/>
             <item
                 android:id="@+id/nav_desconectar"
                 android:icon="@drawable/ic_desconectar"

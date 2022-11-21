@@ -10,19 +10,23 @@
     <string name="nav_idioma">Cambiar idioma</string>
     <string name="nav_informacion">Acerda De</string>
     <string name="nav_desconectar">Desconectar</string>
+    <string name="nav_logout">Cerrar sesión</string>
+    <string name="salir">Salir</string>
+    <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="invitado">Invitado</string>
+
     <!--ACERCA DE-->
-    <string name="acerca_desa">
-    "Desarrolladores"
-    </string>
-    <string name="acerca_desa_nombres">
-    "Martín Caño, Javier Andia, Lorea Hernandez y Noemí Márquez."\n
-    </string>
-    <string name="acerca_dise">
-    "Diseñadores"
-    </string>
-    <string name="acerca_dise_nombres">
-    "Haizea Ruiz, Oihane Vaamonde y Oihane Vaamonde."\n
-    </string>
+    <string name="descripcion">Esta aplicación ha sido desarrollada por alumnos de la Universidad del País Vasco y de CIFP Txurdinaga con el fin de ayudar a los profesores de E.P y a sus alumnas y alumnos a conocer Portugalete mediante juegos didácticos de manera que aprendan divirtiéndose.</string>
+    <string name="acerca_desa">"Desarrolladores"</string>
+    <string name="acerca_desa_nombres">"Martín Caño, Javier Andia, Lorea Hernandez y Noemí Márquez."\n</string>
+    <string name="acerca_dise">"Diseñadores"</string>
+    <string name="acerca_dise_nombres">"Haizea Ruiz, Oihane Vaamonde y Oihane Vaamonde."\n</string>
+
+    <!--REGISTRO/LOGIN-->
+    <string name="username">"Usuario"</string>
+    <string name="password">"Contraseña"</string>
 
     <!--DIALOGO 0-->
     <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
@@ -119,5 +123,14 @@
                                Estas partidas no serán guardadas, por lo cual el progreso se perderá.</string>
     <string name="MODO_PROFE"> El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.</string>
     <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 </resources>
