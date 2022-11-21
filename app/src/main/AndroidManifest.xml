@@ -45,7 +45,6 @@
             android:name=".MainInicio"
             android:exported="true"
             android:theme="@style/SplashTheme">
-<!--            android:theme="@style/Theme.DidaktikAPP">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
