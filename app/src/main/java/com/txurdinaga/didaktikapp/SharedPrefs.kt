@@ -1,7 +1,7 @@
 package com.txurdinaga.didaktikapp
 import android.app.Application
 
-class SharesPrefs : Application(){
+class SharedPrefs : Application(){
     companion object {
 
         internal lateinit var users: Constantes.User

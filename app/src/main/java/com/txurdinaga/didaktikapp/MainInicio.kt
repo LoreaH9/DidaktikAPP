@@ -21,7 +21,7 @@ class MainInicio : AppCompatActivity(){
 
         setContentView(binding.root)
 
-        SharesPrefs.modolibre.modo = false
+        SharedPrefs.modolibre.modo = false
 
         binding.infoModos.setOnClickListener {
             val intent= Intent(this,MainInfoModos::class.java)
@@ -29,13 +29,13 @@ class MainInicio : AppCompatActivity(){
         }
 
         binding.btLibre.setOnClickListener {
-            SharesPrefs.modolibre.modo = true
+            SharedPrefs.modolibre.modo = true
             val intent= Intent(this,MainMenu::class.java)
             startActivity(intent)
         }
 
         binding.btGuiado.setOnClickListener {
-            SharesPrefs.modolibre.modo = true
+            SharedPrefs.modolibre.modo = false
             val intent= Intent(this,MainMenu::class.java)
             startActivity(intent)
         }
