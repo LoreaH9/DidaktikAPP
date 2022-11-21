@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.SharedLibraryInfo
 import android.location.Location
 import androidx.fragment.app.Fragment
 import android.os.Bundle
@@ -44,14 +45,15 @@ class FragmentMapa : Fragment() {
 
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
-        if (!SharesPrefs.modolibre.modo || SharesPrefs.tipousu.tipo == "alumno") {
-            cambiarMarcador(SharesPrefs.puntopartida.Partida.toInt())
+        if (!SharedPrefs.modolibre.modo || SharedPrefs.tipousu.tipo == "alumno") {
+            SharedPrefs.puntopartida.Partida = "0"
+            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt())
         }
         paradas.forEach {
             val marcador = googleMap.addMarker(MarkerOptions().position(it))
             if (marcador != null) marcadores.add(marcador)
         }
-        if(!SharesPrefs.modolibre.modo) {
+        if(!SharedPrefs.modolibre.modo) {
             googleMap.isMyLocationEnabled = true
             googleMap.uiSettings.isMyLocationButtonEnabled = false
             googleMap.uiSettings.isCompassEnabled = false
@@ -68,10 +70,10 @@ class FragmentMapa : Fragment() {
             val distancia=FloatArray(3)
 
             //Distancia con las paradas
-            if (SharesPrefs.puntopartida.Partida == "0"){
-                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharesPrefs.puntopartida.Partida.toInt()].latitude, paradas[SharesPrefs.puntopartida.Partida.toInt()].longitude,distancia)
-            }else if (SharesPrefs.puntopartida.Partida.toInt() in 1..7){
-                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharesPrefs.puntopartida.Partida.toInt()-1].latitude, paradas[SharesPrefs.puntopartida.Partida.toInt()-1].longitude,distancia)
+            if (SharedPrefs.puntopartida.Partida == "0"){
+                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].longitude,distancia)
+            }else if (SharedPrefs.puntopartida.Partida.toInt() in 1..7){
+                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].longitude,distancia)
             }
 
             //Distancia con CIFP Txurdinaga LHII
@@ -81,7 +83,7 @@ class FragmentMapa : Fragment() {
                 setFragmentResult("mapa", bundleOf("rango" to "no"))
             }
         }
-        if(SharesPrefs.modolibre.modo){
+        if(SharedPrefs.modolibre.modo){
             ubicacion = LatLng(43.321841, -3.019356)
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15f))
             googleMap.setOnMarkerClickListener { marker ->
@@ -103,7 +105,7 @@ class FragmentMapa : Fragment() {
 
         binding.UbicacionButton.setOnClickListener {
 
-            if(!SharesPrefs.modolibre.modo) {
+            if(!SharedPrefs.modolibre.modo) {
                 fusedLocation.lastLocation.addOnSuccessListener {
                     ubicacion = LatLng(it.latitude, it.longitude)
                     googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15f))
