@@ -1,58 +1,128 @@
 package com.txurdinaga.didaktikapp
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.pm.SharedLibraryInfo
+import android.location.Location
 import androidx.fragment.app.Fragment
-
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.inflate
 import android.view.ViewGroup
-
+import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.setFragmentResult
+import androidx.core.os.bundleOf
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
+import com.txurdinaga.didaktikapp.Constantes.paradas
+import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding.inflate
+import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
+import com.txurdinaga.didaktikapp.databinding.LayoutInicioBinding.inflate
 
+@Suppress("DEPRECATION")
 class FragmentMapa : Fragment() {
-    var BasilicaStaMaria = LatLng(43.319806, -3.016722)
-    var PlazaSRoque = LatLng(43.3179121, -3.020576198034128)
-    var TorreSalazar = LatLng(43.32024476997707, -3.0171418190002446)
-    val Mercado = LatLng( 43.32164439841235, -3.0177814777832044)
-    val Cascoviejo = LatLng(  43.3207146004226, -3.0178300457686014)
-    val Zunzunegui = LatLng(  43.32254620046105, -3.0185475097471284)
-    val puente = LatLng(  43.323242893062826, -3.017147915508491)
 
+    lateinit var ubicacion:LatLng
+    lateinit var binding: FragmentMapaBinding
+    private lateinit var fusedLocation: FusedLocationProviderClient
+    lateinit var googleMap: GoogleMap
+    var marcadores:ArrayList<Marker> = arrayListOf()
+
+    @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
+        paradas.forEach {
+            val marcador = googleMap.addMarker(MarkerOptions().position(it))
+            if (marcador != null) marcadores.add(marcador)
+        }
 
-        googleMap.addMarker(MarkerOptions().position(BasilicaStaMaria).title("Basilica Sta Maria"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BasilicaStaMaria,15.5f))
+        if (!SharedPrefs.modolibre.modo || SharedPrefs.tipousu.tipo == "alumno") {
+            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
+            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+        }
 
-        googleMap.addMarker(MarkerOptions().position(PlazaSRoque).title("Plaza San Roque"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(PlazaSRoque))
+        //modo guiado el mapa tiene en cuenta tu posicion actual
+        if(!SharedPrefs.modolibre.modo) {
+            googleMap.isMyLocationEnabled = true
+            googleMap.uiSettings.isMyLocationButtonEnabled = false
+            googleMap.uiSettings.isCompassEnabled = false
+            fusedLocation.lastLocation.addOnSuccessListener {
+                if (it != null) {
+                    ubicacion = LatLng(it.latitude, it.longitude)
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
+                }
+            }
+        }
 
-        googleMap.addMarker(MarkerOptions().position(TorreSalazar).title("Torre Salazar"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(TorreSalazar))
+        googleMap.setOnMyLocationChangeListener {
+            ubicacion= LatLng(it.latitude, it.longitude)
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
+            val distancia=FloatArray(3)
 
-        googleMap.addMarker(MarkerOptions().position(Mercado).title("Mercado"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Mercado))
+            //Distancia con las paradas
+            if (SharedPrefs.puntopartida.Partida == "0"){
+                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].longitude,distancia)
+            }else if (SharedPrefs.puntopartida.Partida.toInt() in 1..7){
+                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].longitude,distancia)
+            }
 
-        googleMap.addMarker(MarkerOptions().position(Cascoviejo).title("Casco Viejo"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Cascoviejo))
+            //Distancia con CIFP Txurdinaga LHII
+            if (distancia[0]<50){
+                setFragmentResult("mapa", bundleOf("rango" to "yes"))
+            }else{
+                setFragmentResult("mapa", bundleOf("rango" to "no"))
+            }
+        }
 
-        googleMap.addMarker(MarkerOptions().position(Zunzunegui).title("Zunzunegui"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Zunzunegui))
-
-        googleMap.addMarker(MarkerOptions().position(puente).title("Puente"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(puente))
+        //modo libre el mapa no tiene en cuenta tu posicion actual
+        if(SharedPrefs.modolibre.modo){
+            //ubicacion = LatLng(43.321841, -3.019356)
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
+            googleMap.setOnMarkerClickListener { marker ->
+                //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador
+                println("Prueba: "+marker.id)
+                setFragmentResult("libre", bundleOf("punto" to marker.id.substring(1,2).toInt()))
+                true
+            }
+        }
     }
 
+    @SuppressLint("MissingPermission")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_mapa, container, false)
+        binding = FragmentMapaBinding.inflate(layoutInflater)
+
+        binding.UbicacionButton.setOnClickListener {
+
+            if(!SharedPrefs.modolibre.modo) {
+                fusedLocation.lastLocation.addOnSuccessListener {
+                    ubicacion = LatLng(it.latitude, it.longitude)
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15f))
+                }
+            }
+        }
+        fusedLocation = LocationServices.getFusedLocationProviderClient(requireActivity())
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,4 +130,22 @@ class FragmentMapa : Fragment() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
     }
+
+    fun cambiarMarcador(posicion:Int){
+        marcadores.forEach {
+            when {
+                marcadores.indexOf(it)<(posicion-1) -> {
+                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                }
+                marcadores.indexOf(it)==(posicion-1) -> {
+                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+                }
+                marcadores.indexOf(it)>(posicion-1) -> {
+                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                }
+            }
+        }
+    }
+
+
 }

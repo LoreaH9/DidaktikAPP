@@ -1,8 +1,13 @@
 package com.txurdinaga.didaktikapp
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.txurdinaga.didaktikapp.databinding.LayoutInfoModosBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutInicioBinding
 
@@ -16,12 +21,21 @@ class MainInicio : AppCompatActivity(){
 
         setContentView(binding.root)
 
+        SharedPrefs.modolibre.modo = false
+
         binding.infoModos.setOnClickListener {
-           val intent= Intent(this,MainInfoModos::class.java)
+            val intent= Intent(this,MainInfoModos::class.java)
             startActivity(intent)
         }
 
         binding.btLibre.setOnClickListener {
+            SharedPrefs.modolibre.modo = true
+            val intent= Intent(this,MainMenu::class.java)
+            startActivity(intent)
+        }
+
+        binding.btGuiado.setOnClickListener {
+            SharedPrefs.modolibre.modo = false
             val intent= Intent(this,MainMenu::class.java)
             startActivity(intent)
         }
