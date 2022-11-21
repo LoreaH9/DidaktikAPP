@@ -2,45 +2,45 @@ package com.txurdinaga.didaktikapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.text.InputType.TYPE_CLASS_NUMBER
+import android.text.InputType.TYPE_CLASS_TEXT
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import com.txurdinaga.didaktikapp.databinding.DialogContrasenaBinding
+import com.txurdinaga.didaktikapp.databinding.FragmentPistaBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutContrasenaBinding
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class MainContrasena : AppCompatActivity() {
     private lateinit var binding: LayoutContrasenaBinding
-    var textos: MutableList<Any> = mutableListOf()/*
-    0->Fondo
-    1->Personas
-    2-4->Textos
-    5->Enunciado
-    6->Contraseña
-    7->Actividad
-    8->Enhorabuena (2,4,5,6,7)
-    9-11->Opciones (4)
-    */
+    private lateinit var binding2: FragmentPistaBinding
+    private lateinit var binding3: DialogContrasenaBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutContrasenaBinding.inflate(layoutInflater)
+        binding2 = FragmentPistaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var set = intent?.getIntExtra("set", 0) ?: throw IllegalStateException()
         setEscenario(set)
 
         binding.t1BT.setOnClickListener{
-            showPista()
+            showPista(set,1)
         }
         binding.t2BT.setOnClickListener{
-            showPista()
+            showPista(set, 2)
         }
         binding.t3BT.setOnClickListener{
-            showPista()
+            showPista(set,3)
         }
-        binding.aceptarBT.setOnClickListener{
+        binding.actividadBT.setOnClickListener{
+            showDialogContrasena(set)
+        }
+        binding2.aceptarBT.setOnClickListener{
             hidePista()
         }
     }
@@ -49,50 +49,63 @@ class MainContrasena : AppCompatActivity() {
         val params1 = (binding.t1BT.layoutParams as ViewGroup.MarginLayoutParams)
         val params2 = (binding.t2BT.layoutParams as ViewGroup.MarginLayoutParams)
         val params3 = (binding.t3BT.layoutParams as ViewGroup.MarginLayoutParams)
-        when(set){
-            1 -> {
-                binding.fondoIV.setImageResource(R.drawable.fondo_1)
-                params1.topMargin = 60 *3
-                params1.leftMargin = 120 *3
-                params2.bottomMargin = 40 *3
-                params2.leftMargin = 300 *3
-                params3.topMargin = 140 *3
-                params3.rightMargin = 80 *3
-                textos.add(getString(R.string.pista1_1))
-                textos.add(getString(R.string.pista1_1))
-                textos.add(getString(R.string.pista1_2))
-                textos.add(getString(R.string.pista1_3))
-                textos.add(getString(R.string.enunciado1))
-                textos.add(getString(R.string.contrasena1))
-            }
+        var margins = listOf(1, 1, 1, 1, 1, 1)
+        when(set){            // 1TOP LFT 2BOT LFT 3TOP RGHT
+            1 -> margins = listOf(60, 120, 40, 300, 140, 80)
+            2 -> margins = listOf(40, 100, 40, 200, 140, 60)
+            3 -> margins = listOf(220, 60, 240, 200, 80, 80)
+            4 -> margins = listOf(240, 40, 220, 140, 120, 80)
+            5 -> margins = listOf(240, 40, 220, 120, 160, 80)
+            6 -> margins = listOf(120, 60, 40, 260, 60, 100)
+            7 -> margins = listOf(240, 60, 140, 200, 60, 80)
             else -> finish()
         }
+        params1.topMargin = margins[0] *3
+        params1.leftMargin = margins[1] *3
         binding.t1BT.layoutParams = params1
+
+        params2.bottomMargin = margins[2] *3
+        params2.leftMargin = margins[3] *3
         binding.t2BT.layoutParams = params2
+
+        params3.topMargin = margins[4] *3
+        params3.rightMargin = margins[5] *3
         binding.t3BT.layoutParams = params3
+
+        binding.fondoIV.setImageResource(Params.getFondo(set))
+        binding2.fondoPistaIV.setImageResource(Params.getFondo(set))
+        binding2.personajeIV.setImageResource(Params.getPersonaje(set))
     }
 
-    private fun showPista(){
-        binding.pistaTV.visibility = View.VISIBLE
-        binding.aceptarBT.visibility = View.VISIBLE
-        binding.personajeIV.visibility = View.VISIBLE
-        binding.t1BT.isClickable = false
-        binding.t2BT.isClickable = false
-        binding.t3BT.isClickable = false
-        binding.actividadBT.isClickable = false
+    private fun showPista(set: Int, pista: Int){
+        setContentView(binding2.root)
+        binding2.pistaTV.text = getString(Params.getPistas(set)[pista-1])
     }
 
     private fun hidePista(){
-        binding.pistaTV.visibility = View.INVISIBLE
-        binding.aceptarBT.visibility = View.INVISIBLE
-        binding.personajeIV.visibility = View.INVISIBLE
-        binding.t1BT.isClickable = true
-        binding.t2BT.isClickable = true
-        binding.t3BT.isClickable = true
-        binding.actividadBT.isClickable = true
+        setContentView(binding.root)
     }
 
-    private fun setPista(textos: List<Any>){
-
+    private fun showDialogContrasena(set: Int){
+        binding3 = DialogContrasenaBinding.inflate(layoutInflater)
+        binding3.enunciadoTV.text = getString(Params.getEnunciado(set))
+        if(Regex("\\d+").matches(getString(Params.getContrasena(set)))){
+            binding3.contrasenaET.inputType = TYPE_CLASS_NUMBER
+        } else {
+            binding3.contrasenaET.inputType = TYPE_CLASS_TEXT
+        }
+        binding3.continuarBT.setOnClickListener{
+            var contrasena : String = binding3.contrasenaET.text.toString()
+            if (contrasena.toLowerCase() == getString(Params.getContrasena(set))){
+                startActivity(Intent(this, MainActividad::class.java)
+                    .putExtra("set", set)
+                )
+            }
+        }
+        AlertDialog.Builder(this)
+            .setView(binding3.root)
+            .create()
+            .show()
     }
+
 }

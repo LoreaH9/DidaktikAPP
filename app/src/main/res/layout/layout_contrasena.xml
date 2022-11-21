@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/negro"
     tools:context=".MainDialogo">
 
     <ImageView
@@ -61,57 +61,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/azulosc"
         android:text="Actividad"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/pistaTV"
-        android:layout_width="600dp"
-        android:layout_height="300dp"
-        android:background="@drawable/style_redondeado"
-        android:paddingLeft="40dp"
-        android:paddingTop="40dp"
-        android:paddingRight="40dp"
-        android:paddingBottom="60dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:visibility="invisible"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.495"
-        tools:text="@string/pista6_2" />
-
-    <ImageView
-        android:id="@+id/personajeIV"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/nave_frontal"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@drawable/ali_2" />
-
-    <Button
-        android:id="@+id/aceptarBT"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/purple_500"
-        android:text="ACEPTAR"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/pistaTV"
-        app:layout_constraintEnd_toEndOf="@+id/pistaTV"
-        app:layout_constraintStart_toStartOf="@+id/pistaTV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

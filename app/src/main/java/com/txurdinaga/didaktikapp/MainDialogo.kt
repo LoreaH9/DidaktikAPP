@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.txurdinaga.didaktikapp.databinding.FragmentPistaBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutDialogoBinding
 
 class MainDialogo : AppCompatActivity() {

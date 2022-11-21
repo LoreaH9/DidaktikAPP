@@ -82,15 +82,15 @@
     <string name="pista1_3">Durante la guerra carlista de <b><u>1873</u></b> la parte superior fue bombardeada y tuvo que rehacerse.</string>
     <string name="enunciado1">Ahora suma todas las cifras que aparecen en los textos y el resultado será la contraseña.</string>
     <string name="contrasena1">6287</string>
-    <string name="actividad1">Tendréis que escapar de este laberinto y apuntar los lugares o puntos por los que el camino pasa. Una vez conocidos todos los puntos, tendréis que clicar en cuáles son los lugares que aparecen para conseguir el premio.</string>
+    <string name="actividad1">Tendréis que escapar de este laberinto para conseguir el premio.</string>
 
 <!--PISTA 2-->
     <string name="pista2_1">Las fiestas empiezan el 14 de <b><u>agosto</u></b> con un chupinazo y una lectura desde los <b><u>balcones</u></b> del Ayuntamiento. Después hay mucha <b><u>música</u></b> y espectáculos de todo tipo.</string>
     <string name="pista2_2">El día 15 de agosto, a primera <b><u>hora</u></b> de la mañana, ocurre la llamada <b><u>Diana</u></b> Portugaluja, con el objetivo de que todos los vecinos se despierten y vayan a la fiesta.</string>
     <string name="pista2_3">Y por <b><u>último</u></b>, el día 16 de agosto, el día <b><u>principal</u></b> de las fiestas, es mi día: la festividad del <b><u>patrón</u></b> San Roque. Durante ese día hay una bajada, un “<b><u>Aurresku</u></b>”, y mucha <b><u>fiesta</u></b>.</string>
     <string name="enunciado2">¿Qué palabra de las señaladas tiene 4 vocales?</string>
-    <string name="contrasena2">Aurresku</string>
-    <string name="actividad2">Descifrad el siguiente mensaje (hemos creado un ejemplo con una página web, pero los símbolos no tienen que ser iguales): </string>
+    <string name="contrasena2">aurresku</string>
+    <string name="actividad2">¡Descifrad el siguiente mensaje para conseguir el premio!</string>
     <string name="soluccion2">Escucha mi cantar, portugalujo, despierta, ven conmigo a gozar, en el placer de la fiesta, que nuestro corazón, dice gozoso y placentero, que nuestra diversión, es la mejor del mundo entero.</string>
     <string name="enhorabuena2">¡Listo! Esa es una parte de la Diana Portugaluja. Lo has hecho muy bien Ali, has conseguido otra pieza para el puzzle, mira en el mapa cuál es el siguiente punto y ve hacia allí.</string>
 
@@ -100,27 +100,27 @@
     <string name="pista3_3">La casa tiene cuatro plantas. La primera, tiene vistas a la ría. La <b><u>se9unda</u></b>, contiene un arco impresionante con el escudo de la familia. Y por último, la tercera y cuarta planta está llena de troneras.</string>
     <string name="enunciado3">¿En qué año se incendió la casa?</string>
     <string name="contrasena3">1934</string>
-    <string name="actividad3">Encontrad las 5 piezas ocultas en esta imagen para formar la Torre Salazar:</string>
+    <string name="actividad3">¡Encontrad las 5 piezas ocultas en esta imagen para formar la Torre Salazar y conseguir el premio!</string>
 
 <!--PISTA 4-->
     <string name="pista4_1">Mi fiesta es organizada por Berriztasuna Taldea el día 1 de julio. Y es  muy importante saber que se celebra en el Casco Viejo.</string>
     <string name="pista4_2">Empieza a las 9 de la mañana con 3 importantes elementos: un chupinazo; levantar en lo alto a los Dominguines, unos grandes muñecos de trapo; y una ofrenda floral a mi, la Virgen, que me encuentro en la fachada principal de la Plaza el Mercado.</string>
     <string name="pista4_3">A media noche se hace la Gran Bajada desde la parte más alta del Casco Viejo. Y además, muy importante: para no pasar hambre se sirve durante todo el día una rica sopa de ajo.</string>
-    <string name="enunciado4">¿Cuáles son los 3 elementos claves con los que empiezan estas fiestas de Portugalete?</string>
-    <string name="contrasena4">a)  Ofrecer flores a la Virgen, chupinazo, levantar a los Dominguines.</string>
+    <string name="enunciado4">¿Cuáles son los 3 elementos claves con los que empiezan estas fiestas de Portugalete?
+    <b>a)</b> Ofrecer flores a la Virgen, chupinazo, levantar a los Dominguines.
+    <b>b)</b> Ofrecer comida a la Virgen, chupinazo y bailar con los Dominguines.
+    <b>c)</b> Chupinazo, ofrecer flores a los Dominguines y levantar a la Virgen.</string>
+    <string name="contrasena4">a</string>
     <string name="actividad4">Ahora haced la siguiente sopa de letras:</string>
     <string name="enhorabuena4">¡Genial! Has conseguido otra pieza. Mira el mapa y continúa tu ruta.</string>
-    <string name="opcion1">a)  Ofrecer flores a la Virgen, chupinazo, levantar a los Dominguines.</string>
-    <string name="opcion2">b)  Ofrecer comida a la Virgen, chupinazo y bailar con los Dominguines.</string>
-    <string name="opcion3">c)  Chupinazo, ofrecer flores a los Dominguines y levantar a la Virgen.</string>
 
 <!--PISTA 5-->
     <string name="pista5_1">El casco histórico fue declarado Conjunto Monumental en el año 1996.</string>
     <string name="pista5_2">Podemos atravesar las tres calles que formaban la antigua Villa medieval: la calle Coscojales, la calle Víctor Chávarri donde yo nací, popularmente conocida como calle del Medio, y la calle Santa María.</string>
     <string name="pista5_3">Las calles destacan por sus empinadas cuestas y su suelo empedrado.</string>
     <string name="enunciado5">¿Cómo se conoce popularmente la calle donde se encuentra la casa en la que nació Victor Chavarri?</string>
-    <string name="contrasena5">Calle del Medio</string>
-    <string name="actividad5">Realizad el siguiente crucigrama:</string>
+    <string name="contrasena5">calle del medio</string>
+    <string name="actividad5">¡Realizad el siguiente crucigrama para conseguir el premio!</string>
     <string name="enhorabuena5">¡Muy bien! Has conseguido otra pieza para el puzzle, ahora continúa a la siguiente parada.</string>
 
 <!--PISTA 6-->
@@ -128,8 +128,8 @@
     <string name="pista6_2">Mis ob<b><u>R</u></b>as reflejan la vida contemporánea española. En 1926 publiqué mi prim<b><u>E</u></b>r libro, Vida y paisaje de Bilbao, al que siguió la novela Chiripi (1931), que trata de la historia de un jugador de fútbol. Lo que más utilizo en mis obras es el humor, bueno, más bien, el sarcas<b><u>M</u></b>o.</string>
     <string name="pista6_3">Las novelas que publ<b><u>I</u></b>qué hasta 1950 se ambientan en Bilbao y sus alrededores, mientras que a partir de esa fecha el escenari<b><u>O</u></b> principal es Madrid. En Portugalete hay un instituto que lleva mi nombre, el I.E.<b><u>S</u></b>. Juan Antonio Zunzunegui.</string>
     <string name="enunciado6">¿Qué es lo que ha recibido Zunzunegi con muchas de sus obras?</string>
-    <string name="contrasena6">PREMIOS</string>
-    <string name="actividad6">Haced un dibujo de Zunzunegui y poned el año en el que nació en los huecos que aparecen en la parte inferior (un número por cada hueco).</string>
+    <string name="contrasena6">premios</string>
+    <string name="actividad6">¡Haced un dibujo de Zunzunegui y poned el año en el que nació en los huecos que aparecen en la parte inferior para conseguir el premio!</string>
     <string name="enhorabuena6">¡Muy bien! Has conseguido la última pieza del puzzle. Ahora vete al apartado “carpeta” y ordena las piezas, formando la imagen correcta. Esa imagen será el último punto del mapa.</string>
 
 <!--PISTA 7-->
