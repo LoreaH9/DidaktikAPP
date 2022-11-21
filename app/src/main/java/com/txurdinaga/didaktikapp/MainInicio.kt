@@ -15,6 +15,8 @@ class MainInicio : AppCompatActivity(){
     private lateinit var binding: LayoutInicioBinding
     private lateinit var binding2: LayoutInfoModosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(1000)
+        setTheme(R.style.Theme_DidaktikAPP)
         super.onCreate(savedInstanceState)
         binding = LayoutInicioBinding.inflate(layoutInflater)
         binding2 = LayoutInfoModosBinding.inflate(layoutInflater)
