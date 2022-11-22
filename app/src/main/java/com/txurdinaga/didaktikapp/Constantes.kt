@@ -55,9 +55,9 @@ object Constantes {
             set(value) = Idioma.edit().putString(SHARED_NAME, value).apply()
     }
 
-    var BasilicaStaMaria = LatLng(43.319806, -3.016722)
-    var PlazaSRoque = LatLng(43.3179121, -3.020576198034128)
-    var TorreSalazar = LatLng(43.32024476997707, -3.0171418190002446)
+    val BasilicaStaMaria = LatLng(43.319806, -3.016722)
+    val PlazaSRoque = LatLng(43.3179121, -3.020576198034128)
+    val TorreSalazar = LatLng(43.32024476997707, -3.0171418190002446)
     val Mercado = LatLng( 43.32164439841235, -3.0177814777832044)
     val Cascoviejo = LatLng(  43.3207146004226, -3.0178300457686014)
     val Zunzunegui = LatLng(  43.32254620046105, -3.0185475097471284)
