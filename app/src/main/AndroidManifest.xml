@@ -9,7 +9,6 @@
 
     <application
         android:name=".SharedPrefs"
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -29,7 +28,7 @@
 
         <activity
             android:name=".MainMenu"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="fullSensor"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -53,14 +52,9 @@
         </activity>
         <activity
             android:name=".MainContrasena"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
