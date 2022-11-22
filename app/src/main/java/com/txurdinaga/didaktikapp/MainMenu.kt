@@ -72,7 +72,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
                 DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
-            R.id.nav_idioma ->
+            R.id.nav_tema ->
                 showBasicDialog()
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
