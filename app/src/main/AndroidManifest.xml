@@ -52,9 +52,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainInfoModos"
+            android:name=".MainContrasena"
             android:exported="true"
-            android:theme="@style/Theme.DidaktikAPP" />
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
