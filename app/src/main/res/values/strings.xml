@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ali y sus aventuras en Portu</string>
+    <string name="app_name">Aliventuras en Portu</string>
     <string name="app_version">v0.0.1</string>
 
     <!--NAVIGATION DRAWER-->
@@ -7,6 +7,7 @@
     <string name="close_nav">Cerrar</string>
     <string name="nav_mapa">Mapa</string>
     <string name="nav_profesor">Modo profesor</string>
+    <string name="nav_tema">Cambiar Tema</string>
     <string name="nav_idioma">Cambiar idioma</string>
     <string name="nav_informacion">Acerda De</string>
     <string name="nav_desconectar">Desconectar</string>
@@ -22,7 +23,7 @@
     <string name="acerca_desa">"Desarrolladores"</string>
     <string name="acerca_desa_nombres">"Martín Caño, Javier Andia, Lorea Hernandez y Noemí Márquez."\n</string>
     <string name="acerca_dise">"Diseñadores"</string>
-    <string name="acerca_dise_nombres">"Haizea Ruiz, Oihane Vaamonde y Oihane Vaamonde."\n</string>
+    <string name="acerca_dise_nombres">"Haizea Ruiz, Oihane Vaamonde y Eider Vallejo."\n</string>
 
     <!--REGISTRO/LOGIN-->
     <string name="username">"Usuario"</string>
@@ -123,6 +124,7 @@
                                Estas partidas no serán guardadas, por lo cual el progreso se perderá.</string>
     <string name="MODO_PROFE"> El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.</string>
     <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

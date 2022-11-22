@@ -15,6 +15,8 @@ class MainInicio : AppCompatActivity(){
     private lateinit var binding: LayoutInicioBinding
     private lateinit var binding2: LayoutInfoModosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(1000)
+        setTheme(R.style.Theme_DidaktikAPP)
         super.onCreate(savedInstanceState)
         binding = LayoutInicioBinding.inflate(layoutInflater)
         binding2 = LayoutInfoModosBinding.inflate(layoutInflater)
@@ -22,6 +24,9 @@ class MainInicio : AppCompatActivity(){
         setContentView(binding.root)
 
         SharedPrefs.modolibre.modo = false
+        //Comprueba los permisos de navegación
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1)
 
         binding.infoModos.setOnClickListener {
             val intent= Intent(this,MainInfoModos::class.java)

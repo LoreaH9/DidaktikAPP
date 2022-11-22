@@ -1,25 +1,14 @@
 package com.txurdinaga.didaktikapp
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.content.pm.SharedLibraryInfo
 import android.location.Location
 import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.setFragmentResult
 import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -48,7 +37,7 @@ class FragmentMapa : Fragment() {
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
         paradas.forEach {
-            val marcador = googleMap.addMarker(MarkerOptions().position(it))
+            val marcador = googleMap.addMarker(MarkerOptions().position(it).title(it.toString()))
             if (marcador != null) marcadores.add(marcador)
         }
 
