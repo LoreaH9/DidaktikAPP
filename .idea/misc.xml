@@ -3,15 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/ic_tema.xml" value="0.102" />
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_informacion.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_inicio.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_menu.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/nav_header.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/menu/nav_menu.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1835" />
         <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_dialogo.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/switch_item.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/ik_2dm3/Documents/GitHub/DidaktikAPP/app/src/main/res/menu/nav_menu.xml" value="0.536" />
       </map>
     </option>
   </component>
