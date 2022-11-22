@@ -1,6 +1,6 @@
 package com.txurdinaga.didaktikapp
 
-import DialogRegistro
+import DialogLogin
 import android.Manifest
 import android.content.DialogInterface
 import android.content.Intent
@@ -69,17 +69,17 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_mapa ->supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
-                DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
+                DialogLogin().show(supportFragmentManager, "LoginDialog")
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
             R.id.nav_desconectar ->
-                showBasicDialog()
+                showCloseAppDialog()
                 }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun showBasicDialog() {
+    private fun showCloseAppDialog() {
         AlertDialog.Builder(this)
             .setTitle(R.string.salir)
             .setMessage(R.string.seguro_salir)
