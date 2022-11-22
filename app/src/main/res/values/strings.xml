@@ -7,6 +7,7 @@
     <string name="close_nav">Cerrar</string>
     <string name="nav_mapa">Mapa</string>
     <string name="nav_profesor">Modo profesor</string>
+    <string name="nav_tema">Cambiar Tema</string>
     <string name="nav_idioma">Cambiar idioma</string>
     <string name="nav_informacion">Acerda De</string>
     <string name="nav_desconectar">Desconectar</string>

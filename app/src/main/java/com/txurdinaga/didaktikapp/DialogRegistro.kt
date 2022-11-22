@@ -28,6 +28,10 @@ class DialogRegistro : DialogFragment() {
                     DialogInterface.OnClickListener { dialog, id ->
                         getDialog()?.cancel()
                     })
+                .setNeutralButton("Erregistratu",
+                DialogInterface.OnClickListener{dialog,id ->
+
+                })
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
