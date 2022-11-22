@@ -31,9 +31,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Comprueba los permisos de navegación
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1)
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)

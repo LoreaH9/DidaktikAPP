@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.setFragmentResult
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -93,6 +94,7 @@ class FragmentMapa : Fragment() {
         //modo libre el mapa no tiene en cuenta tu posicion actual
         if(SharedPrefs.modolibre.modo){
             //ubicacion = LatLng(43.321841, -3.019356)
+            binding.UbicacionButton.isVisible = false
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
             googleMap.setOnMarkerClickListener { marker ->
                 //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador
