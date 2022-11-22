@@ -44,7 +44,15 @@ object Constantes {
         var user: String
             get() = User.getString(SHARED_NAME, "").toString()
             set(value) = User.edit().putString(SHARED_NAME, value).apply()
+    }
 
+    internal class idioma(context: Context) {
+        val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences.idioma"
+        val SHARED_NAME = "Idioma"
+        val Idioma: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
+        var idioma: String
+            get() = Idioma.getString(SHARED_NAME, "").toString()
+            set(value) = Idioma.edit().putString(SHARED_NAME, value).apply()
     }
 
     var BasilicaStaMaria = LatLng(43.319806, -3.016722)

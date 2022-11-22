@@ -8,6 +8,7 @@ class SharedPrefs : Application(){
         internal lateinit var tipousu: Constantes.TipoUsu
         internal lateinit var puntopartida: Constantes.PuntoPartida
         internal lateinit var modolibre: Constantes.ModoLibre
+        internal lateinit var idioma: Constantes.idioma
 
     }
 
