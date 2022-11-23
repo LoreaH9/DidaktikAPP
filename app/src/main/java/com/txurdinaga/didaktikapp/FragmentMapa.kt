@@ -44,16 +44,14 @@ class FragmentMapa : Fragment() {
             if (marcador != null) marcadores.add(marcador)
         }
 
-        if (!SharedPrefs.modolibre.modo || SharedPrefs.tipousu.tipo == "alumno") {
-            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
-            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
-        }
-
-        //modo guiado el mapa tiene en cuenta tu posicion actual
-        if(!SharedPrefs.modolibre.modo) {
+        if (SharedPrefs.tipousu.tipo == "alumno") {
             googleMap.isMyLocationEnabled = true
             googleMap.uiSettings.isMyLocationButtonEnabled = false
             googleMap.uiSettings.isCompassEnabled = false
+
+            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
+            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
                     ubicacion = LatLng(it.latitude, it.longitude)
@@ -62,9 +60,19 @@ class FragmentMapa : Fragment() {
             }
         }
 
+        if(SharedPrefs.modolibre.modo){
+            //ubicacion = LatLng(43.321841, -3.019356)
+            googleMap.setOnMarkerClickListener { marker ->
+                //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador
+                println("Prueba: "+marker.id)
+                setFragmentResult("libre", bundleOf("punto" to marker.id.substring(1,2).toInt()))
+                true
+            }
+        }
+
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
             val distancia=FloatArray(3)
 
             //Distancia con las paradas
@@ -82,9 +90,7 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        //modo libre el mapa no tiene en cuenta tu posicion actual
-        if(SharedPrefs.modolibre.modo){
-            //ubicacion = LatLng(43.321841, -3.019356)
+        if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
             googleMap.setOnMarkerClickListener { marker ->
                 //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador

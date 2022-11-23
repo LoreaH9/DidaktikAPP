@@ -60,7 +60,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         if (SharedPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
-            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = ""
+            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
         }
     }
 
