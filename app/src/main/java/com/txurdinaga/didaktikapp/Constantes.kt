@@ -63,5 +63,6 @@ object Constantes {
     val Zunzunegui = LatLng(  43.32254620046105, -3.0185475097471284)
     val Puente = LatLng(  43.323242893062826, -3.017147915508491)
     internal val paradas: List<LatLng> = listOf(BasilicaStaMaria, PlazaSRoque, TorreSalazar, Mercado, Cascoviejo, Zunzunegui, Puente)
+    internal val nombre_paradas: List<String> = listOf("Actividad 1", "Actividad 2", "Actividad 3", "Actividad 4", "Actividad 5", "Actividad 6", "Actividad 7")
 
 }

@@ -1,12 +1,14 @@
 package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.location.Location
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -20,6 +22,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
+import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
 import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding.inflate
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
@@ -36,8 +39,8 @@ class FragmentMapa : Fragment() {
 
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
-        paradas.forEach {
-            val marcador = googleMap.addMarker(MarkerOptions().position(it).title(it.toString()))
+        paradas.forEachIndexed { index, it ->
+            val marcador = googleMap.addMarker(MarkerOptions().position(it).title(nombre_paradas[index]))
             if (marcador != null) marcadores.add(marcador)
         }
 
