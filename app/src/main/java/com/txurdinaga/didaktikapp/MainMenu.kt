@@ -73,7 +73,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
             R.id.nav_desconectar ->
-                showBasicDialog()
+                showCloseAppDialog()
             R.id.nav_home ->
                 showHomeDialog()
                 }
