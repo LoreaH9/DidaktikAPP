@@ -2,8 +2,14 @@
     <string name="app_name">Aliventuras en Portu</string>
     <string name="app_version">v0.0.1</string>
 
-
-    <string name="Titulo_Actividad1"></string>
+    <!--TITULOS DE CADA ACTIVIDAD-->
+    <string name="Titulo_Actividad1">Basilica Santa Maria</string>
+    <string name="Titulo_Actividad2">Plaza San Roque</string>
+    <string name="Titulo_Actividad3">Torre Salazar</string>
+    <string name="Titulo_Actividad4">Mercado</string>
+    <string name="Titulo_Actividad5">Casco Viejo</string>
+    <string name="Titulo_Actividad6">Zunzunegui</string>
+    <string name="Titulo_Actividad7">Puente Colgante</string>
 
 
     <!--NAVIGATION DRAWER-->
@@ -20,6 +26,7 @@
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
     <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
+    <string name="seguro_cambiar_idioma">¿Quieres cambiar el idioma a <b>EUSKERA</b>?</string>
 
     <string name="si">Si</string>
     <string name="no">No</string>

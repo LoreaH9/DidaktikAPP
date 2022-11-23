@@ -77,8 +77,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showBasicDialog()
             R.id.nav_home ->
                 showHomeDialog()
-            //  R.id.nav_idioma ->
-
+             R.id.nav_idioma ->
+                 showIdiomaDialog()
                 }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
@@ -120,12 +120,11 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     private fun showIdiomaDialog(){
         AlertDialog.Builder(this)
-            .setTitle(R.string.salir)
-            .setMessage(R.string.seguro_salir_home)
+            .setTitle("Cambiar Idioma")
+            .setMessage(R.string.seguro_cambiar_idioma)
             .setPositiveButton(R.string.si,
                 DialogInterface.OnClickListener { dialog, id ->
-                    var intent= Intent(this,MainInicio::class.java)
-                    startActivity(intent)
+
                 })
             .setNegativeButton(R.string.no,
                 DialogInterface.OnClickListener { _, id ->
