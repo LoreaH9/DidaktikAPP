@@ -2,7 +2,10 @@ package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import android.location.Location
+
+import com.txurdinaga.didaktikapp.MainMenu
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -99,6 +102,25 @@ class FragmentMapa : Fragment() {
                 true
             }
         }
+        googleMap.setOnMarkerClickListener{
+            onInfoWindowClick(it)
+        }
+    }
+    fun onInfoWindowClick(marker: Marker): Boolean {
+        AlertDialog.Builder(requireContext())
+            .setTitle(R.string.salir)
+            .setMessage(R.string.seguro_salir_home)
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+        return true
+
     }
 
     @SuppressLint("MissingPermission")
@@ -123,10 +145,13 @@ class FragmentMapa : Fragment() {
         return binding.root
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+
     }
 
     fun cambiarMarcador(posicion:Int){
