@@ -77,6 +77,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showBasicDialog()
             R.id.nav_home ->
                 showHomeDialog()
+            //  R.id.nav_idioma ->
+
                 }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
@@ -100,6 +102,23 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     private fun showHomeDialog(){
+        AlertDialog.Builder(this)
+            .setTitle(R.string.salir)
+            .setMessage(R.string.seguro_salir_home)
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+                    var intent= Intent(this,MainInicio::class.java)
+                    startActivity(intent)
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+    }
+
+    private fun showIdiomaDialog(){
         AlertDialog.Builder(this)
             .setTitle(R.string.salir)
             .setMessage(R.string.seguro_salir_home)

@@ -2,6 +2,10 @@
     <string name="app_name">Aliventuras en Portu</string>
     <string name="app_version">v0.0.1</string>
 
+
+    <string name="Titulo_Actividad1"></string>
+
+
     <!--NAVIGATION DRAWER-->
     <string name="open_nav">Abrir</string>
     <string name="close_nav">Cerrar</string>
