@@ -73,7 +73,9 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
             R.id.nav_desconectar ->
-                showCloseAppDialog()
+                showBasicDialog()
+            R.id.nav_home ->
+                showHomeDialog()
                 }
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
@@ -87,6 +89,23 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 DialogInterface.OnClickListener { dialog, id ->
                     finishAffinity()
                     exitProcess(0)
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+    }
+
+    private fun showHomeDialog(){
+        AlertDialog.Builder(this)
+            .setTitle(R.string.salir)
+            .setMessage(R.string.seguro_salir_home)
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+                    var intent= Intent(this,MainInicio::class.java)
+                    startActivity(intent)
                 })
             .setNegativeButton(R.string.no,
                 DialogInterface.OnClickListener { _, id ->

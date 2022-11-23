@@ -12,9 +12,12 @@
     <string name="nav_idioma">Cambiar idioma</string>
     <string name="nav_informacion">Acerda De</string>
     <string name="nav_desconectar">Desconectar</string>
+    <string name="nav_home">Salir al Menu</string>
     <string name="nav_logout">Cerrar sesión</string>
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
+    <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
+
     <string name="si">Si</string>
     <string name="no">No</string>
     <string name="invitado">Invitado</string>
