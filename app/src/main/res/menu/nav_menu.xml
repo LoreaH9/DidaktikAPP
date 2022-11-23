@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn = "navigation_view">
 
@@ -19,6 +20,11 @@
             android:icon="@drawable/ic_idioma"
             android:title="@string/nav_idioma"/>
         <item
+            android:id="@+id/nav_tema"
+            android:title="@string/nav_tema"
+            app:actionLayout="@layout/switch_item"
+            android:icon="@drawable/ic_tema"/>
+        <item
             android:id="@+id/nav_informacion"
             android:icon="@drawable/ic_informacion"
             android:title="@string/nav_informacion"/>
@@ -34,6 +40,12 @@
                 android:id="@+id/nav_desconectar"
                 android:icon="@drawable/ic_desconectar"
                 android:title="@string/nav_desconectar"/>
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home"
+                android:title="@string/nav_home"/>
+
+
         </menu>
 
     </item>

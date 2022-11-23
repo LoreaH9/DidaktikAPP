@@ -1,25 +1,16 @@
 package com.txurdinaga.didaktikapp
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.content.pm.SharedLibraryInfo
+import android.content.DialogInterface
 import android.location.Location
 import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.setFragmentResult
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -31,6 +22,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
+import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
 import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding.inflate
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
@@ -47,21 +39,19 @@ class FragmentMapa : Fragment() {
 
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
-        paradas.forEach {
-            val marcador = googleMap.addMarker(MarkerOptions().position(it))
+        paradas.forEachIndexed { index, it ->
+            val marcador = googleMap.addMarker(MarkerOptions().position(it).title(nombre_paradas[index]))
             if (marcador != null) marcadores.add(marcador)
         }
 
-        if (!SharedPrefs.modolibre.modo || SharedPrefs.tipousu.tipo == "alumno") {
-            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
-            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
-        }
-
-        //modo guiado el mapa tiene en cuenta tu posicion actual
-        if(!SharedPrefs.modolibre.modo) {
+        if (SharedPrefs.tipousu.tipo == "alumno") {
             googleMap.isMyLocationEnabled = true
             googleMap.uiSettings.isMyLocationButtonEnabled = false
             googleMap.uiSettings.isCompassEnabled = false
+
+            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
+            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
                     ubicacion = LatLng(it.latitude, it.longitude)
@@ -70,9 +60,19 @@ class FragmentMapa : Fragment() {
             }
         }
 
+        if(SharedPrefs.modolibre.modo){
+            //ubicacion = LatLng(43.321841, -3.019356)
+            googleMap.setOnMarkerClickListener { marker ->
+                //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador
+                println("Prueba: "+marker.id)
+                setFragmentResult("libre", bundleOf("punto" to marker.id.substring(1,2).toInt()))
+                true
+            }
+        }
+
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
             val distancia=FloatArray(3)
 
             //Distancia con las paradas
@@ -90,9 +90,7 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        //modo libre el mapa no tiene en cuenta tu posicion actual
-        if(SharedPrefs.modolibre.modo){
-            //ubicacion = LatLng(43.321841, -3.019356)
+        if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
             googleMap.setOnMarkerClickListener { marker ->
                 //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador

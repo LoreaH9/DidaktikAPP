@@ -12,6 +12,6 @@
     <color name="violeta">#FF7B6CAA</color>
     <color name="verdeosc">#FF3E6C00</color>
     <color name="verdecla">#FF93FA66</color>
-    <color name="rojo">#FFFF0000</color>
     <color name="grey">#FFC9C9C9</color>
+    <color name="red">#FFFF0000</color>
 </resources>

@@ -24,6 +24,9 @@ class MainInicio : AppCompatActivity(){
         setContentView(binding.root)
 
         SharedPrefs.modolibre.modo = false
+        //Comprueba los permisos de navegación
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1)
 
         binding.infoModos.setOnClickListener {
             val intent= Intent(this,MainInfoModos::class.java)
