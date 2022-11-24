@@ -100,8 +100,17 @@ class FragmentMapa : Fragment() {
         }
         googleMap.setOnMarkerClickListener{
             Log.i("1",it.toString())
-            println("Prueba: $it")
-            showActivityDialog(it,"hola","hoslaf")
+            println("Prueba:" + it.id)
+            when (it.id) {
+                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                else -> {showErrorDialog(it,"Error","Error")}
+            }
            // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
         }
     }
