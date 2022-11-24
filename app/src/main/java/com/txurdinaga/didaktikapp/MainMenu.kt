@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -31,7 +32,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         super.onCreate(savedInstanceState)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
