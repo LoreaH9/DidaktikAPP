@@ -23,7 +23,7 @@
         android:id="@+id/pistaTV"
         android:layout_width="600dp"
         android:layout_height="300dp"
-        android:background="@drawable/style_redondeado"
+        android:background="@drawable/style_redondeado_bordes"
         android:paddingLeft="40dp"
         android:paddingTop="40dp"
         android:paddingRight="40dp"

@@ -18,7 +18,6 @@ class MainContrasena : AppCompatActivity() {
     private lateinit var binding2: FragmentPistaBinding
     private lateinit var binding3: DialogContrasenaBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutContrasenaBinding.inflate(layoutInflater)

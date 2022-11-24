@@ -67,15 +67,15 @@ class Params {
             }
         }
 
-        fun getActividad(set:Int): Int {
+        fun getExplicacion(set:Int): Int {
             return when (set) {
-                1 -> R.string.actividad1
-                2 -> R.string.actividad2
-                3 -> R.string.actividad3
-                4 -> R.string.actividad4
-                5 -> R.string.actividad5
-                6 -> R.string.actividad6
-                7 -> R.string.actividad7
+                1 -> R.string.explicacion1
+                2 -> R.string.explicacion2
+                3 -> R.string.explicacion3
+                4 -> R.string.explicacion4
+                5 -> R.string.explicacion5
+                6 -> R.string.explicacion6
+                7 -> R.string.explicacion7
                 else -> 0
             }
         }

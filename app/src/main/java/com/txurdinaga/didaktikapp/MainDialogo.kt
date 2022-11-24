@@ -15,7 +15,7 @@ class MainDialogo : AppCompatActivity() {
         binding = LayoutDialogoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var set = 1
+        var set = 2
 
         var line = 1
         setDialogo(set, 0)
