@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.txurdinaga.didaktikapp.databinding.FragmentPistaBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutDialogoBinding
 
 class MainDialogo : AppCompatActivity() {
@@ -14,7 +15,7 @@ class MainDialogo : AppCompatActivity() {
         binding = LayoutDialogoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var set = 1
+        var set = 2
 
         var line = 1
         setDialogo(set, 0)
