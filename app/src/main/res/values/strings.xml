@@ -48,7 +48,7 @@
     <string name="nav_profesor">Modo profesor</string>
     <string name="nav_tema">Cambiar Tema</string>
     <string name="nav_idioma">Cambiar idioma</string>
-    <string name="nav_informacion">Acerda De</string>
+    <string name="nav_informacion">Acerca De</string>
     <string name="nav_desconectar">Desconectar</string>
     <string name="nav_home">Salir al Menu</string>
     <string name="nav_logout">Cerrar sesión</string>

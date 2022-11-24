@@ -15,7 +15,7 @@ class MainDialogo : AppCompatActivity() {
         binding = LayoutDialogoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var set = 2
+        var set = intent?.getIntExtra("set", 0) ?: throw IllegalStateException()
 
         var line = 1
         setDialogo(set, 0)
