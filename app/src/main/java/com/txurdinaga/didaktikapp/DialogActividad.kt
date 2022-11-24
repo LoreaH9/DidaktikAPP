@@ -16,8 +16,6 @@ class DialogActividad: DialogFragment() {
             val builder = AlertDialog.Builder(it)
             // Get the layout inflater
             val inflater = requireActivity().layoutInflater;
-            val view=inflater.inflate(R.layout.dialog_actividad, null)
-            val boton=view.findViewById<Button>(R.id.bt_jugar)
 
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout

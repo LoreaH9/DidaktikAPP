@@ -99,16 +99,15 @@ class FragmentMapa : Fragment() {
             }
         }
         googleMap.setOnMarkerClickListener{
-            Log.i("1",it.toString())
             println("Prueba:" + it.id)
             when (it.id) {
-                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
-                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
-                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
-                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
-                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
-                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
-                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.error),requireContext().resources.getString(R.string.error))
+                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_1),requireContext().resources.getString(R.string.titulo_actividad_1))
+                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_2),requireContext().resources.getString(R.string.titulo_actividad_2))
+                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_3),requireContext().resources.getString(R.string.titulo_actividad_3))
+                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_4),requireContext().resources.getString(R.string.titulo_actividad_4))
+                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_5),requireContext().resources.getString(R.string.titulo_actividad_5))
+                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_6),requireContext().resources.getString(R.string.titulo_actividad_6))
+                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_7),requireContext().resources.getString(R.string.titulo_actividad_7))
                 else -> {showErrorDialog(it,"Error","Error")}
             }
            // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
