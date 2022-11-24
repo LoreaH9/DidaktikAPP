@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view2CL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/style_redondeado">
+
+    <ImageView
+        android:id="@+id/imagen2IV"
+        android:layout_width="360dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linea1CL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/actividad_2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linea1CL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linea2CL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/e1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="SCUCH"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/a1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="  M"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/i1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="  C"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/i2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+
+        <TextView
+            android:id="@+id/t4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="NTAR,  P"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/o1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t4"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <TextView
+            android:id="@+id/t5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="RTUGAL"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/o1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/u1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t5"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="U" />
+
+        <TextView
+            android:id="@+id/t6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="J"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/u1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/o2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t6"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <TextView
+            android:id="@+id/t7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text=",  D"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/o2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/e2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t7"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="SP"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/i3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t8"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+
+        <TextView
+            android:id="@+id/t9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ERTA,"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i3"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linea2CL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linea3CL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/t10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="V"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/e3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t10"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="N  CONM"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/i4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t11"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+
+        <TextView
+            android:id="@+id/t12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="GO  A  G"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/o3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t12"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <TextView
+            android:id="@+id/t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ZAR,  EN  "
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/o3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/e4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="L  PLAC"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/e5"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t13"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="R  DE  L"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/a2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t14"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linea3CL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linea4CL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/t15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="F"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ESTA,  Q"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/u2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t16"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="U" />
+
+        <TextView
+            android:id="@+id/t17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="E  NUESTR"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/u2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/o4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t17"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <TextView
+            android:id="@+id/t18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="  COR"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/o4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ZÓN,  D"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="CE  G"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ZOSO  Y"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/o5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/o5"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t20"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <EditText
+            android:id="@+id/i6"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t19"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+
+        <EditText
+            android:id="@+id/a3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t18"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+
+        <EditText
+            android:id="@+id/i5"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t15"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linea4CL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linea5CL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/t29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ÓN,  ES  L"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/i7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/a6"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t29"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+
+        <EditText
+            android:id="@+id/i7"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t28"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I" />
+
+        <TextView
+            android:id="@+id/t28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="  DIVERS"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/a5"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t27"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+
+        <TextView
+            android:id="@+id/t27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="ESTR"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/u3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/u3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t26"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="U" />
+
+        <TextView
+            android:id="@+id/t26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="  N"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/e6"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t25"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="1dp"
+            android:text=",  QU"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/o6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/o6"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t24"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <TextView
+            android:id="@+id/t24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="CENTER"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/a4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="PL"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/a4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t23"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linea5CL"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/o7"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t33"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="O" />
+
+        <EditText
+            android:id="@+id/e8"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t32"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="NDO  "
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/u4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/u4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t31"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="U" />
+
+        <TextView
+            android:id="@+id/t31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="JOR  DEL  M"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="M"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/e7"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/negro"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/t30"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="E" />
+
+        <TextView
+            android:id="@+id/t33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="NTER"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/e8"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/zoomBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/blanco"
+        android:clickable="true"
+        android:contentDescription="@string/actividad2"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imagen2IV"
+        app:layout_constraintEnd_toEndOf="@+id/imagen2IV"
+        app:srcCompat="@android:drawable/ic_menu_zoom"
+        app:tint="@color/azulosc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,7 +28,7 @@
             android:id="@+id/textView8"
             android:layout_width="312dp"
             android:layout_height="41dp"
-            android:text="@string/Titulo_Actividad1"
+            android:text="@string/titulo_actividad_1"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
