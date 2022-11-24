@@ -552,5 +552,11 @@ class MainDialogo : AppCompatActivity() {
                 binding.siguienteBT.visibility = View.VISIBLE
             }
         }
+
+
+    }
+    override fun onDestroy() {
+
+        super.onDestroy()
     }
 }

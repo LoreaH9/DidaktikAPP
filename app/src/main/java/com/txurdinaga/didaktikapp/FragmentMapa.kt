@@ -3,6 +3,7 @@ package com.txurdinaga.didaktikapp
 import DialogLogin
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -118,12 +119,12 @@ class FragmentMapa : Fragment() {
         AlertDialog.Builder(requireContext())
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton(R.string.si,
+            .setPositiveButton(R.string.jugar,
                 DialogInterface.OnClickListener { dialog, id ->
+                    var intent = Intent(requireContext(),MainDialogo::class.java)
+                    startActivity(intent)
                 })
-            .setNegativeButton(R.string.no,
-                DialogInterface.OnClickListener { _, id ->
-                })
+
             .setCancelable(false)
             .create()
             .show()
