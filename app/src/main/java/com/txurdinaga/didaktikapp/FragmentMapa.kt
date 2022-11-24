@@ -2,10 +2,7 @@ package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
-import android.content.Intent
 import android.location.Location
-
-import com.txurdinaga.didaktikapp.MainMenu
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -27,9 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
-import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding.inflate
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
-import com.txurdinaga.didaktikapp.databinding.LayoutInicioBinding.inflate
 
 @Suppress("DEPRECATION")
 class FragmentMapa : Fragment() {
@@ -103,10 +98,12 @@ class FragmentMapa : Fragment() {
             }
         }
         googleMap.setOnMarkerClickListener{
-            onInfoWindowClick(it)
+            showActivityDialog(it)
+            showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
         }
     }
-    fun onInfoWindowClick(marker: Marker): Boolean {
+
+    fun showActivityDialog(marker: Marker): Boolean {
         AlertDialog.Builder(requireContext())
             .setTitle(R.string.salir)
             .setMessage(R.string.seguro_salir_home)
@@ -120,8 +117,24 @@ class FragmentMapa : Fragment() {
             .create()
             .show()
         return true
-
     }
+
+    fun showErrorDialog(marker: Marker, title: String, message:String): Boolean {
+        AlertDialog.Builder(requireContext())
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+        return false
+    }
+
 
     @SuppressLint("MissingPermission")
     override fun onCreateView(
