@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.location.Location
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -92,15 +93,17 @@ class FragmentMapa : Fragment() {
             }
         }
         googleMap.setOnMarkerClickListener{
-            showActivityDialog(it)
-            showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
+            Log.i("1",it.toString())
+            println("Prueba: $it")
+            showActivityDialog(it,"hola","hoslaf")
+           // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
         }
     }
 
-    fun showActivityDialog(marker: Marker): Boolean {
+    fun showActivityDialog(marker: Marker, title: String, message:String): Boolean {
         AlertDialog.Builder(requireContext())
-            .setTitle(R.string.salir)
-            .setMessage(R.string.seguro_salir_home)
+            .setTitle(title)
+            .setMessage(message)
             .setPositiveButton(R.string.si,
                 DialogInterface.OnClickListener { dialog, id ->
                 })

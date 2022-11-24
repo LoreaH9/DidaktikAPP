@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
@@ -30,7 +31,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         super.onCreate(savedInstanceState)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
@@ -68,7 +68,9 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_mapa ->supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
-                DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
+                DialogActividad().show(supportFragmentManager, "MyCustomFragment")
+
+            // DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
             R.id.nav_tema ->
                 showBasicDialog()
             R.id.nav_informacion -> supportFragmentManager.beginTransaction()
@@ -83,6 +85,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
+
 
     private fun showBasicDialog() {
         AlertDialog.Builder(this)
