@@ -1,16 +1,16 @@
 package com.txurdinaga.didaktikapp
 
+import DialogLogin
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.location.Location
-import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
