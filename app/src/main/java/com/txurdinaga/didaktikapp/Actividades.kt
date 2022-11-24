@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.DialogInterface
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
+import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad1Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
@@ -23,7 +25,6 @@ interface Actividades {
     }
 
     fun run2(binding: LayoutActividadBinding, layoutInflater: LayoutInflater) {
-        var binding2 = FragmentActividad2Binding.inflate(layoutInflater)
         binding.containerVW.layoutResource = R.layout.fragment_actividad_2
         binding.containerVW.inflate()
     }
