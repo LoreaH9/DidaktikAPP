@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.DidaktikAPP" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/rojo</item>
+        <item name="colorPrimary">@color/azulosc</item>
         <item name="colorPrimaryVariant">@color/azulosc</item>
         <item name="colorOnPrimary">@color/blanco</item>
         <!-- Secondary brand color. -->
