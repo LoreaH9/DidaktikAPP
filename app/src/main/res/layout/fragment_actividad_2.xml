@@ -916,19 +916,4 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/zoomBT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/blanco"
-        android:clickable="true"
-        android:contentDescription="@string/actividad2"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imagen2IV"
-        app:layout_constraintEnd_toEndOf="@+id/imagen2IV"
-        app:srcCompat="@android:drawable/ic_menu_zoom"
-        app:tint="@color/azulosc" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
