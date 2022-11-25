@@ -66,7 +66,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_mapa ->supportFragmentManager.beginTransaction()
+            R.id.nav_mapa -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
                 DialogLogin().show(supportFragmentManager, "LoginDialog")
@@ -74,11 +74,15 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showCloseAppDialog()
             R.id.nav_home ->
                 showHomeDialog()
-            R.id.nav_informacion -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentInformacion()).commit()
              R.id.nav_idioma ->
                  showIdiomaDialog()
                 }
+            R.id.nav_idioma ->
+                showIdiomaDialog()
+            R.id.nav_informacion ->
+                acerca()
+            }
+
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
@@ -139,5 +143,10 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         } else {
             super.onBackPressed()
         }
+    }
+
+    private fun acerca(){
+        var intent= Intent(this,FragmentInformacion::class.java)
+        startActivity(intent)
     }
 }

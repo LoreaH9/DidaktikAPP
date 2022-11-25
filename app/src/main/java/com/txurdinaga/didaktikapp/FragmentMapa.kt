@@ -3,6 +3,7 @@ package com.txurdinaga.didaktikapp
 import DialogLogin
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -35,6 +36,8 @@ class FragmentMapa : Fragment() {
     private lateinit var fusedLocation: FusedLocationProviderClient
     lateinit var googleMap: GoogleMap
     var marcadores:ArrayList<Marker> = arrayListOf()
+
+
 
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
@@ -69,6 +72,8 @@ class FragmentMapa : Fragment() {
             }
         }
 
+
+
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
@@ -101,30 +106,37 @@ class FragmentMapa : Fragment() {
         googleMap.setOnMarkerClickListener{
             println("Prueba:" + it.id)
             when (it.id) {
-                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_1),requireContext().resources.getString(R.string.titulo_actividad_1))
-                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_2),requireContext().resources.getString(R.string.titulo_actividad_2))
-                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_3),requireContext().resources.getString(R.string.titulo_actividad_3))
-                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_4),requireContext().resources.getString(R.string.titulo_actividad_4))
-                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_5),requireContext().resources.getString(R.string.titulo_actividad_5))
-                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_6),requireContext().resources.getString(R.string.titulo_actividad_6))
-                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_7),requireContext().resources.getString(R.string.titulo_actividad_7))
+                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_1),requireContext().resources.getString(R.string.titulo_actividad_1),1)
+                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_2),requireContext().resources.getString(R.string.titulo_actividad_2),2)
+                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_3),requireContext().resources.getString(R.string.titulo_actividad_3),3)
+                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_4),requireContext().resources.getString(R.string.titulo_actividad_4),4)
+                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_5),requireContext().resources.getString(R.string.titulo_actividad_5),5)
+                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_6),requireContext().resources.getString(R.string.titulo_actividad_6),6)
+                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_7),requireContext().resources.getString(R.string.titulo_actividad_7),7)
                 else -> {showErrorDialog(it,"Error","Error")}
             }
            // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
         }
+
+        binding.UbicacionButton.setOnClickListener {
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
+        }
+
+
     }
 
-    fun showActivityDialog(marker: Marker, title: String, message:String): Boolean {
+    fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
         AlertDialog.Builder(requireContext())
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton(R.string.si,
+            .setPositiveButton(R.string.jugar,
                 DialogInterface.OnClickListener { dialog, id ->
+                    startActivity(Intent(requireContext(),MainDialogo::class.java)
+                        .putExtra("set", set)
+                    )
                 })
-            .setNegativeButton(R.string.no,
-                DialogInterface.OnClickListener { _, id ->
-                })
-            .setCancelable(false)
+
+            .setCancelable(true)
             .create()
             .show()
         return true
@@ -153,6 +165,7 @@ class FragmentMapa : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+       // DialogInicio()
         binding = FragmentMapaBinding.inflate(layoutInflater)
 
         binding.UbicacionButton.setOnClickListener {
@@ -168,8 +181,23 @@ class FragmentMapa : Fragment() {
 
         return binding.root
     }
+/*
+    fun DialogInicio(){
+        AlertDialog.Builder(requireContext())
+            .setTitle("USUARIO")
+            .setMessage("INSERTA TU NOMBRE DE USUARIO")
+            .setPositiveButton("ENTRAR",
+                DialogInterface.OnClickListener { dialog, id ->
+                })
 
-
+            .setNeutralButton("SOY PROFESOR",
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+    }
+*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
