@@ -76,7 +76,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showHomeDialog()
              R.id.nav_idioma ->
                  showIdiomaDialog()
-                }
             R.id.nav_idioma ->
                 showIdiomaDialog()
             R.id.nav_informacion ->
