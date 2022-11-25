@@ -74,6 +74,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showCloseAppDialog()
             R.id.nav_home ->
                 showHomeDialog()
+            R.id.nav_informacion -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentInformacion()).commit()
              R.id.nav_idioma ->
                  showIdiomaDialog()
                 }
