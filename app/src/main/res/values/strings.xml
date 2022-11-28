@@ -2,6 +2,8 @@
     <string name="app_name">Aliventuras en Portu</string>
     <string name="app_version">v0.0.1</string>
     <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
+    <string name="jugar">JUGAR</string>
+
 
     <!--NUMERO DE CADA ACTIVIDAD-->
     <string name="actividad_1">Actividad 1</string>
@@ -46,7 +48,7 @@
     <string name="nav_profesor">Modo profesor</string>
     <string name="nav_tema">Cambiar Tema</string>
     <string name="nav_idioma">Cambiar idioma</string>
-    <string name="nav_informacion">Acerda De</string>
+    <string name="nav_informacion">Acerca De</string>
     <string name="nav_desconectar">Desconectar</string>
     <string name="nav_home">Salir al Menu</string>
     <string name="nav_logout">Cerrar sesión</string>

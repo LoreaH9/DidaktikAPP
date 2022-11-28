@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.DidaktikAPP" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.DidaktikAPP" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/azulosc</item>
         <item name="colorPrimaryVariant">@color/azulosc</item>
@@ -16,5 +16,10 @@
 
     <style name="SplashTheme" parent="Theme.DidaktikAPP">
         <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
+
+    <style name="Theme.DidaktikAPP.NoActionBar" parent="Theme.DidaktikAPP">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>
