@@ -22,15 +22,14 @@ class MainActividad2 : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutActividadBinding.inflate(layoutInflater)
-        binding2 = FragmentActividad2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.fondoIV.setImageResource(ActividadesProvider.actividad[2].fondo)
         binding.explicacionTV.text = getString(ActividadesProvider.actividad[2].explicacion)
         binding.zoomBT.visibility = View.INVISIBLE
 
-        binding.containerVW.layoutResource = R.layout.fragment_actividad_2
-        binding.containerVW.inflate()
+        binding2 = FragmentActividad2Binding.inflate(layoutInflater)
+        binding.fragFL.addView(binding2.root)
 
         binding.ayudaBT.setOnClickListener{
             if (!binding.explicacionTV.isVisible){
@@ -50,12 +49,16 @@ class MainActividad2 : AppCompatActivity(){
                 .show()
         }
 
+        binding.terminarActividadBT.setOnClickListener{
+
+        }
+
         var listA : List<EditText> = listOf(
-            binding2.a1, binding2.a2, binding2.a3, binding2.a4, binding2.a5, binding2.a6)
+            binding2.a1, binding2.a2, binding2.a3, binding2.a4, binding2.a5, binding2.a6, binding2.a7)
         var listE : List<EditText> = listOf(
-            binding2.e1, binding2.e2, binding2.a3, binding2.e4, binding2.e5, binding2.e6, binding2.e7, binding2.e8)
+            binding2.e1, binding2.e2, binding2.e3, binding2.e4, binding2.e5, binding2.e6, binding2.e7, binding2.e8)
         var listI : List<EditText> = listOf(
-            binding2.i1, binding2.i2, binding2.i3, binding2.i4, binding2.i5, binding2.i6, binding2.i7)
+            binding2.i1, binding2.i2, binding2.i3, binding2.i4, binding2.i5, binding2.i6)
         var listO : List<EditText> = listOf(
             binding2.o1, binding2.o2, binding2.o3, binding2.o4, binding2.o5, binding2.o6, binding2.o7)
         var listU : List<EditText> = listOf(
@@ -63,16 +66,18 @@ class MainActividad2 : AppCompatActivity(){
 
         thread {
             while(true) {
-                Log.i("i", "thread")
-                if (comprobatuLetra(listA, "a") &&
-                    comprobatuLetra(listE, "e") &&
-                    comprobatuLetra(listI, "i") &&
-                    comprobatuLetra(listO, "o") &&
-                    comprobatuLetra(listU, "u")
-                )
-                    binding.terminarActividadBT.visibility = View.VISIBLE
-                else
-                    binding.terminarActividadBT.visibility = View.INVISIBLE
+                var comprobaketa : List<Boolean> = listOf(
+                    comprobatuLetra(listA, "A"),
+                    comprobatuLetra(listE, "E"),
+                    comprobatuLetra(listI, "I"),
+                    comprobatuLetra(listO, "O"),
+                    comprobatuLetra(listU, "U") )
+                runOnUiThread{
+                    if (!comprobaketa.contains(false))
+                        binding.terminarActividadBT.visibility = View.VISIBLE
+                    else
+                        binding.terminarActividadBT.visibility = View.INVISIBLE
+                }
                 Thread.sleep(1000)
             }
         }
@@ -81,20 +86,26 @@ class MainActividad2 : AppCompatActivity(){
 
     fun comprobatuLetra(list: List<EditText>, letra: String) :Boolean{
         var ret = true
+        var col: Int
         list.forEach {
-            println(it.text.toString())
-            if(it.text.toString().toLowerCase() == letra){
-                it.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.verdecla))
+            var str:String = "${it.text}".toUpperCase()
+            if(str.toUpperCase() == letra){
+                col = ContextCompat.getColor(this, R.color.verdecla)
             }
-            else if(it.text.toString() == ""){
-                it.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.negro))
+            else if(str == ""){
+                col = ContextCompat.getColor(this, R.color.negro)
                 ret = false
             }
             else {
-                it.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.rojo))
+                col = ContextCompat.getColor(this, R.color.rojo)
                 ret = false
             }
+            it.backgroundTintList = ColorStateList.valueOf(col)
+            it.setTextColor(col)
         }
         return ret
     }
+
+
+
 }

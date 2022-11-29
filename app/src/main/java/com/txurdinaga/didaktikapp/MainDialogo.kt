@@ -4,10 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
+import com.txurdinaga.didaktikapp.databinding.DialogAudioBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutDialogoBinding
 
 class MainDialogo : AppCompatActivity() {
     private lateinit var binding: LayoutDialogoBinding
+    private lateinit var audioController: DialogAudioBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +28,31 @@ class MainDialogo : AppCompatActivity() {
             line++
         }
 
+        binding.audioBT.setOnClickListener{
+            AlertDialog.Builder(this)
+                .setView(layoutInflater.inflate(R.layout.dialog_audio, null))
+                .create()
+                .show()
+        }
+
         binding.siguienteBT.setOnClickListener{
             startActivity(Intent(this, MainContrasena::class.java)
                 .putExtra("set", set)
             )
         }
+
+
+        audioController = DialogAudioBinding.inflate(layoutInflater)
+        audioController.rewindBT.setOnClickListener{
+
+        }
+        audioController.playPauseBT.setOnClickListener{
+
+        }
+        audioController.volumeBT.setOnClickListener{
+            audioController.volumenSB.visibility = View.VISIBLE
+        }
+        //audioController.volumenSB.setOnSeekBarChangeListener()
 
     }
 
