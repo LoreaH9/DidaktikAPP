@@ -1,6 +1,6 @@
 package com.txurdinaga.didaktikapp
 
-import DialogRegistro
+import DialogLogin
 import android.Manifest
 import android.content.DialogInterface
 import android.content.Intent
@@ -8,7 +8,9 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -30,10 +32,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         super.onCreate(savedInstanceState)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //Comprueba los permisos de navegación
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1)
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
@@ -62,28 +60,33 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         if (SharedPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
-            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = ""
+            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_mapa ->supportFragmentManager.beginTransaction()
+            R.id.nav_mapa -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
-                DialogRegistro().show(supportFragmentManager, "MyCustomFragment")
-            R.id.nav_idioma ->
-                showBasicDialog()
-            R.id.nav_informacion -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentInformacion()).commit()
+                DialogLogin().show(supportFragmentManager, "LoginDialog")
             R.id.nav_desconectar ->
-                showBasicDialog()
-                }
+                showCloseAppDialog()
+            R.id.nav_home ->
+                showHomeDialog()
+             R.id.nav_idioma ->
+                 showIdiomaDialog()
+            R.id.nav_idioma ->
+                showIdiomaDialog()
+            R.id.nav_informacion ->
+                acerca()
+            }
+
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun showBasicDialog() {
+    private fun showCloseAppDialog() {
         AlertDialog.Builder(this)
             .setTitle(R.string.salir)
             .setMessage(R.string.seguro_salir)
@@ -100,11 +103,49 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             .show()
     }
 
+    private fun showHomeDialog(){
+        AlertDialog.Builder(this)
+            .setTitle(R.string.salir)
+            .setMessage(R.string.seguro_salir_home)
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+                    var intent= Intent(this,MainInicio::class.java)
+                    startActivity(intent)
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+    }
+
+    private fun showIdiomaDialog(){
+        AlertDialog.Builder(this)
+            .setTitle("Cambiar Idioma")
+            .setMessage(R.string.seguro_cambiar_idioma)
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
+    }
+
     override fun onBackPressed() {
         if (drawerLayout!!.isDrawerOpen(GravityCompat.START)) {
             drawerLayout!!.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
+    }
+
+    private fun acerca(){
+        var intent= Intent(this,FragmentInformacion::class.java)
+        startActivity(intent)
     }
 }

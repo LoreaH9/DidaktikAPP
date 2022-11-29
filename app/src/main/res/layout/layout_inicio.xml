@@ -38,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:text="MODO GUIADO"
-                android:textColor="@color/white"
+                android:text="@string/modo_guiado"
+                android:textColor="@color/blanco"
                 android:textSize="23dp"
                 android:textStyle="bold" />
 
@@ -67,8 +67,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:text="MODO LIBRE"
-                android:textColor="@color/white"
+                android:text="@string/modo_libre"
+                android:textColor="@color/blanco"
                 android:textSize="23dp"
                 android:textStyle="bold" />
            <pl.droidsonroids.gif.GifImageView

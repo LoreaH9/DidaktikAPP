@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.txurdinaga.didaktikapp.R
 
-class DialogRegistro : DialogFragment() {
+class DialogLogin : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
@@ -21,12 +21,12 @@ class DialogRegistro : DialogFragment() {
             builder.setView(inflater.inflate(R.layout.dialog_profesor, null))
                 // Add action buttons
                 .setPositiveButton("aceptar",
-                    DialogInterface.OnClickListener { dialog, id ->
+                    DialogInterface.OnClickListener { _, _ ->
                         // sign in the user ...
                     })
                 .setNegativeButton("cancelar",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        getDialog()?.cancel()
+                    DialogInterface.OnClickListener { _, _ ->
+                        dialog?.cancel()
                     })
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")

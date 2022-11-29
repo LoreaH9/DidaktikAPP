@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/negro"
     tools:context=".MainDialogo">
 
     <ImageView
@@ -56,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginEnd="70dp"
+        android:textColor="@color/negro"
         app:layout_constraintBottom_toBottomOf="@+id/bocadilloIV"
         app:layout_constraintEnd_toEndOf="@+id/bocadilloIV"
         app:layout_constraintStart_toStartOf="@+id/bocadilloIV"
@@ -67,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00FFFFFF"
-        android:textColor="@color/black"
+        android:textColor="@color/negro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,8 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/purple_500"
-        android:text="Hurrengoa"
+        android:backgroundTint="@color/azulosc"
+        android:text="SIGUIENTE"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
