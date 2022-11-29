@@ -71,12 +71,11 @@
         </activity>
 
         <activity
-            android:name=".MainActividad"
+            android:name=".actividades.MainActividad1"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">
         </activity>
-
 
         <activity
             android:name=".MainInfoModos"
@@ -85,7 +84,47 @@
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">
         </activity>
 
+        <activity
+            android:name=".actividades.MainActividad2"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad3"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad4"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad5"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad6"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad7"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
 
     </application>
-
 </manifest>
