@@ -72,6 +72,10 @@
     <string name="username">"Usuario"</string>
     <string name="password">"Contraseña"</string>
 
+    <!--NOMBRE USUARIO-->
+    <string name="nombre">"Nombre"</string>
+
+
     <!--DIALOGO 0-->
     <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
     <string name="dialogo0_2">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
