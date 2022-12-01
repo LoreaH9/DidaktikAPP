@@ -6,66 +6,65 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageButton
+    <Button
         android:id="@+id/rewindBT"
+        android:clickable="true"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:background="@drawable/style_boton"
         android:backgroundTint="@color/azulosc"
         android:contentDescription="@string/app_name"
         android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toStartOf="@+id/play_pauseBT"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/play_pauseBT"
-        app:srcCompat="@android:drawable/ic_media_rew" />
+        app:srcCompat="@drawable/rewind"
+        app:tint="@color/blanco"
+        android:focusable="true" />
 
-    <ImageButton
+    <Button
         android:id="@+id/play_pauseBT"
+        android:clickable="true"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/style_boton"
         android:backgroundTint="@color/azulosc"
         android:contentDescription="@string/app_name"
         android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/play"
+        app:tint="@color/blanco"
+        android:focusable="true" />
 
-    <ImageButton
+    <Button
         android:id="@+id/volumeBT"
+        android:clickable="true"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:background="@drawable/style_boton"
         android:backgroundTint="@color/azulosc"
         android:contentDescription="@string/app_name"
         android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/play_pauseBT"
         app:layout_constraintTop_toTopOf="@+id/play_pauseBT"
-        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
-
-    <SeekBar
-        android:id="@+id/volumenSB"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/azulosc"
-        android:indeterminate="false"
-        android:indeterminateTint="@color/blanco"
-        android:max="100"
-        android:progress="50"
-        android:progressTint="@color/azulcla"
-        android:rotation="0"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/play_pauseBT" />
+        app:srcCompat="@drawable/vol_2"
+        app:tint="@color/blanco"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
