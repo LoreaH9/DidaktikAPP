@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -131,7 +132,10 @@ class FragmentMapa : Fragment() {
     }
 
     fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
+        val image = ImageView(requireContext())
+        image.setImageResource(R.drawable.usuarios4)
         AlertDialog.Builder(requireContext())
+            .setView(image)
             .setTitle(title)
             .setMessage(message)
             .setPositiveButton(R.string.jugar,
@@ -140,7 +144,6 @@ class FragmentMapa : Fragment() {
                         .putExtra("set", set)
                     )
                 })
-
             .setCancelable(true)
             .create()
             .show()
