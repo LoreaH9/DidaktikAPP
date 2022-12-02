@@ -19,6 +19,7 @@ class SharedPrefs : Application(){
         tipousu = Constantes.TipoUsu(applicationContext)
         puntopartida = Constantes.PuntoPartida(applicationContext)
         modolibre = Constantes.ModoLibre(applicationContext)
+        idioma = Constantes.idioma(applicationContext)
 
     }
 }

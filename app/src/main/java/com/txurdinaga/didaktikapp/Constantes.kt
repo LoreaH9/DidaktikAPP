@@ -1,8 +1,12 @@
+@file:Suppress("DEPRECATION")
+
 package com.txurdinaga.didaktikapp
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Resources
 import com.google.android.gms.maps.model.LatLng
+import java.util.*
 
 object Constantes {
 
@@ -53,6 +57,16 @@ object Constantes {
         var idioma: String
             get() = Idioma.getString(SHARED_NAME, "").toString()
             set(value) = Idioma.edit().putString(SHARED_NAME, value).apply()
+
+        fun aldatu(hizkuntza_berria: String, resources: Resources) {
+            SharedPrefs.idioma.idioma = hizkuntza_berria
+            val locale = Locale(SharedPrefs.idioma.idioma)
+            Locale.setDefault(locale)
+            val resources = resources
+            val configuration = resources.configuration
+            configuration.setLocale(locale)
+            resources.updateConfiguration(configuration, resources.displayMetrics)
+        }
     }
 
     val BasilicaStaMaria = LatLng(43.319806, -3.016722)
