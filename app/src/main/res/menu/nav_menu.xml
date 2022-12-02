@@ -22,7 +22,6 @@
         <item
             android:id="@+id/nav_tema"
             android:title="@string/nav_tema"
-            app:actionLayout="@layout/switch_item"
             android:icon="@drawable/ic_tema"/>
         <item
             android:id="@+id/nav_informacion"

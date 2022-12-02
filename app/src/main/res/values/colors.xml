@@ -10,8 +10,16 @@
     <color name="negro">#FF000000</color>
     <color name="gris">#FFC9C9C9</color>
 
-
-
+    <!--COLORES MODO OSCURO-->
+    <color name="OSC_verdeCL">#40712B</color>
+    <color name="OSC_verdeosc">#314517</color>
+    <color name="OSC_rojo">#730000</color>
+    <color name="OSC_azulcla">#37527E</color>
+    <color name="OSC_azulosc">#1C3255</color>
+    <color name="OSC_violeta">#3A3350</color>
+    <color name="OSC_blanco">#FFFFFFFF</color>
+    <color name="OSC_negro">#FF000000</color>
+    <color name="OSC_gris">#FFC9C9C9</color>
 
 
 </resources>

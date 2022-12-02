@@ -39,7 +39,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             SharedPrefs.idioma.idioma="es"
         }
 
-        var load=findViewById<Switch>(R.id.swi)
+
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
@@ -63,7 +63,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             navigationView.setCheckedItem(R.id.nav_mapa)
         }
-
 
 
 
@@ -97,8 +96,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_informacion ->
                 acerca()
             R.id.nav_tema ->
+                temaldatu()
 
-                setdaynight(0)
 
             }
 
@@ -107,8 +106,24 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     private fun temaldatu(){
+            AlertDialog.Builder(this)
+                .setTitle("Cambiar Tema")
+                .setMessage("Quieres cambiar tema?")
+                .setPositiveButton(R.string.si,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        setdaynight(0)
+                        var intent= Intent(this,MainInicio::class.java)
+                        startActivity(intent)
+                    })
+                .setNegativeButton(R.string.no,
+                    DialogInterface.OnClickListener { _, id ->
 
-    }
+                    })
+                .setCancelable(false)
+                .create()
+                .show()
+        }
+
 
 
     private fun showCloseAppDialog() {
@@ -163,8 +178,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .create()
                 .show()
 
-        }
-        else if (SharedPrefs.idioma.idioma == "es"){
+        } else {
             AlertDialog.Builder(this)
                 .setTitle("Cambiar Idioma")
                 .setMessage(R.string.seguro_cambiar_idioma)
