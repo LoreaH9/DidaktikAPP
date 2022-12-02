@@ -61,7 +61,9 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
-        }
+        } else
+            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
