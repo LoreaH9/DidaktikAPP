@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_audioCL"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/rewindBT"
+        android:clickable="true"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="@drawable/style_boton"
+        android:backgroundTint="@color/azulosc"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/play_pauseBT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/play_pauseBT"
+        app:srcCompat="@drawable/rewind"
+        app:tint="@color/blanco"
+        android:focusable="true" />
+
+    <Button
+        android:id="@+id/play_pauseBT"
+        android:clickable="true"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/style_boton"
+        android:backgroundTint="@color/azulosc"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/play"
+        app:tint="@color/blanco"
+        android:focusable="true" />
+
+    <Button
+        android:id="@+id/volumeBT"
+        android:clickable="true"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="@drawable/style_boton"
+        android:backgroundTint="@color/azulosc"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/play_pauseBT"
+        app:layout_constraintTop_toTopOf="@+id/play_pauseBT"
+        app:srcCompat="@drawable/vol_2"
+        app:tint="@color/blanco"
+        android:focusable="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
