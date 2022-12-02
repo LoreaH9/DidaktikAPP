@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.txurdinaga.didaktikapp.databinding.DialogContrasenaBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentPistaBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutContrasenaBinding
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 class MainContrasena : AppCompatActivity() {
     private lateinit var binding: LayoutContrasenaBinding
@@ -71,14 +69,14 @@ class MainContrasena : AppCompatActivity() {
         params3.rightMargin = margins[5] *3
         binding.t3BT.layoutParams = params3
 
-        binding.fondoIV.setImageResource(Params.getFondo(set))
-        binding2.fondoPistaIV.setImageResource(Params.getFondo(set))
-        binding2.personajeIV.setImageResource(Params.getPersonaje(set))
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding2.fondoPistaIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding2.personajeIV.setImageResource(ActividadesProvider.actividad[set].perso)
     }
 
     private fun showPista(set: Int, pista: Int){
         setContentView(binding2.root)
-        binding2.pistaTV.text = getString(Params.getPistas(set)[pista-1])
+        binding2.pistaTV.text = getString(ActividadesProvider.actividad[set].pistas[pista-1])
     }
 
     private fun hidePista(){
@@ -87,16 +85,16 @@ class MainContrasena : AppCompatActivity() {
 
     private fun showDialogContrasena(set: Int){
         binding3 = DialogContrasenaBinding.inflate(layoutInflater)
-        binding3.enunciadoTV.text = getString(Params.getEnunciado(set))
-        if(Regex("\\d+").matches(getString(Params.getContrasena(set)))){
+        binding3.enunciadoTV.text = getString(ActividadesProvider.actividad[set].enunciado)
+        if(Regex("\\d+").matches(getString(ActividadesProvider.actividad[set].contrasena))){
             binding3.contrasenaET.inputType = TYPE_CLASS_NUMBER
         } else {
             binding3.contrasenaET.inputType = TYPE_CLASS_TEXT
         }
         binding3.continuarBT.setOnClickListener{
             var contrasena : String = binding3.contrasenaET.text.toString()
-            if (contrasena.toLowerCase() == getString(Params.getContrasena(set))){
-                startActivity(Intent(this, MainActividad::class.java)
+            if (contrasena.toLowerCase() == getString(ActividadesProvider.actividad[set].contrasena)){
+                startActivity(Intent(this, ActividadesProvider.actividad[set].main)
                     .putExtra("set", set)
                 )
             }
@@ -106,5 +104,7 @@ class MainContrasena : AppCompatActivity() {
             .create()
             .show()
     }
+
+
 
 }

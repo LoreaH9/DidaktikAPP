@@ -64,22 +64,15 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             navigationView.setCheckedItem(R.id.nav_mapa)
         }
 
-
-
         //En caso de no haber usuario pone el invitado por defecto
         if (SharedPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
-        }
-
-
-
-
-
-
+        } else
+            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
+    
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -91,10 +84,13 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showCloseAppDialog()
             R.id.nav_home ->
                 showHomeDialog()
+             R.id.nav_idioma ->
+                 showIdiomaDialog()
             R.id.nav_idioma ->
                 showIdiomaDialog()
-            R.id.nav_informacion ->
-                acerca()
+            R.id.nav_informacion ->supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentInformacion()).commit()
+     
             R.id.nav_tema ->
                 temaldatu()
 
@@ -204,12 +200,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             super.onBackPressed()
         }
     }
-
-    private fun acerca(){
-        var intent= Intent(this,FragmentInformacion::class.java)
-        startActivity(intent)
-    }
-
 
     fun setdaynight(mode:Int){
         if (mode==0){

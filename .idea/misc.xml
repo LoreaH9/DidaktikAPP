@@ -3,10 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/style_redondeado.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/style_redondeado_bordes.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/style_redondeado_editext.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/vacio.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/fragment_mapa.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/layout_actividad.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/layout_inicio.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/layout_menu.xml" value="0.1" />
         <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_dialogo.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/switch_item.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/ik_2dm3/Documents/GitHub/DidaktikAPP/app/src/main/res/menu/nav_menu.xml" value="0.536" />
       </map>
     </option>
   </component>
