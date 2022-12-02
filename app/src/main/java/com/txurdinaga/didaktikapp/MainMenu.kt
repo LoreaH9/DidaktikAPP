@@ -9,17 +9,20 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
+import java.util.*
 import kotlin.system.exitProcess
 
 
@@ -32,6 +35,11 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         super.onCreate(savedInstanceState)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if (SharedPrefs.idioma.idioma==null){
+            SharedPrefs.idioma.idioma="es"
+        }
+
+        var load=findViewById<Switch>(R.id.swi)
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
@@ -56,13 +64,23 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             navigationView.setCheckedItem(R.id.nav_mapa)
         }
 
+
+
+
         //En caso de no haber usuario pone el invitado por defecto
         if (SharedPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
         }
+
+
+
+
+
+
     }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -78,11 +96,20 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showIdiomaDialog()
             R.id.nav_informacion ->
                 acerca()
+            R.id.nav_tema ->
+
+                setdaynight(0)
+
             }
 
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
+
+    private fun temaldatu(){
+
+    }
+
 
     private fun showCloseAppDialog() {
         AlertDialog.Builder(this)
@@ -119,19 +146,41 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     private fun showIdiomaDialog(){
-        AlertDialog.Builder(this)
-            .setTitle("Cambiar Idioma")
-            .setMessage(R.string.seguro_cambiar_idioma)
-            .setPositiveButton(R.string.si,
-                DialogInterface.OnClickListener { dialog, id ->
+        if(SharedPrefs.idioma.idioma == "eu") {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.titulo_cambiar_idioma)
+                .setMessage(R.string.seguro_cambiar_idioma)
+                .setPositiveButton(R.string.si,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        SharedPrefs.idioma.aldatu("es",resources)
+                        val intent = Intent(this, MainMenu::class.java)
+                        startActivity(intent)
+                    })
+                .setNegativeButton(R.string.no,
+                    DialogInterface.OnClickListener { _, id ->
+                    })
+                .setCancelable(false)
+                .create()
+                .show()
 
-                })
-            .setNegativeButton(R.string.no,
-                DialogInterface.OnClickListener { _, id ->
-                })
-            .setCancelable(false)
-            .create()
-            .show()
+        }
+        else if (SharedPrefs.idioma.idioma == "es"){
+            AlertDialog.Builder(this)
+                .setTitle("Cambiar Idioma")
+                .setMessage(R.string.seguro_cambiar_idioma)
+                .setPositiveButton(R.string.si,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        SharedPrefs.idioma.aldatu("eu",resources)
+                        val intent = Intent(this, MainMenu::class.java)
+                        startActivity(intent)
+                    })
+                .setNegativeButton(R.string.no,
+                    DialogInterface.OnClickListener { _, id ->
+                    })
+                .setCancelable(false)
+                .create()
+                .show()
+        }
     }
 
     override fun onBackPressed() {
@@ -146,4 +195,16 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         var intent= Intent(this,FragmentInformacion::class.java)
         startActivity(intent)
     }
+
+
+    fun setdaynight(mode:Int){
+        if (mode==0){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+    }
+
+
 }

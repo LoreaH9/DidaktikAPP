@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad1Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad3Binding
@@ -58,5 +61,6 @@ interface Actividades {
         binding.containerVW.layoutResource = R.layout.fragment_actividad_7
         binding.containerVW.inflate()
     }
+
 
 }
