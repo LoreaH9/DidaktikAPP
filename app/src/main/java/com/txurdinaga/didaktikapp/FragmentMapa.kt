@@ -1,6 +1,8 @@
 package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog.show
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
@@ -11,6 +13,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -61,6 +64,8 @@ class FragmentMapa : Fragment() {
             }
         }
 
+
+
         if(SharedPrefs.modolibre.modo){
             //ubicacion = LatLng(43.321841, -3.019356)
             googleMap.setOnMarkerClickListener { marker ->
@@ -93,6 +98,9 @@ class FragmentMapa : Fragment() {
             }
         }
 
+        DialogNombre().show(parentFragmentManager, "LoginDialog")
+
+
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
             googleMap.setOnMarkerClickListener { marker ->
@@ -120,8 +128,6 @@ class FragmentMapa : Fragment() {
         binding.UbicacionButton.setOnClickListener {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
         }
-
-
     }
 
     fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
@@ -167,6 +173,8 @@ class FragmentMapa : Fragment() {
        // DialogInicio()
         binding = FragmentMapaBinding.inflate(layoutInflater)
 
+
+
         binding.UbicacionButton.setOnClickListener {
 
             if(!SharedPrefs.modolibre.modo) {
@@ -180,6 +188,7 @@ class FragmentMapa : Fragment() {
 
         return binding.root
     }
+
 /*
     fun DialogInicio(){
         AlertDialog.Builder(requireContext())

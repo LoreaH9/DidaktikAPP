@@ -72,6 +72,10 @@
     <string name="username">"Usuario"</string>
     <string name="password">"Contraseña"</string>
 
+    <!--NOMBRE USUARIO-->
+    <string name="nombre">"Nombre"</string>
+
+
     <!--DIALOGO 0-->
     <string name="vacio"></string>
 
