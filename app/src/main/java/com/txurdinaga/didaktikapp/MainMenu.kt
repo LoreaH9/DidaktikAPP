@@ -78,8 +78,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                  showIdiomaDialog()
             R.id.nav_idioma ->
                 showIdiomaDialog()
-            R.id.nav_informacion ->
-                acerca()
+            R.id.nav_informacion ->supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentInformacion()).commit()
             }
 
         drawerLayout!!.closeDrawer(GravityCompat.START)
@@ -142,10 +142,5 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         } else {
             super.onBackPressed()
         }
-    }
-
-    private fun acerca(){
-        var intent= Intent(this,FragmentInformacion::class.java)
-        startActivity(intent)
     }
 }

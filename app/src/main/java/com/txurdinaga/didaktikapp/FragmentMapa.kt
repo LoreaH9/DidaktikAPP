@@ -1,6 +1,5 @@
 package com.txurdinaga.didaktikapp
 
-import DialogLogin
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent

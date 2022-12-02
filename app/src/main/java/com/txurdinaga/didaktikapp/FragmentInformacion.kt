@@ -1,15 +1,26 @@
 package com.txurdinaga.didaktikapp
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.txurdinaga.didaktikapp.databinding.FragmentInformacionBinding
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 
-class FragmentInformacion: AppCompatActivity() {
-    lateinit var binding: FragmentInformacionBinding
+
+
+class FragmentInformacion : Fragment() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= FragmentInformacionBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
+        arguments?.let {
 
+        }
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_informacion, container, false)
+    }
 }
