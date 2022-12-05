@@ -26,7 +26,7 @@ class MainActividad2 : AppCompatActivity(){
 
         binding.fondoIV.setImageResource(ActividadesProvider.actividad[2].fondo)
         binding.explicacionTV.text = getString(ActividadesProvider.actividad[2].explicacion)
-        binding.zoomBT.visibility = View.INVISIBLE
+        binding.verBT.visibility = View.INVISIBLE
 
         binding2 = FragmentActividad2Binding.inflate(layoutInflater)
         binding.fragFL.addView(binding2.root)
@@ -41,8 +41,8 @@ class MainActividad2 : AppCompatActivity(){
             }
         }
 
-        binding.zoomBT.visibility = View.VISIBLE
-        binding.zoomBT.setOnClickListener{
+        binding.verBT.visibility = View.VISIBLE
+        binding.verBT.setOnClickListener{
             AlertDialog.Builder(this)
                 .setView(layoutInflater.inflate(R.layout.fragment_actividad_2_2, null))
                 .create()
