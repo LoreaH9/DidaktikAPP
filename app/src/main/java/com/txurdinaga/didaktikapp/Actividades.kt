@@ -16,7 +16,6 @@ import com.txurdinaga.didaktikapp.databinding.FragmentActividad3Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad4Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad5Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad6Binding
-import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
 interface Actividades {
@@ -55,12 +54,12 @@ interface Actividades {
         binding.containerVW.layoutResource = R.layout.fragment_actividad_6
         binding.containerVW.inflate()
     }
-
+/*
     fun run7(binding: LayoutActividadBinding, layoutInflater: LayoutInflater) {
         var binding7 = FragmentActividad7Binding.inflate(layoutInflater)
         binding.containerVW.layoutResource = R.layout.fragment_actividad_7
         binding.containerVW.inflate()
     }
-
+*/
 
 }

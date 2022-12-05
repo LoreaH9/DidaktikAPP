@@ -77,6 +77,11 @@
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">
         </activity>
 
+        <activity
+            android:name=".Actividad7"
+            android:exported="true"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
 
         <activity
             android:name=".MainInfoModos"
