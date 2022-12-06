@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.ActividadesProvider
 import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad3Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
@@ -16,15 +17,14 @@ class MainActividad3 : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutActividadBinding.inflate(layoutInflater)
-        binding3 = FragmentActividad3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.fondoIV.setImageResource(ActividadesProvider.actividad[3].fondo)
         binding.explicacionTV.text = getString(ActividadesProvider.actividad[3].explicacion)
-        binding.zoomBT.visibility = View.INVISIBLE
+        binding.verBT.visibility = View.INVISIBLE
 
-        binding.containerVW.layoutResource = R.layout.fragment_actividad_1
-        binding.containerVW.inflate()
+        binding3 = FragmentActividad3Binding.inflate(layoutInflater)
+        binding.fragFL.addView(binding3.root)
 
         binding.ayudaBT.setOnClickListener{
             if (!binding.explicacionTV.isVisible){
