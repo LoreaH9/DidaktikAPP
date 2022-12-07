@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.txurdinaga.didaktikapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".SharedPrefs"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,12 +17,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DidaktikAPP"
+        android:screenOrientation="portrait"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".MainMenu"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".FragmentInformacion"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".MainDialogo"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MainInicio"
+            android:exported="true"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,15 +64,22 @@
 
         <activity
             android:name=".MainContrasena"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
 
         <activity
             android:name=".actividades.MainActividad1"
             android:exported="true"
             android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".MainInfoModos"
+            android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">
         </activity>
 
