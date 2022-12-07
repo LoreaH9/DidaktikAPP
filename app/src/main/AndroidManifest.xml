@@ -39,8 +39,7 @@
         <activity
             android:name=".FragmentInformacion"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -71,15 +70,9 @@
         </activity>
 
         <activity
-            android:name=".MainActividad"
+            android:name=".actividades.MainActividad1"
             android:exported="true"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
-        </activity>
-
-        <activity
-            android:name=".Actividad7"
-            android:exported="true"
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">
         </activity>
 
@@ -90,7 +83,48 @@
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">
         </activity>
 
+        <activity
+            android:name=".actividades.MainActividad2"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad3"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad4"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad5"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad6"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".actividades.MainActividad7"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.DidaktikAPP.NoActionBar">
+        </activity>
 
     </application>
-
 </manifest>
