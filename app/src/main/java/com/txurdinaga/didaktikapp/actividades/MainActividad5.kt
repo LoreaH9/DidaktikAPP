@@ -90,20 +90,16 @@ class MainActividad5 : AppCompatActivity(){
     }
 
     fun formarRespuesta(list:List<EditText>) : String{
-        var str : String = ""
+        var str = ""
         for(i in list.indices) str += "${list[i].text}"
         return str
     }
 
     fun comprobar5(resp: List<List<EditText>>, solu: List<String>) : Boolean{
-        return (
-            formarRespuesta(resp[0]) == solu[0] &&
-            formarRespuesta(resp[1]) == solu[1] &&
-            formarRespuesta(resp[2]) == solu[2] &&
-            formarRespuesta(resp[3]) == solu[3] &&
-            formarRespuesta(resp[4]) == solu[4] &&
-            formarRespuesta(resp[5]) == solu[5] &&
-            formarRespuesta(resp[6]) == solu[6]
-        )
+        var r = true
+        for(i in resp.indices)
+            if(formarRespuesta(resp[i]) != solu[i])
+                r = false
+        return r
     }
 }
