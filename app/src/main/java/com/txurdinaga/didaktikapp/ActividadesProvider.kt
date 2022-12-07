@@ -21,7 +21,8 @@ class ActividadesProvider {
                 contrasena = R.string.vacio,
                 explicacion = R.string.vacio,
                 enhorabuena = R.string.vacio,
-                main = null
+                main = null,
+                layout = 0
             ),
             Actividad(
                 set = 1,
@@ -46,7 +47,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena1,
                 explicacion = R.string.explicacion1,
                 enhorabuena = R.string.vacio,
-                main = MainActividad1::class.java
+                main = MainActividad1::class.java,
+                layout = R.layout.fragment_actividad_1
             ),
             Actividad(
                 set = 2,
@@ -73,7 +75,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena2,
                 explicacion = R.string.explicacion2,
                 enhorabuena = R.string.enhorabuena2,
-                main = MainActividad2::class.java
+                main = MainActividad2::class.java,
+                layout = R.layout.fragment_actividad_2
             ),
             Actividad(
                 set = 3,
@@ -96,7 +99,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena3,
                 explicacion = R.string.explicacion3,
                 enhorabuena = R.string.vacio,
-                main = MainActividad3::class.java
+                main = MainActividad3::class.java,
+                layout = R.layout.fragment_actividad_3
             ),
             Actividad(
                 set = 4,
@@ -121,7 +125,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena4,
                 explicacion = R.string.explicacion4,
                 enhorabuena = R.string.enhorabuena4,
-                main = MainActividad4::class.java
+                main = MainActividad4::class.java,
+                layout = R.layout.fragment_actividad_4
             ),
             Actividad(
                 set = 5,
@@ -146,7 +151,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena5,
                 explicacion = R.string.explicacion5,
                 enhorabuena = R.string.enhorabuena5,
-                main = MainActividad5::class.java
+                main = MainActividad5::class.java,
+                layout = R.layout.fragment_actividad_5
             ),
             Actividad(
                 set = 6,
@@ -169,7 +175,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena6,
                 explicacion = R.string.explicacion6,
                 enhorabuena = R.string.enhorabuena6,
-                main = MainActividad6::class.java
+                main = MainActividad6::class.java,
+                layout = R.layout.fragment_actividad_6
             ),
             Actividad(
                 set = 7,
@@ -191,7 +198,8 @@ class ActividadesProvider {
                 contrasena = R.string.contrasena7,
                 explicacion = R.string.explicacion7,
                 enhorabuena = R.string.enhorabuena7,
-                main = MainActividad7::class.java
+                main = MainActividad7::class.java,
+                layout = R.layout.fragment_actividad_7
             ),
             Actividad(
                 set = 8,
@@ -207,7 +215,8 @@ class ActividadesProvider {
                 contrasena = R.string.vacio,
                 explicacion = R.string.vacio,
                 enhorabuena = R.string.vacio,
-                main = null
+                main = null,
+                layout = 0
             )
         )
     }

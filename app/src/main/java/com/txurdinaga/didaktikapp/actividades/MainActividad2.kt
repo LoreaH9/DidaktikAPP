@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -26,7 +27,7 @@ class MainActividad2 : AppCompatActivity(){
 
         binding.fondoIV.setImageResource(ActividadesProvider.actividad[2].fondo)
         binding.explicacionTV.text = getString(ActividadesProvider.actividad[2].explicacion)
-        binding.zoomBT.visibility = View.INVISIBLE
+        binding.verBT.visibility = View.INVISIBLE
 
         binding2 = FragmentActividad2Binding.inflate(layoutInflater)
         binding.fragFL.addView(binding2.root)
@@ -41,8 +42,8 @@ class MainActividad2 : AppCompatActivity(){
             }
         }
 
-        binding.zoomBT.visibility = View.VISIBLE
-        binding.zoomBT.setOnClickListener{
+        binding.verBT.visibility = View.VISIBLE
+        binding.verBT.setOnClickListener{
             AlertDialog.Builder(this)
                 .setView(layoutInflater.inflate(R.layout.fragment_actividad_2_2, null))
                 .create()
@@ -73,8 +74,10 @@ class MainActividad2 : AppCompatActivity(){
                     comprobatuLetra(listO, "O"),
                     comprobatuLetra(listU, "U") )
                 runOnUiThread{
-                    if (!comprobaketa.contains(false))
+                    if (!comprobaketa.contains(false)) {
                         binding.terminarActividadBT.visibility = View.VISIBLE
+                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
+                    }
                     else
                         binding.terminarActividadBT.visibility = View.INVISIBLE
                 }

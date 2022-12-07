@@ -94,7 +94,7 @@
             app:srcCompat="@drawable/ic_help" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/zoomBT"
+            android:id="@+id/verBT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -103,7 +103,7 @@
             app:backgroundTint="@color/violeta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ayudaBT"
-            app:srcCompat="@android:drawable/ic_menu_zoom"
+            app:srcCompat="@drawable/ic_ver"
             tools:visibility="visible" />
 
         <Button

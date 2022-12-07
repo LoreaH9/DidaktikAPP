@@ -232,4 +232,15 @@
     <string name="explicacion7" translatable="false">Une las fotos con sus nombres correspondientes:</string>
     <string name="enhorabuena7" translatable="false">¡Genial! Has completado el ejercicio Ali, toma te mereces este ticket para poder realizar tu misión. Espero que hayas aprendido mucho durante este viaje. ¡GRACIAS!</string>
 
+    <!--NOMBRE DE LOS LUGARES DE ACTIVIDAD 7-->
+    <string name="lugar_1" translatable="false">Alberto de Palacios </string>
+    <string name="lugar_2" translatable="false">Casco Viejo</string>
+    <string name="lugar_3" translatable="false">Fiestas de la Virgen de la Guia</string>
+    <string name="lugar_4" translatable="false">Juan Antonio de Zunzunegui</string>
+    <string name="lugar_5" translatable="false">Puente Bizkaia</string>
+    <string name="lugar_6" translatable="false">Torre de Salazar</string>
+    <string name="lugar_7" translatable="false">San Roque</string>
+    <string name="lugar_8" translatable="false">Basilica de Santa Maria</string>
+    <string name="lugar_9" translatable="false">Victor Chavarri</string>
+
 </resources>

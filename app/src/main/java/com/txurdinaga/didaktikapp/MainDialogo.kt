@@ -21,9 +21,9 @@ class MainDialogo : AppCompatActivity(), AudioController {
         setContentView(binding.root)
 
         audioPlayer = MediaPlayer.create(this, R.raw.audio_0_1)
-        audioPlayer.play()
+        //audioPlayer.play()
 
-        var set = 0
+        var set = intent?.getIntExtra("set", 0) ?: throw IllegalStateException()
 
         var line = 1
         setDialogo(set, 0)
