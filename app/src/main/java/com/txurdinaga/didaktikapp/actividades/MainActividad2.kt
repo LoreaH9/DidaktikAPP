@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -73,8 +74,10 @@ class MainActividad2 : AppCompatActivity(){
                     comprobatuLetra(listO, "O"),
                     comprobatuLetra(listU, "U") )
                 runOnUiThread{
-                    if (!comprobaketa.contains(false))
+                    if (!comprobaketa.contains(false)) {
                         binding.terminarActividadBT.visibility = View.VISIBLE
+                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
+                    }
                     else
                         binding.terminarActividadBT.visibility = View.INVISIBLE
                 }
