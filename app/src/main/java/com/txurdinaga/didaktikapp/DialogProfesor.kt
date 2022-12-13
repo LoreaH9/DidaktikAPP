@@ -5,24 +5,34 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.txurdinaga.didaktikapp.Constantes.contraseniaProfesor
+import com.txurdinaga.didaktikapp.Constantes.usuarioProfesor
 import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.SharedPrefs
+import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding
 
-class DialogLogin : DialogFragment() {
+class DialogProfesor : DialogFragment() {
+    private lateinit var binding: DialogProfesorBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-            // Get the layout inflater
             val inflater = requireActivity().layoutInflater;
-
-            // Inflate and set the layout for the dialog
-            // Pass null as the parent view because its going in the dialog layout
-            builder.setView(inflater.inflate(R.layout.dialog_profesor, null))
+            binding = DialogProfesorBinding.inflate(layoutInflater)
+            builder.setView(binding.root)
                 // Add action buttons
                 .setPositiveButton("aceptar",
                     DialogInterface.OnClickListener { _, _ ->
-                        // sign in the user ...
+                        if (binding.nombreUsuario.text.toString() == usuarioProfesor &&
+                            binding.contraUsuario.text.toString() == contraseniaProfesor){
+                            SharedPrefs.users.user = usuarioProfesor
+
+                        }else{
+                            Toast.makeText(context, R.string.incorrecto, Toast.LENGTH_LONG).show()
+                        }
                     })
                 .setNegativeButton("cancelar",
                     DialogInterface.OnClickListener { _, _ ->

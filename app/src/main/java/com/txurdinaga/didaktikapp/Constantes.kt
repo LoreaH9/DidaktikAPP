@@ -77,4 +77,7 @@ object Constantes {
     internal val paradas: List<LatLng> = listOf(BasilicaStaMaria, PlazaSRoque, TorreSalazar, Mercado, Cascoviejo, Zunzunegui, Puente)
     internal val nombre_paradas: List<String> = listOf("Actividad 1", "Actividad 2", "Actividad 3", "Actividad 4", "Actividad 5", "Actividad 6", "Actividad 7")
 
+    internal const val usuarioProfesor:String="Profesor"
+    internal const val contraseniaProfesor:String="123"
+
 }

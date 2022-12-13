@@ -1,17 +1,12 @@
 package com.txurdinaga.didaktikapp
 
-import DialogLogin
-import android.Manifest
+import DialogProfesor
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -20,9 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
-import java.util.*
 import kotlin.system.exitProcess
 
 
@@ -38,8 +31,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         if (SharedPrefs.idioma.idioma==null){
             SharedPrefs.idioma.idioma="es"
         }
-
-
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
@@ -79,7 +70,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.nav_mapa -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->
-                DialogLogin().show(supportFragmentManager, "LoginDialog")
+                DialogProfesor().show(supportFragmentManager, "LoginDialog")
             R.id.nav_desconectar ->
                 showCloseAppDialog()
             R.id.nav_home ->

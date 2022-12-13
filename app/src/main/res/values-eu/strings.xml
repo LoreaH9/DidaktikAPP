@@ -18,6 +18,7 @@
     <!--ERROR DIALOG MODO-->
     <string name="motivo_error1">Lehenik aurreko jarduera amaitu behar duzu</string>
     <string name="motivo_error2">50 metroko rangotik kanpo zaude!!</string>
+    <string name="incorrecto">Erabiltzailea edo pasahitza okerra</string>
 
 
 

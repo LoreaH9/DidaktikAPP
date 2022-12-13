@@ -27,6 +27,7 @@
     <string name="error" translatable="false">ERROR</string>
     <string name="motivo_error1">Antes debes finalizar la anterior Actividad</string>
     <string name="motivo_error2">Estas fuera del rango de los 50 metros!!</string>
+    <string name="incorrecto">Usuario o contraseña incorrectas</string>
 
     <!--MODOS-->
     <string name="Modos"><u>Información de los modos</u></string>
