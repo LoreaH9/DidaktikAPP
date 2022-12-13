@@ -99,7 +99,7 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        DialogNombre().show(parentFragmentManager, "LoginDialog")
+        //DialogNombre().show(parentFragmentManager, "LoginDialog")
 
 
         if(SharedPrefs.tipousu.tipo=="profesor"){

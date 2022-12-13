@@ -26,10 +26,11 @@ class DialogNombre : DialogFragment() {
                 // Add action buttons
                 .setPositiveButton("Aceptar",
                     DialogInterface.OnClickListener { _, _ ->
-                        var nombre:String = "${binding.fas.text}"
-                        val telefono: String = binding.fas.getText().toString()
+                        //var nombre:String= "${binding.fas.text}"
+                        var prueba= "prueba"
+                        val telefono: String = binding.izena.getText().toString()
                         Log.i("i", telefono)
-                        SharedPrefs.users.user = nombre
+                        SharedPrefs.users.user = prueba
                     })
                 .setTitle("¿CUAL ES TU NOMBRE?")
             builder.create()

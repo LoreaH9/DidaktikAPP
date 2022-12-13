@@ -24,28 +24,22 @@
         android:layout_height="match_parent"
         android:paddingBottom="20dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout1"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/izena"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:hint="@string/nombre"
+            android:minHeight="48dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:endIconMode="clear_text"
             app:endIconTint="@color/azulosc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.17000002">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="TouchTargetSizeCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
