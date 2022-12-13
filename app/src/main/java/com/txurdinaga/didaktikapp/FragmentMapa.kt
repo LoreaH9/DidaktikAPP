@@ -96,7 +96,9 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        DialogNombre().show(parentFragmentManager, "LoginDialog")
+        if(SharedPrefs.users.user==""){
+            DialogNombre().show(parentFragmentManager, "LoginDialog")
+        }
 
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))

@@ -29,7 +29,7 @@ class DialogProfesor : DialogFragment() {
                         if (binding.nombreUsuario.text.toString() == usuarioProfesor &&
                             binding.contraUsuario.text.toString() == contraseniaProfesor){
                             SharedPrefs.users.user = usuarioProfesor
-
+                            SharedPrefs.tipousu.tipo="profesor"
                         }else{
                             Toast.makeText(context, R.string.incorrecto, Toast.LENGTH_LONG).show()
                         }

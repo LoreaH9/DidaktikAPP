@@ -22,14 +22,12 @@ class DialogNombre : DialogFragment() {
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
             binding = DialogNombreBinding.inflate(layoutInflater)
-            builder.setView(inflater.inflate(R.layout.dialog_nombre, null))
+            builder.setView(binding.root)
                 // Add action buttons
                 .setPositiveButton("Aceptar",
                     DialogInterface.OnClickListener { _, _ ->
-                        var nombre:String = "${binding.fas.text}"
-                        val telefono: String = binding.fas.getText().toString()
-                        Log.i("i", telefono)
-                        SharedPrefs.users.user = nombre
+                        SharedPrefs.users.user = binding.fas.text.toString()
+                        Log.i("1",binding.fas.text.toString())
                     })
                 .setTitle("¿CUAL ES TU NOMBRE?")
             builder.create()
