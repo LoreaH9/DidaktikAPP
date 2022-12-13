@@ -11,8 +11,8 @@ import java.util.*
 object Constantes {
 
     internal class TipoUsu(context: Context) {
-        val PREFS_NAME = "com.g2.sharedpreferences"
-        val SHARED_NAME = "Tipo"
+        private val PREFS_NAME = "com.g2.sharedpreferences"
+        private val SHARED_NAME = "Tipo"
         val name: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
         var tipo: String
             //comprobamos el archivo de shared preferences
@@ -22,8 +22,8 @@ object Constantes {
     }
 
     internal class PuntoPartida(context: Context) {
-        val PREFS_NAME = "com.g2.didaktikapp.PuntoPartida"
-        val SHARED_NAME = "Partida"
+        private val PREFS_NAME = "com.g2.didaktikapp.PuntoPartida"
+        private val SHARED_NAME = "Partida"
         val PuntoPartida: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
         var Partida: String
             get() = PuntoPartida.getString(SHARED_NAME, "").toString()
@@ -32,8 +32,8 @@ object Constantes {
 
 
     internal class ModoLibre(context: Context) {
-        val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences"
-        val SHARED_NAME = "Modo"
+        private val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences"
+        private val SHARED_NAME = "Modo"
         val name: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
         var modo: Boolean
             get() = name.getBoolean(SHARED_NAME, false)
@@ -42,8 +42,8 @@ object Constantes {
     }
 
     internal class User(context: Context) {
-        val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences.User"
-        val SHARED_NAME = "User"
+        private val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences.User"
+        private val SHARED_NAME = "User"
         val User: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
         var user: String
             get() = User.getString(SHARED_NAME, "").toString()
@@ -51,8 +51,8 @@ object Constantes {
     }
 
     internal class idioma(context: Context) {
-        val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences.idioma"
-        val SHARED_NAME = "Idioma"
+        private val PREFS_NAME = "com.g2.didaktikapp.sharedpreferences.idioma"
+        private val SHARED_NAME = "Idioma"
         val Idioma: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
         var idioma: String
             get() = Idioma.getString(SHARED_NAME, "").toString()
@@ -62,10 +62,8 @@ object Constantes {
             SharedPrefs.idioma.idioma = hizkuntza_berria
             val locale = Locale(SharedPrefs.idioma.idioma)
             Locale.setDefault(locale)
-            val resources = resources
-            val configuration = resources.configuration
-            configuration.setLocale(locale)
-            resources.updateConfiguration(configuration, resources.displayMetrics)
+            resources.configuration.setLocale(locale)
+            resources.updateConfiguration(resources.configuration, resources.displayMetrics)
         }
     }
 
