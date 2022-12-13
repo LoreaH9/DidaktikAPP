@@ -65,8 +65,6 @@ class FragmentMapa : Fragment() {
             }
         }
 
-
-
         if(SharedPrefs.modolibre.modo){
             //ubicacion = LatLng(43.321841, -3.019356)
             googleMap.setOnMarkerClickListener { marker ->
@@ -77,10 +75,9 @@ class FragmentMapa : Fragment() {
             }
         }
 
-
-
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
             val distancia=FloatArray(3)
 
@@ -101,7 +98,6 @@ class FragmentMapa : Fragment() {
 
         //DialogNombre().show(parentFragmentManager, "LoginDialog")
 
-
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
             googleMap.setOnMarkerClickListener { marker ->
@@ -111,6 +107,7 @@ class FragmentMapa : Fragment() {
                 true
             }
         }
+
         googleMap.setOnMarkerClickListener{
             println("Prueba:" + it.id)
             when (it.id) {

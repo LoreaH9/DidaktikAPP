@@ -23,7 +23,7 @@ class MainDialogo : AppCompatActivity(), AudioController {
         audioPlayer = MediaPlayer.create(this, R.raw.audio_0_1)
         //audioPlayer.play()
 
-        var set = 5
+        var set = intent?.getIntExtra("set", 0) ?: throw IllegalStateException()
 
         var line = 1
         setDialogo(set, 0)
