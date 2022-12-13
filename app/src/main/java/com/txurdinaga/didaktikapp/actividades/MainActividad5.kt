@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -84,13 +85,14 @@ class MainActividad5 : AppCompatActivity(){
         binding.terminarActividadBT.visibility = View.VISIBLE
         binding.terminarActividadBT.setOnClickListener{
             if(comprobar5(respuestas, solucciones)){
-                finish()
+                binding.terminarActividadBT.visibility = View.VISIBLE
+                Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
             }
         }
     }
 
     fun formarRespuesta(list:List<EditText>) : String{
-        var str : String = ""
+        var str = ""
         for(i in list.indices) str += "${list[i].text}"
         return str
     }
