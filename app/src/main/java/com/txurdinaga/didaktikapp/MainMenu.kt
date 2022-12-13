@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
 import kotlin.system.exitProcess
 
@@ -28,6 +29,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         super.onCreate(savedInstanceState)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         if (SharedPrefs.idioma.idioma==null){
             SharedPrefs.idioma.idioma="es"
         }
@@ -69,8 +71,10 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         when (item.itemId) {
             R.id.nav_mapa -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
-            R.id.nav_profesor ->
+            R.id.nav_profesor ->{
                 DialogProfesor().show(supportFragmentManager, "LoginDialog")
+                startActivity(Intent(this, MainMenu::class.java))
+            }
             R.id.nav_desconectar ->
                 showCloseAppDialog()
             R.id.nav_home ->
@@ -81,15 +85,33 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showIdiomaDialog()
             R.id.nav_informacion ->supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
-     
+            R.id.nav_logout->
+                showLogOutDialog()
             R.id.nav_tema ->
                 temaldatu()
-
 
             }
 
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun showLogOutDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Cerrar sesion")
+            .setMessage("¿Quieres cerrar sesion?")
+            .setPositiveButton(R.string.si,
+                DialogInterface.OnClickListener { dialog, id ->
+                    SharedPrefs.users.user = ""
+                    SharedPrefs.tipousu.tipo="alumno"
+                    startActivity(Intent(this,MainInicio::class.java))
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { _, id ->
+                })
+            .setCancelable(false)
+            .create()
+            .show()
     }
 
     private fun temaldatu(){
@@ -99,8 +121,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .setPositiveButton(R.string.si,
                     DialogInterface.OnClickListener { dialog, id ->
                         setdaynight(0)
-                        var intent= Intent(this,MainInicio::class.java)
-                        startActivity(intent)
+                        startActivity(Intent(this,MainInicio::class.java))
                     })
                 .setNegativeButton(R.string.no,
                     DialogInterface.OnClickListener { _, id ->

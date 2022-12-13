@@ -3,8 +3,6 @@
     <string name="app_name">Aliventuras en Portu</string>
     <string name="jugar">JOLASTU</string>
 
-
-
     <!--NUMERO DE CADA ACTIVIDAD-->
     <string name="actividad_1">1.Aktibitatea</string>
     <string name="actividad_2">2.Aktibitatea</string>
@@ -14,20 +12,16 @@
     <string name="actividad_6">6.Aktibitatea</string>
     <string name="actividad_7">7.Aktibitatea</string>
 
-
     <!--ERROR DIALOG MODO-->
     <string name="motivo_error1">Lehenik aurreko jarduera amaitu behar duzu</string>
     <string name="motivo_error2">50 metroko rangotik kanpo zaude!!</string>
     <string name="incorrecto">Erabiltzailea edo pasahitza okerra</string>
-
-
 
     <!--MODOS-->
     <string name="Modos"><u>Moduen Informazioa</u></string>
     <string name="modo_guiado">MODU GIDATUA</string>
     <string name="modo_libre">MODU LIBREA</string>
     <string name="modo_profesor">"IRAKASLEEN MODUA "</string>
-
 
     <!--INFO MODOS-->
     <string name="info_modo_guiado">Ibilbide zehatz bati jarraituz jokatu nahi du. Aktibatuta dagoen puntua bakarrik jolastu ahal izango da, eta bertara sartzeko, gutxienez tokitik 50 metrora egon beharko dugu.Partida jostatzen ari garen azken puntuan gordeko da.</string>
@@ -48,13 +42,16 @@
     <string name="nav_logout">Itxi Saioa</string>
     <string name="salir">Irten</string>
 
+    <!--LOGIN/LOGOUT PROFESOR-->
+    <string name="login_title"><u>Saioa itxi</u></string>
+    <string name="logout">¿Zihur zaude saioa itxi nahi duzula?</string>
+
     <!--DIALOGS MENU-->
     <string name="seguro_salir">¿Aplikaziotik atera nahi duzu?</string>
     <string name="seguro_salir_home">Hasierako menura irten nahi duzu?</string>
     <string name="seguro_cambiar_idioma">¿Hizkuntza aldatu nahi duzu?</string>
     <string name="si">Bai</string>
     <string name="no">Ez</string>
-
 
     <!--ACERCA DE/GURI BURUZ-->
     <string name="descripcion">Aplikazio hau Euskal Herriko Unibertsitateko eta Txurdinaga LHIIko ikasleek garatu dute, LHko irakasleei eta ikasleei Portugalete jolas didaktikoen bidez ezagutzen laguntzeko, modu horretan dibertitzen ikas dezaten.</string>

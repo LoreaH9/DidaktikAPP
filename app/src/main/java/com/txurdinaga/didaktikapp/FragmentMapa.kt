@@ -98,6 +98,7 @@ class FragmentMapa : Fragment() {
 
         if(SharedPrefs.users.user==""){
             DialogNombre().show(parentFragmentManager, "LoginDialog")
+            startActivity(Intent(requireContext(), MainMenu::class.java))
         }
 
         if(SharedPrefs.tipousu.tipo=="profesor"){

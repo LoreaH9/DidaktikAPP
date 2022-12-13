@@ -27,7 +27,6 @@ class DialogNombre : DialogFragment() {
                 .setPositiveButton("Aceptar",
                     DialogInterface.OnClickListener { _, _ ->
                         SharedPrefs.users.user = binding.fas.text.toString()
-                        Log.i("1",binding.fas.text.toString())
                     })
                 .setTitle("¿CUAL ES TU NOMBRE?")
             builder.create()
