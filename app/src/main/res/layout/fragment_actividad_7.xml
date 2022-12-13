@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view7CL"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/style_redondeado">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+
+                android:id="@+id/foto7_1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/alberto_palacios" />
+
+            <ImageView
+                android:id="@+id/foto7_2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_1"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_1"
+                app:srcCompat="@drawable/casco_viejo" />
+
+            <ImageView
+                android:id="@+id/foto7_3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_2"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_2"
+                app:srcCompat="@drawable/fiesta_virgen_guia" />
+
+            <ImageView
+                android:id="@+id/foto7_4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_3"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_3"
+                app:srcCompat="@drawable/juanantonio" />
+
+            <ImageView
+                android:id="@+id/foto7_5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_4"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_4"
+                app:srcCompat="@drawable/puente_bizk" />
+
+            <ImageView
+                android:id="@+id/foto7_6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_5"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_5"
+                app:srcCompat="@drawable/salazar" />
+
+            <ImageView
+                android:id="@+id/foto7_7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_6"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_6"
+                app:srcCompat="@drawable/san_roque" />
+
+            <ImageView
+                android:id="@+id/foto7_8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/foto7_7"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_7"
+                app:srcCompat="@drawable/sta_maria" />
+
+            <ImageView
+                android:id="@+id/foto7_9"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/foto7_8"
+                app:layout_constraintTop_toBottomOf="@+id/foto7_8"
+                app:srcCompat="@drawable/victor_chavarri" />
+
+            <TextView
+                android:id="@+id/text7_3"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_3"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/foto7_1" />
+
+            <TextView
+                android:id="@+id/text7_1"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_1"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_2"
+                app:layout_constraintEnd_toEndOf="@+id/text7_3"
+                app:layout_constraintTop_toTopOf="@+id/foto7_2" />
+
+            <TextView
+                android:id="@+id/text7_5"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_5"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_3"
+                app:layout_constraintEnd_toEndOf="@+id/text7_1"
+                app:layout_constraintTop_toTopOf="@+id/foto7_3" />
+
+            <TextView
+                android:id="@+id/text7_2"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_2"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_4"
+                app:layout_constraintEnd_toEndOf="@+id/text7_5"
+                app:layout_constraintTop_toTopOf="@+id/foto7_4" />
+
+            <TextView
+                android:id="@+id/text7_6"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_6"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_5"
+                app:layout_constraintEnd_toEndOf="@+id/text7_2"
+                app:layout_constraintTop_toTopOf="@+id/foto7_5" />
+
+            <TextView
+                android:id="@+id/text7_4"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_4"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_6"
+                app:layout_constraintEnd_toEndOf="@+id/text7_6"
+                app:layout_constraintTop_toTopOf="@+id/foto7_6" />
+
+            <TextView
+                android:id="@+id/text7_9"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_9"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_7"
+                app:layout_constraintEnd_toEndOf="@+id/text7_4"
+                app:layout_constraintTop_toTopOf="@+id/foto7_7" />
+
+            <TextView
+                android:id="@+id/text7_7"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_7"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_8"
+                app:layout_constraintEnd_toEndOf="@+id/text7_9"
+                app:layout_constraintTop_toTopOf="@+id/foto7_8" />
+
+            <TextView
+                android:id="@+id/text7_8"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_redondeado_editext"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/lugar_8"
+                android:textAlignment="center"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/foto7_9"
+                app:layout_constraintEnd_toEndOf="@+id/text7_7"
+                app:layout_constraintTop_toTopOf="@+id/foto7_9" />
+
+            <TextView
+                android:id="@+id/statusTextView"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/negro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

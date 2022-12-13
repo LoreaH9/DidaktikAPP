@@ -1,136 +1,234 @@
 <resources>
-    <string name="app_name">Ali y sus aventuras en Portu</string>
-    <string name="app_version">v0.0.1</string>
+    <string name="app_name">Aliventuras en Portu</string>
+    <string name="app_version" translatable="false">v0.0.1</string>
+    <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
+    <string name="jugar">JUGAR</string>
+
+
+    <!--NUMERO DE CADA ACTIVIDAD-->
+    <string name="actividad_1">Actividad 1</string>
+    <string name="actividad_2">Actividad 2</string>
+    <string name="actividad_3">Actividad 3</string>
+    <string name="actividad_4">Actividad 4</string>
+    <string name="actividad_5">Actividad 5</string>
+    <string name="actividad_6">Actividad 6</string>
+    <string name="actividad_7">Actividad 7</string>
+
+    <!--TITULOS DE CADA ACTIVIDAD-->
+    <string name="titulo_actividad_1" translatable="false">Basilica Santa Maria</string>
+    <string name="titulo_actividad_2" translatable="false">Plaza San Roque</string>
+    <string name="titulo_actividad_3" translatable="false">Torre Salazar</string>
+    <string name="titulo_actividad_4" translatable="false">Mercado</string>
+    <string name="titulo_actividad_5" translatable="false">Casco Viejo</string>
+    <string name="titulo_actividad_6" translatable="false">Zunzunegui</string>
+    <string name="titulo_actividad_7" translatable="false">Puente Colgante</string>
+
+    <!--ERROR DIALOG MODO-->
+    <string name="error" translatable="false">ERROR</string>
+    <string name="motivo_error1">Antes debes finalizar la anterior Actividad</string>
+    <string name="motivo_error2">Estas fuera del rango de los 50 metros!!</string>
+
+    <!--MODOS-->
+    <string name="Modos"><u>Información de los modos</u></string>
+    <string name="modo_guiado">MODO GUIADO</string>
+    <string name="modo_libre">MODO LIBRE</string>
+    <string name="modo_profesor">MODO PROFESOR</string>
+
+    <!--INFO MODOS-->
+    <string name="info_modo_guiado">Este trata de jugar siguiendo una ruta definida. Solo se podrá jugar el punto que esté activado y para acceder a él tendremos que estar al menos a 50m del lugar.
+                               La partida se guardará en el último punto al que juguemos.</string>
+    <string name="info_modo_libre"> Este trata de jugar en el orden que queramos, la única condición para acceder a ellos es estar a menos de 50m del lugar.
+                               Estas partidas no serán guardadas, por lo cual el progreso se perderá.</string>
+    <string name="info_modo_profesor"> El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.</string>
 
     <!--NAVIGATION DRAWER-->
     <string name="open_nav">Abrir</string>
     <string name="close_nav">Cerrar</string>
     <string name="nav_mapa">Mapa</string>
     <string name="nav_profesor">Modo profesor</string>
+    <string name="nav_tema">Cambiar Tema</string>
     <string name="nav_idioma">Cambiar idioma</string>
-    <string name="nav_informacion">Acerda De</string>
+    <string name="nav_informacion">Acerca De</string>
     <string name="nav_desconectar">Desconectar</string>
+    <string name="nav_home">Salir al Menu</string>
     <string name="nav_logout">Cerrar sesión</string>
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
+    <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
+    <string name="titulo_cambiar_idioma" >Cambiar Idioma</string>
+    <string name="seguro_cambiar_idioma">¿Quieres cambiar el idioma a <b>EUSKERA</b>?</string>
+
     <string name="si">Si</string>
     <string name="no">No</string>
-    <string name="invitado">Invitado</string>
+    <string name="invitado" translatable="false">Invitado</string>
 
     <!--ACERCA DE-->
     <string name="descripcion">Esta aplicación ha sido desarrollada por alumnos de la Universidad del País Vasco y de CIFP Txurdinaga con el fin de ayudar a los profesores de E.P y a sus alumnas y alumnos a conocer Portugalete mediante juegos didácticos de manera que aprendan divirtiéndose.</string>
     <string name="acerca_desa">"Desarrolladores"</string>
-    <string name="acerca_desa_nombres">"Martín Caño, Javier Andia, Lorea Hernandez y Noemí Márquez."\n</string>
+    <string name="acerca_desa_nombres" translatable="false">"Martín Caño, Javier Andia, Lorea Hernandez y Noemí Márquez."\n</string>
     <string name="acerca_dise">"Diseñadores"</string>
-    <string name="acerca_dise_nombres">"Haizea Ruiz, Oihane Vaamonde y Oihane Vaamonde."\n</string>
+    <string name="acerca_dise_nombres" translatable="false">"Haizea Ruiz, Oihane Vaamonde y Eider Vallejo."\n</string>
 
     <!--REGISTRO/LOGIN-->
     <string name="username">"Usuario"</string>
     <string name="password">"Contraseña"</string>
 
+    <!--NOMBRE USUARIO-->
+    <string name="nombre">"Nombre"</string>
+
+
     <!--DIALOGO 0-->
-    <string name="dialogo0_1">¡Hola! Me llamo Ali y soy agente espacial.</string>
-    <string name="dialogo0_2">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
-    <string name="dialogo0_3">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
-    <string name="dialogo0_4">¡Venga, montaos en mi nave!</string>
+    <string name="vacio"></string>
+
+    <!--DIALOGO 0-->
+    <string name="dialogo0_1" translatable="false">¡Hola! Me llamo Ali y soy agente espacial.</string>
+    <string name="dialogo0_2" translatable="false">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
+    <string name="dialogo0_3" translatable="false">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
+    <string name="dialogo0_4" translatable="false">¡Venga, montaos en mi nave!</string>
 
     <!--DIALOGO 1-->
-    <string name="dialogo1_1">Vaya… Parece que se me ha roto la nave… ¿Qué hacemos ahora? ¿Cómo voy a llegar a Getxo?</string>
-    <string name="dialogo1_2">Toma, puedes usar este mapa.</string>
-    <string name="dialogo1_3">Pero… ¿Quién eres tú? ¿De dónde has salido?</string>
-    <string name="dialogo1_4">Me llamo María Díaz de Haro, pero también me conocen como Señora de Vizcaya, y hace exactamente 700 años fundé este pueblo en el que has aterrizado, Portugalete.</string>
-    <string name="dialogo1_5">¡Ala! ¿En serio? ¿Y este mapa que me has dado, me ayudará a llegar a mi destino?</string>
-    <string name="dialogo1_6">Si, pero me temo que no va a ser tan fácil. He marcado varios puntos en este mapa, y en cada uno podrás ganar una pista. Cuando consigas todas, descubrirás cómo llegar.</string>
-    <string name="dialogo1_7">¡Genial! ¿Por dónde empiezo?</string>
-    <string name="dialogo1_8">Puedes empezar por aquí, haz click en los elementos y encuentra la contraseña:</string>
+    <string name="dialogo1_1" translatable="false">Vaya… Parece que se me ha roto la nave… ¿Qué hacemos ahora? ¿Cómo voy a llegar a Getxo?</string>
+    <string name="dialogo1_2" translatable="false">Toma, puedes usar este mapa.</string>
+    <string name="dialogo1_3" translatable="false">Pero… ¿Quién eres tú? ¿De dónde has salido?</string>
+    <string name="dialogo1_4" translatable="false">Me llamo María Díaz de Haro, pero también me conocen como Señora de Vizcaya, y hace exactamente 700 años fundé este pueblo en el que has aterrizado, Portugalete.</string>
+    <string name="dialogo1_5" translatable="false">¡Ala! ¿En serio? ¿Y este mapa que me has dado, me ayudará a llegar a mi destino?</string>
+    <string name="dialogo1_6" translatable="false">Si, pero me temo que no va a ser tan fácil. He marcado varios puntos en este mapa, y en cada uno podrás ganar una pista. Cuando consigas todas, descubrirás cómo llegar.</string>
+    <string name="dialogo1_7" translatable="false">¡Genial! ¿Por dónde empiezo?</string>
+    <string name="dialogo1_8" translatable="false">Puedes empezar por aquí, haz click en los elementos y encuentra la contraseña:</string>
 
     <!--DIALOGO 2-->
-    <string name="dialogo2_1">Creo que he llegado a la segunda parada de la ruta. ¿Será esta la Plaza San Roque?</string>
-    <string name="dialogo2_2">Oh, buenos días viajero. Veo que estás siguiendo el famoso mapa de María Díaz de Haro para llegar hasta Getxo. ¿Es eso cierto?</string>
-    <string name="dialogo2_3">Si, así es. Y tú. ¿Quién eres?</string>
-    <string name="dialogo2_4">Me llamo San Roque, como la plaza en la que te encuentras, y soy el protagonista de las fiestas patronales de Portugalete.</string>
-    <string name="dialogo2_5">Nací en el siglo XIII, y era hijo de uno de los más importantes caballeros del rey. A los 20 años, decidí viajar a Roma.</string>
-    <string name="dialogo2_6">Y en el camino ayudé a mucha gente que había enfermado por la peste negra.</string>
-    <string name="dialogo2_7">Es por ello que gracias a mis cuidados y ayudas las personas me tienen un gran aprecio y construyeron ermitas y de más en mi nombre.</string>
-    <string name="dialogo2_8">Así hasta el día de hoy, en el que hay una fiesta en mi honor.</string>
-    <string name="dialogo2_9">Y esa fiesta, ¿cuándo se celebra?</string>
-    <string name="dialogo2_10">Escucha atentamente. Ahora te informaré sobre mis fiestas patronales, y si estás atento, encontrarás la palabra que tenga 4 vocales.</string>
+    <string name="dialogo2_1" translatable="false">Creo que he llegado a la segunda parada de la ruta. ¿Será esta la Plaza San Roque?</string>
+    <string name="dialogo2_2" translatable="false">Oh, buenos días viajero. Veo que estás siguiendo el famoso mapa de María Díaz de Haro para llegar hasta Getxo. ¿Es eso cierto?</string>
+    <string name="dialogo2_3" translatable="false">Si, así es. Y tú. ¿Quién eres?</string>
+    <string name="dialogo2_4" translatable="false">Me llamo San Roque, como la plaza en la que te encuentras, y soy el protagonista de las fiestas patronales de Portugalete.</string>
+    <string name="dialogo2_5" translatable="false">Nací en el siglo XIII, y era hijo de uno de los más importantes caballeros del rey. A los 20 años, decidí viajar a Roma.</string>
+    <string name="dialogo2_6" translatable="false">Y en el camino ayudé a mucha gente que había enfermado por la peste negra.</string>
+    <string name="dialogo2_7" translatable="false">Es por ello que gracias a mis cuidados y ayudas las personas me tienen un gran aprecio y construyeron ermitas y de más en mi nombre.</string>
+    <string name="dialogo2_8" translatable="false">Así hasta el día de hoy, en el que hay una fiesta en mi honor.</string>
+    <string name="dialogo2_9" translatable="false">Y esa fiesta, ¿cuándo se celebra?</string>
+    <string name="dialogo2_10" translatable="false">Escucha atentamente. Ahora te informaré sobre mis fiestas patronales, y si estás atento, encontrarás la palabra que tenga 4 vocales.</string>
 
     <!--DIALOGO 3-->
-    <string name="dialogo3_1">¡¡Hola!! Tú debes ser el alien que está realizando la ruta a Getxo, ¿no es eso cierto?</string>
-    <string name="dialogo3_2">Sí. Pero ¿Cómo te llamas?</string>
-    <string name="dialogo3_3">Me llamo Lope García de Salazar, y este castillo que ves detrás de mí lo construyó mi padre, Ochoa García de Salazar en 1379.</string>
-    <string name="dialogo3_4">Yo lo heredé cuando él murió. Seguro que has oído hablar de mi, el famoso cronista que luchó con valentía contras sus enemigos en las tierras de Bizkaia.</string>
-    <string name="dialogo3_5">La verdad que no, pero ¿y si me cuentas más y así consigo la pieza del puzzle que necesito para llegar al final?</string>
-    <string name="dialogo3_6">Está bien. Escucha atentamente y conseguirás las pistas necesarias para completar la prueba que te dará esa pieza. Un consejo: fijate bien en los número que no deberían estar en el texto.</string>
+    <string name="dialogo3_1" translatable="false">¡¡Hola!! Tú debes ser el alien que está realizando la ruta a Getxo, ¿no es eso cierto?</string>
+    <string name="dialogo3_2" translatable="false">Sí. Pero ¿Cómo te llamas?</string>
+    <string name="dialogo3_3" translatable="false">Me llamo Lope García de Salazar, y este castillo que ves detrás de mí lo construyó mi padre, Ochoa García de Salazar en 1379.</string>
+    <string name="dialogo3_4" translatable="false">Yo lo heredé cuando él murió. Seguro que has oído hablar de mi, el famoso cronista que luchó con valentía contras sus enemigos en las tierras de Bizkaia.</string>
+    <string name="dialogo3_5" translatable="false">La verdad que no, pero ¿y si me cuentas más y así consigo la pieza del puzzle que necesito para llegar al final?</string>
+    <string name="dialogo3_6" translatable="false">Está bien. Escucha atentamente y conseguirás las pistas necesarias para completar la prueba que te dará esa pieza. Un consejo: fijate bien en los número que no deberían estar en el texto.</string>
 
     <!--DIALOGO 4-->
-    <string name="dialogo4_1">Ufff, qué viaje tan movidito.</string>
-    <string name="dialogo4_2">¡Pero si solo es la 4º parada!</string>
-    <string name="dialogo4_3">Ui, y tú…¿quién eres?</string>
-    <string name="dialogo4_4">Me llamo la Virgen de la Guía, y soy la encargada de ayudarte a conseguir la 4º pieza del puzzle final.</string>
-    <string name="dialogo4_5">¿La Virgen de la Guía?</string>
-    <string name="dialogo4_6">¡Pues claro! ¿Es que no has oído hablar de mi? Verás, soy la protagonista de una de las fiestas más esperadas por todos los habitantes de Portugalete.</string>
-    <string name="dialogo4_7">Y, esas fiestas, ¿cuándo son?</string>
-    <string name="dialogo4_8">Atento Ali. Necesitarás tener los ojos y los oídos bien abiertos para encontrar las pistas que te llevarán a esa preciada pieza de puzzle.</string>
+    <string name="dialogo4_1" translatable="false">Ufff, qué viaje tan movidito.</string>
+    <string name="dialogo4_2" translatable="false">¡Pero si solo es la 4º parada!</string>
+    <string name="dialogo4_3" translatable="false">Ui, y tú…¿quién eres?</string>
+    <string name="dialogo4_4" translatable="false">Me llamo la Virgen de la Guía, y soy la encargada de ayudarte a conseguir la 4º pieza del puzzle final.</string>
+    <string name="dialogo4_5" translatable="false">¿La Virgen de la Guía?</string>
+    <string name="dialogo4_6" translatable="false">¡Pues claro! ¿Es que no has oído hablar de mi? Verás, soy la protagonista de una de las fiestas más esperadas por todos los habitantes de Portugalete.</string>
+    <string name="dialogo4_7" translatable="false">Y, esas fiestas, ¿cuándo son?</string>
+    <string name="dialogo4_8" translatable="false">Atento Ali. Necesitarás tener los ojos y los oídos bien abiertos para encontrar las pistas que te llevarán a esa preciada pieza de puzzle.</string>
 
     <!--DIALOGO 5-->
-    <string name="dialogo5_1">¡Que rápido has llegado!</string>
-    <string name="dialogo5_2">¡Qué susto! Todavía no me acostumbro… ¿Cómo te llamas?</string>
-    <string name="dialogo5_3">Me llamo Víctor Chávarri, y se puede decir que me conocen por mis negocios y contribuciones a la metalurgia y construcciones de Vizcaya.</string>
-    <string name="dialogo5_4">¿Metalurgia? ¿Qué es eso?</string>
-    <string name="dialogo5_5">La metalurgia… es extraer metales a partir de minerales. Pero la siguiente prueba no va sobre eso. ¿Sabéis donde estamos?</string>
-    <string name="dialogo5_6">Parecen calles antiguas.</string>
-    <string name="dialogo5_7">Eso es, estamos en el Casco Viejo de Portugalete. Si pinchas en los siguientes elementos, podrás aprender un poco más sobre esta zona tan importante.</string>
-    <string name="dialogo5_8">Presta mucha atención para poder responder a la pregunta final. ¡Suerte!</string>
+    <string name="dialogo5_1" translatable="false">¡Que rápido has llegado!</string>
+    <string name="dialogo5_2" translatable="false">¡Qué susto! Todavía no me acostumbro… ¿Cómo te llamas?</string>
+    <string name="dialogo5_3" translatable="false">Me llamo Víctor Chávarri, y se puede decir que me conocen por mis negocios y contribuciones a la metalurgia y construcciones de Vizcaya.</string>
+    <string name="dialogo5_4" translatable="false">¿Metalurgia? ¿Qué es eso?</string>
+    <string name="dialogo5_5" translatable="false">La metalurgia… es extraer metales a partir de minerales. Pero la siguiente prueba no va sobre eso. ¿Sabéis donde estamos?</string>
+    <string name="dialogo5_6" translatable="false">Parecen calles antiguas.</string>
+    <string name="dialogo5_7" translatable="false">Eso es, estamos en el Casco Viejo de Portugalete. Si pinchas en los siguientes elementos, podrás aprender un poco más sobre esta zona tan importante.</string>
+    <string name="dialogo5_8" translatable="false">Presta mucha atención para poder responder a la pregunta final. ¡Suerte!</string>
 
     <!--DIALOGO 6-->
-    <string name="dialogo6_1">Estoy muy muy cansado, no sé cuántas paradas me quedan todavía…</string>
-    <string name="dialogo6_2">¡Amigo! No te preocupes, ya estás llegando a tu destino. Esta es la penúltima parada.</string>
-    <string name="dialogo6_3">Ai, que bien. Por cierto, creo que no te conozco.</string>
-    <string name="dialogo6_4">¡Es verdad! Se me ha olvidado presentarme. Soy Juan Antonio de Zunzunegi y fui un novelista vasco, también miembro de la Real Academia Española.</string>
-    <string name="dialogo6_5">¿Eso es un diccionario, verdad?</string>
-    <string name="dialogo6_6">Sí, también, pero es mucho más que eso. Clica sobre los elementos, y vete averiguando más información sobre mí.</string>
+    <string name="dialogo6_1" translatable="false">Estoy muy muy cansado, no sé cuántas paradas me quedan todavía…</string>
+    <string name="dialogo6_2" translatable="false">¡Amigo! No te preocupes, ya estás llegando a tu destino. Esta es la penúltima parada.</string>
+    <string name="dialogo6_3" translatable="false">Ai, que bien. Por cierto, creo que no te conozco.</string>
+    <string name="dialogo6_4" translatable="false">¡Es verdad! Se me ha olvidado presentarme. Soy Juan Antonio de Zunzunegi y fui un novelista vasco, también miembro de la Real Academia Española.</string>
+    <string name="dialogo6_5" translatable="false">¿Eso es un diccionario, verdad?</string>
+    <string name="dialogo6_6" translatable="false">Sí, también, pero es mucho más que eso. Clica sobre los elementos, y vete averiguando más información sobre mí.</string>
 
     <!--DIALOGO 7-->
-    <string name="dialogo7_1">Por fín, ¡última parada del mapa! ¡Y es un puente! Por aquí podré llegar a Getxo, pero… necesitaré un ticket para pasar, ¿no?</string>
-    <string name="dialogo7_2">¡Eso es! Yo me llamo Alberto de Palacios, y fui el diseñador de este puente que estás viendo aquí. Fue el primer puente transbordador construido en el mundo de estructura metálica, y se inauguró en 1893.</string>
-    <string name="dialogo7_3">¿Impresionante no? Y sí, yo tengo la última pieza que necesitas para conseguir ese ticket del que hablas.</string>
-    <string name="dialogo7_4">¿Cómo lo consigo?</string>
-    <string name="dialogo7_5">Aquí tienes la última prueba… Para hallar la contraseña tendréis que buscar los números amarillos.</string>
+    <string name="dialogo7_1" translatable="false">Por fín, ¡última parada del mapa! ¡Y es un puente! Por aquí podré llegar a Getxo, pero… necesitaré un ticket para pasar, ¿no?</string>
+    <string name="dialogo7_2" translatable="false">¡Eso es! Yo me llamo Alberto de Palacios, y fui el diseñador de este puente que estás viendo aquí. Fue el primer puente transbordador construido en el mundo de estructura metálica, y se inauguró en 1893.</string>
+    <string name="dialogo7_3" translatable="false">¿Impresionante no? Y sí, yo tengo la última pieza que necesitas para conseguir ese ticket del que hablas.</string>
+    <string name="dialogo7_4" translatable="false">¿Cómo lo consigo?</string>
+    <string name="dialogo7_5" translatable="false">Aquí tienes la última prueba… Para hallar la contraseña tendréis que buscar los números amarillos.</string>
 
     <!--DIALOGO 8-->
-    <string name="dialogo8_1">¡MUCHÍSIMAS GRACIAS AMIGOS POR HABERME AYUDADO TANTO! ESPERO QUE HAYÁIS APRENDIDO MUCHO, ¡NOS VEMOS EN LA PRÓXIMA MISIÓN!</string>
-    <string name="dialogo8_2">¡AGUUUR!</string>
+    <string name="dialogo8_1" translatable="false">¡MUCHÍSIMAS GRACIAS AMIGOS POR HABERME AYUDADO TANTO! ESPERO QUE HAYÁIS APRENDIDO MUCHO, ¡NOS VEMOS EN LA PRÓXIMA MISIÓN!</string>
+    <string name="dialogo8_2" translatable="false">¡AGUUUR!</string>
 
-    <!--INFO MODOS-->
-    <string name="Modos"><u>Información de los modos</u></string>
-    <string name="Info_modos">MODO GUIADO:
-                                Este trata de jugar siguiendo una ruta definida. Solo se podrá jugar el punto que esté activado y para acceder a él tendremos que estar al menos a 50m del lugar. La partida se guardará en el último punto al que juguemos.
+    <!--PISTA 1-->
+    <string name="pista1_1" translatable="false">La iglesia de Santa María de Portugalete la mandé construir en <b><u>1322</u></b>. Portugalete era entonces un pueblo muy pequeño, y su población creció tanto que fue necesario construir una nueva iglesia.</string>
+    <string name="pista1_2" translatable="false">Las obras empezaron en <b><u>1492</u></b> y duraron más de cien años, hasta <b><u>1600</u></b>. Familias como los Salazar ayudaron en la construcción con donaciones.</string>
+    <string name="pista1_3" translatable="false">Durante la guerra carlista de <b><u>1873</u></b> la parte superior fue bombardeada y tuvo que rehacerse.</string>
+    <string name="enunciado1" translatable="false">Ahora suma todas las cifras que aparecen en los textos y el resultado será la contraseña.</string>
+    <string name="contrasena1" translatable="false">6287</string>
+    <string name="explicacion1" translatable="false">Tendréis que escapar de este laberinto para conseguir el premio.</string>
 
-                              MODO LIBRE:
-                                Este trata de jugar en el orden que queramos, la única condición para acceder a ellos es estar a menos de 50m del lugar. Estas partidas no serán guardadas, por lo cual el progreso se perderá.
+    <!--PISTA 2-->
+    <string name="pista2_1" translatable="false">Las fiestas empiezan el 14 de <b><u>agosto</u></b> con un chupinazo y una lectura desde los <b><u>balcones</u></b> del Ayuntamiento. Después hay mucha <b><u>música</u></b> y espectáculos de todo tipo.</string>
+    <string name="pista2_2" translatable="false">El día 15 de agosto, a primera <b><u>hora</u></b> de la mañana, ocurre la llamada <b><u>Diana</u></b> Portugaluja, con el objetivo de que todos los vecinos se despierten y vayan a la fiesta.</string>
+    <string name="pista2_3" translatable="false">Y por <b><u>último</u></b>, el día 16 de agosto, el día <b><u>principal</u></b> de las fiestas, es mi día: la festividad del <b><u>patrón</u></b> San Roque. Durante ese día hay una bajada, un “<b><u>Aurresku</u></b>”, y mucha <b><u>fiesta</u></b>.</string>
+    <string name="enunciado2" translatable="false">¿Qué palabra de las señaladas tiene 4 vocales?</string>
+    <string name="contrasena2" translatable="false">aurresku</string>
+    <string name="explicacion2" translatable="false">¡Descifrad el siguiente mensaje para conseguir el premio!</string>
+    <string name="actividad2" translatable="false">__SCUCH__ M__ C__NTAR, P__RTUGAL__J__, D__SP__ERT__, V__N CONM__GO A G__ZAR, EN __L PLAC__R DE L__ F__ESTA, Q__E NUESTR__ COR__ZÓN, D__CE G__ZOSO Y PL__CENTER__, QU__ N__ESTR__ DIVERS__ÓN, ES L__ M__JOR DEL M__NDO __NTER__.</string>
+    <string name="enhorabuena2" translatable="false">¡Listo! Esa es una parte de la Diana Portugaluja. Lo has hecho muy bien Ali, has conseguido otra pieza para el puzzle, mira en el mapa cuál es el siguiente punto y ve hacia allí.</string>
 
-                              MODO PROFESOR/A:
-                                El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.
-    </string>
-    <string name="Titulo_guiado">MODO GUIADO</string>
-    <string name="Titulo_libre">MODO LIBRE</string>
-    <string name="Titulo_profe">MODO PROFESOR</string>
-    <string name="MODO_GUIADO">Este trata de jugar siguiendo una ruta definida. Solo se podrá jugar el punto que esté activado y para acceder a él tendremos que estar al menos a 50m del lugar.
-                               La partida se guardará en el último punto al que juguemos.</string>
-    <string name="MODO_LIBRE"> Este trata de jugar en el orden que queramos, la única condición para acceder a ellos es estar a menos de 50m del lugar.
-                               Estas partidas no serán guardadas, por lo cual el progreso se perderá.</string>
-    <string name="MODO_PROFE"> El modo profesor/a se distingue de los otros modos por no tener la restricción de los 50m para iniciar un juego y poder acceder a ellos por elección propia.</string>
-    <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <!--PISTA 3-->
+    <string name="pista3_1" translatable="false"><b><u>3sta</u></b> casa-torre fue construida por mi padre en 1379, y más tarde, al ser yo el hijo mayor, pasó a ser mía. Con el paso <b><u>de1</u></b> tiempo, el edificio pasó de ser una torre defensiva a convertirse en una residencia familiar, es decir, en nuestra casa.</string>
+    <string name="pista3_2" translatable="false">En 1934, con la Revolución de Octubre, la casa se incendió; y no fue hasta 1958 cuando se volvió a construir. <b><u>4unque</u></b>, la última reconstrucción fue hace poco, en el 2003, para poder añadir en su interior el museo y restaurante que hay hoy en día.</string>
+    <string name="pista3_3" translatable="false">La casa tiene cuatro plantas. La primera, tiene vistas a la ría. La <b><u>se9unda</u></b>, contiene un arco impresionante con el escudo de la familia. Y por último, la tercera y cuarta planta está llena de troneras.</string>
+    <string name="enunciado3" translatable="false">¿En qué año se incendió la casa?</string>
+    <string name="contrasena3" translatable="false">1934</string>
+    <string name="explicacion3" translatable="false">¡Encontrad las 5 piezas ocultas en esta imagen para formar la Torre Salazar y conseguir el premio!</string>
+
+    <!--PISTA 4-->
+    <string name="pista4_1" translatable="false">Mi fiesta es organizada por Berriztasuna Taldea el día 1 de julio. Y es  muy importante saber que se celebra en el Casco Viejo.</string>
+    <string name="pista4_2" translatable="false">Empieza a las 9 de la mañana con 3 importantes elementos: un chupinazo; levantar en lo alto a los Dominguines, unos grandes muñecos de trapo; y una ofrenda floral a mi, la Virgen, que me encuentro en la fachada principal de la Plaza el Mercado.</string>
+    <string name="pista4_3" translatable="false">A media noche se hace la Gran Bajada desde la parte más alta del Casco Viejo. Y además, muy importante: para no pasar hambre se sirve durante todo el día una rica sopa de ajo.</string>
+    <string name="enunciado4" translatable="false">¿Cuáles son los 3 elementos claves con los que empiezan estas fiestas de Portugalete?
+    <b>a)</b> Ofrecer flores a la Virgen, chupinazo, levantar a los Dominguines.
+    <b>b)</b> Ofrecer comida a la Virgen, chupinazo y bailar con los Dominguines.
+    <b>c)</b> Chupinazo, ofrecer flores a los Dominguines y levantar a la Virgen.</string>
+    <string name="contrasena4" translatable="false">a</string>
+    <string name="explicacion4" translatable="false">Ahora haced la siguiente sopa de letras:</string>
+    <string name="enhorabuena4" translatable="false">¡Genial! Has conseguido otra pieza. Mira el mapa y continúa tu ruta.</string>
+
+    <!--PISTA 5-->
+    <string name="pista5_1" translatable="false">El casco histórico fue declarado Conjunto Monumental en el año 1996.</string>
+    <string name="pista5_2" translatable="false">Podemos atravesar las tres calles que formaban la antigua Villa medieval: la calle Coscojales, la calle Víctor Chávarri donde yo nací, popularmente conocida como calle del Medio, y la calle Santa María.</string>
+    <string name="pista5_3" translatable="false">Las calles destacan por sus empinadas cuestas y su suelo empedrado.</string>
+    <string name="enunciado5" translatable="false">¿Cómo se conoce popularmente la calle donde se encuentra la casa en la que nació Victor Chavarri?</string>
+    <string name="contrasena5" translatable="false">calle del medio</string>
+    <string name="explicacion5" translatable="false">¡Realizad el siguiente crucigrama para conseguir el premio!</string>
+    <string name="enhorabuena5" translatable="false">¡Muy bien! Has conseguido otra pieza para el puzzle, ahora continúa a la siguiente parada.</string>
+
+    <!--PISTA 6-->
+    <string name="pista6_1" translatable="false">Nací un 21 de diciembre en el nº 2 de la calle Casilda Iturrízar en un hogar de la burguesía vizcaína, siendo yo el único chico entre los 7 hermanos que tenía. Usando la narración, destaqué <b><u>P</u></b>or mis dotes de observador de paisajes y ambientes de mi tierra.</string>
+    <string name="pista6_2" translatable="false">Mis ob<b><u>R</u></b>as reflejan la vida contemporánea española. En 1926 publiqué mi prim<b><u>E</u></b>r libro, Vida y paisaje de Bilbao, al que siguió la novela Chiripi (1931), que trata de la historia de un jugador de fútbol. Lo que más utilizo en mis obras es el humor, bueno, más bien, el sarcas<b><u>M</u></b>o.</string>
+    <string name="pista6_3" translatable="false">Las novelas que publ<b><u>I</u></b>qué hasta 1950 se ambientan en Bilbao y sus alrededores, mientras que a partir de esa fecha el escenari<b><u>O</u></b> principal es Madrid. En Portugalete hay un instituto que lleva mi nombre, el I.E.<b><u>S</u></b>. Juan Antonio Zunzunegui.</string>
+    <string name="enunciado6" translatable="false">¿Qué es lo que ha recibido Zunzunegi con muchas de sus obras?</string>
+    <string name="contrasena6" translatable="false">premios</string>
+    <string name="explicacion6" translatable="false">¡Haced un dibujo de Zunzunegui y poned el año en el que nació en los huecos que aparecen en la parte inferior para conseguir el premio!</string>
+    <string name="enhorabuena6" translatable="false">¡Muy bien! Has conseguido la última pieza del puzzle. Ahora vete al apartado “carpeta” y ordena las piezas, formando la imagen correcta. Esa imagen será el último punto del mapa.</string>
+
+    <!--PISTA 7-->
+    <string name="pista7_1" translatable="false">El <b><u>1</u></b>3 de julio de 200<b><u>6</u></b>, la UNESC<b><u>0</u></b> decidió declarar al Puente Bizkaia Patrimonio de la Humanidad.</string>
+    <string name="pista7_2" translatable="false">Junto con Ferdinand <b><u>4</u></b>rnodin, ideamos la manera de unir las d<b><u>0</u></b>s or<b><u>1</u></b>llas sin interrumpir el tráfico marítimo.</string>
+    <string name="pista7_3" translatable="false">Se puede pasar el puente en la barqui<b><u>11</u></b>a, que transporta personas y vehículo<b><u>2</u></b> y también existe la pos<b><u>1</u></b>bilidad de recorrer el Puente C<b><u>0</u></b>lgante sobre la pasarela peatonal.</string>
+    <string name="enunciado7" translatable="false">¿Cuántos metros mide el puente aproximadamente?</string>
+    <string name="contrasena7" translatable="false">61</string>
+    <string name="explicacion7" translatable="false">Une las fotos con sus nombres correspondientes:</string>
+    <string name="enhorabuena7" translatable="false">¡Genial! Has completado el ejercicio Ali, toma te mereces este ticket para poder realizar tu misión. Espero que hayas aprendido mucho durante este viaje. ¡GRACIAS!</string>
+
+    <!--NOMBRE DE LOS LUGARES DE ACTIVIDAD 7-->
+    <string name="lugar_1" translatable="false">Alberto de Palacios </string>
+    <string name="lugar_2" translatable="false">Casco Viejo</string>
+    <string name="lugar_3" translatable="false">Fiestas de la Virgen de la Guia</string>
+    <string name="lugar_4" translatable="false">Juan Antonio de Zunzunegui</string>
+    <string name="lugar_5" translatable="false">Puente Bizkaia</string>
+    <string name="lugar_6" translatable="false">Torre de Salazar</string>
+    <string name="lugar_7" translatable="false">San Roque</string>
+    <string name="lugar_8" translatable="false">Basilica de Santa Maria</string>
+    <string name="lugar_9" translatable="false">Victor Chavarri</string>
 
 </resources>

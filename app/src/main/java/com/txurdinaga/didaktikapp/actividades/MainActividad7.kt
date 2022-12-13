@@ -1,0 +1,183 @@
+package com.txurdinaga.didaktikapp.actividades
+
+import android.content.ClipData
+import android.content.ClipDescription
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Point
+import android.os.Build
+import android.os.Bundle
+import android.view.DragEvent
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import com.txurdinaga.didaktikapp.ActividadesProvider
+import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
+import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
+
+class MainActividad7 : AppCompatActivity(){
+    private lateinit var binding: LayoutActividadBinding
+    private lateinit var binding7: FragmentActividad7Binding
+    private var seleccionada : ImageView? = null
+    private lateinit var foto_list:List<ImageView>
+    private lateinit var text_list:List<TextView>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = LayoutActividadBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[7].fondo)
+        binding.explicacionTV.text = getString(ActividadesProvider.actividad[7].explicacion)
+        binding.verBT.visibility = View.INVISIBLE
+
+        binding7 = FragmentActividad7Binding.inflate(layoutInflater)
+        binding.fragFL.addView(binding7.root)
+
+        binding.ayudaBT.setOnClickListener{
+            if (!binding.explicacionTV.isVisible){
+                binding.explicacionTV.visibility = View.VISIBLE
+                binding.ayudaBT.setImageResource(R.drawable.ic_x)
+            } else {
+                binding.explicacionTV.visibility = View.INVISIBLE
+                binding.ayudaBT.setImageResource(R.drawable.ic_help)
+            }
+        }
+
+        binding7.foto71.setOnLongClickListener(longClickListener)
+        binding7.foto72.setOnLongClickListener(longClickListener)
+        binding7.foto73.setOnLongClickListener(longClickListener)
+        binding7.foto74.setOnLongClickListener(longClickListener)
+        binding7.foto75.setOnLongClickListener(longClickListener)
+        binding7.foto76.setOnLongClickListener(longClickListener)
+        binding7.foto77.setOnLongClickListener(longClickListener)
+        binding7.foto78.setOnLongClickListener(longClickListener)
+        binding7.foto79.setOnLongClickListener(longClickListener)
+
+        binding7.text71.setOnDragListener(dragListener)
+        binding7.text72.setOnDragListener(dragListener)
+        binding7.text73.setOnDragListener(dragListener)
+        binding7.text74.setOnDragListener(dragListener)
+        binding7.text75.setOnDragListener(dragListener)
+        binding7.text76.setOnDragListener(dragListener)
+        binding7.text77.setOnDragListener(dragListener)
+        binding7.text78.setOnDragListener(dragListener)
+        binding7.text79.setOnDragListener(dragListener)
+
+        foto_list = listOf(
+            binding7.foto71, binding7.foto72, binding7.foto73, binding7.foto74, binding7.foto75,
+            binding7.foto76, binding7.foto77, binding7.foto78, binding7.foto79
+        )
+        text_list = listOf(
+            binding7.text71, binding7.text72, binding7.text73, binding7.text74, binding7.text75,
+            binding7.text76, binding7.text77, binding7.text78, binding7.text79
+        )
+
+    }
+
+    private class MyDragShadowBuilder(val v: View) : View.DragShadowBuilder(v) {
+        override fun onProvideShadowMetrics(size: Point, touch: Point) {
+            size.set(view.width, view.height)
+            touch.set(view.width / 2, view.height / 2)
+        }
+        override fun onDrawShadow(canvas: Canvas) {
+            v.draw(canvas)
+        }
+    }
+
+    private val longClickListener = View.OnLongClickListener { v ->
+        val item = ClipData.Item(v.tag as? CharSequence)
+        seleccionada = v as ImageView
+
+        val dragData = ClipData(
+            v.tag as? CharSequence,
+            arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
+            item
+        )
+
+        val myShadow = MyDragShadowBuilder(v)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            v.startDragAndDrop(dragData, myShadow,null,0)
+        } else {
+            v.startDrag(dragData, myShadow,null,0)
+        }
+
+        true
+    }
+
+    private val dragListener = View.OnDragListener { v, event ->
+        val receiverView: TextView = v as TextView
+
+        when (event.action) {
+            DragEvent.ACTION_DRAG_STARTED -> {
+                binding7.statusTextView.text = "Estas arrastrando una figura"
+                true
+            }
+
+            DragEvent.ACTION_DRAG_ENTERED -> {
+                if(event.clipDescription.label == receiverView.tag as? String) {
+
+                    binding7.statusTextView.text = "Imagen Correcta!"
+                } else {
+                    binding7.statusTextView.text = "No Imagen Incorrecta!"
+                }
+                v.invalidate()
+                true
+            }
+
+            DragEvent.ACTION_DRAG_LOCATION ->
+                true
+
+            DragEvent.ACTION_DRAG_EXITED -> {
+                if(event.clipDescription.label == receiverView.tag as? String) {
+                    binding7.statusTextView.text = "Casi la tenias!"
+                    v.invalidate()
+                }
+                true
+            }
+
+            DragEvent.ACTION_DROP -> {
+                binding7.statusTextView.text = "Soltaste la imagen!"
+                if (comparar(seleccionada, receiverView)){
+                    receiverView.setBackgroundResource(R.drawable.style_redondeado_editext_v)
+                    seleccionada?.isEnabled = false
+                    seleccionada?.alpha = 0.65F
+                    if(comprobacionFinal7(foto_list)) {
+                        binding.terminarActividadBT.visibility = View.VISIBLE
+                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
+                    }
+                }else
+                    receiverView.setBackgroundResource(R.drawable.style_redondeado_editext)
+
+                true
+            }
+
+            DragEvent.ACTION_DRAG_ENDED -> {
+
+                true
+            }
+
+            else -> {
+                false
+            }
+        }
+    }
+
+    fun comparar(img: ImageView?, txt:TextView) :Boolean {
+        return img == foto_list[text_list.indexOf(txt)]
+    }
+
+    fun comprobacionFinal7(list: List<ImageView>) :Boolean {
+        var r = true
+        for(i in list.indices)
+            if(list[i].isEnabled)
+                r = false
+        return r
+    }
+
+}

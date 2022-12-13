@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aliventuras en Portu</string>
+    <string name="jugar">JOLASTU</string>
+
+
+
+    <!--NUMERO DE CADA ACTIVIDAD-->
+    <string name="actividad_1">1.Aktibitatea</string>
+    <string name="actividad_2">2.Aktibitatea</string>
+    <string name="actividad_3">3.Aktibitatea</string>
+    <string name="actividad_4">4.Aktibitatea</string>
+    <string name="actividad_5">5.Aktibitatea</string>
+    <string name="actividad_6">6.Aktibitatea</string>
+    <string name="actividad_7">7.Aktibitatea</string>
+
+
+    <!--ERROR DIALOG MODO-->
+    <string name="motivo_error1">Lehenik aurreko jarduera amaitu behar duzu</string>
+    <string name="motivo_error2">50 metroko rangotik kanpo zaude!!</string>
+
+
+
+    <!--MODOS-->
+    <string name="Modos"><u>Moduen Informazioa</u></string>
+    <string name="modo_guiado">MODU GIDATUA</string>
+    <string name="modo_libre">MODU LIBREA</string>
+    <string name="modo_profesor">"IRAKASLEEN MODUA "</string>
+
+
+    <!--INFO MODOS-->
+    <string name="info_modo_guiado">Ibilbide zehatz bati jarraituz jokatu nahi du. Aktibatuta dagoen puntua bakarrik jolastu ahal izango da, eta bertara sartzeko, gutxienez tokitik 50 metrora egon beharko dugu.Partida jostatzen ari garen azken puntuan gordeko da.</string>
+    <string name="info_modo_libre">Nahi dugun ordenan jokatu nahi dugu, eta horietara iristeko baldintza bakarra tokitik 50 m baino gutxiagora egotea da.
+        Partida horiek ez dira gordeko; beraz, aurrerapena galdu egingo da.</string>
+    <string name="info_modo_profesor">Irakasle modua beste modu batzuetatik bereizten da, ez baitauka jolas bat hasteko eta norberaren aukeraz haietara sartu ahal izateko 50 m-ko muga.</string>
+
+    <!--MENU AUKERAK-->
+    <string name="open_nav">Ireki</string>
+    <string name="close_nav">Itxi</string>
+    <string name="nav_mapa">Mapa</string>
+    <string name="nav_profesor">Irakasle Modua</string>
+    <string name="nav_tema">Tema aldatu</string>
+    <string name="nav_idioma">Hizkuntza aldatu</string>
+    <string name="nav_informacion">Guri Buruz</string>
+    <string name="nav_desconectar">Deskonektatu</string>
+    <string name="nav_home">Menura irten</string>
+    <string name="nav_logout">Itxi Saioa</string>
+    <string name="salir">Irten</string>
+
+    <!--DIALOGS MENU-->
+    <string name="seguro_salir">¿Aplikaziotik atera nahi duzu?</string>
+    <string name="seguro_salir_home">Hasierako menura irten nahi duzu?</string>
+    <string name="seguro_cambiar_idioma">¿Hizkuntza aldatu nahi duzu?</string>
+    <string name="si">Bai</string>
+    <string name="no">Ez</string>
+
+
+    <!--ACERCA DE/GURI BURUZ-->
+    <string name="descripcion">Aplikazio hau Euskal Herriko Unibertsitateko eta Txurdinaga LHIIko ikasleek garatu dute, LHko irakasleei eta ikasleei Portugalete jolas didaktikoen bidez ezagutzen laguntzeko, modu horretan dibertitzen ikas dezaten.</string>
+    <string name="acerca_desa">Garatzaileak</string>
+    <string name="acerca_dise">Diseinatzaileak</string>
+    <string name="username">Erabiltzailea</string>
+    <string name="password">Pasahitza</string>
+    <string name="titulo_cambiar_idioma">Hizkuntza aldatu</string>
+
+</resources>

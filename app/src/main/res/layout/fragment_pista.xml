@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fondoCL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/fondo_pistaIV"
+        android:layout_width="match_parent"
+        android:layout_height="1000dp"
+        android:src="@drawable/fondo_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/fondo_1" />
+
+    <TextView
+        android:id="@+id/pistaTV"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
+        android:background="@drawable/style_redondeado_bordes"
+        android:paddingLeft="40dp"
+        android:paddingTop="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="60dp"
+        android:textAlignment="center"
+        android:textColor="@color/negro"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495"
+        tools:text="@string/pista6_2" />
+
+    <Button
+        android:id="@+id/aceptarBT"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/azulosc"
+        android:text="ACEPTAR"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pistaTV"
+        app:layout_constraintEnd_toEndOf="@+id/pistaTV"
+        app:layout_constraintStart_toStartOf="@+id/pistaTV" />
+
+    <ImageView
+        android:id="@+id/personajeIV"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/nave_frontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:srcCompat="@drawable/ali_2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
