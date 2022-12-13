@@ -1,8 +1,6 @@
 package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog.show
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
@@ -14,7 +12,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -30,6 +27,7 @@ import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
+import com.txurdinaga.didaktikapp.dialog.DialogNombre
 
 @Suppress("DEPRECATION")
 class FragmentMapa : Fragment() {
