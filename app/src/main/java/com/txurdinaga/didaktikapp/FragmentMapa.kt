@@ -69,7 +69,7 @@ class FragmentMapa : Fragment() {
                 true
             }
         }
-
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
         googleMap.setOnMyLocationChangeListener {
             ubicacion = LatLng(it.latitude, it.longitude)
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f)) //en vez d zunzunegi se pondria ubicacion si es modo libre o guiado
@@ -78,7 +78,7 @@ class FragmentMapa : Fragment() {
             //Distancia con las paradas
             if (SharedPrefs.puntopartida.Partida == "0"){
                 Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].longitude,distancia)
-            }else if (SharedPrefs.puntopartida.Partida.toInt() in 1..7){
+            } else if (SharedPrefs.puntopartida.Partida.toInt() in 1..7){
                 Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].longitude,distancia)
             }
 
