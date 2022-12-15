@@ -2,6 +2,7 @@ package com.txurdinaga.didaktikapp.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 
 @Entity
 class Usuario(
@@ -9,6 +10,7 @@ class Usuario(
     var nombre:String,
     var profesor: Int,
     var modoLibre: Int,
-    var juegosCompletados: List<String>
+    @TypeConverters(JuegoTypeConverter::class)
+    var juegosCompletados: Juego
 
-)
+    )

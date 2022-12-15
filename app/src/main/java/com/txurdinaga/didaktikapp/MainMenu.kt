@@ -55,10 +55,10 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         //En caso de no haber usuario pone el invitado por defecto
         if (SharedPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
-            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = getString(R.string.invitado)
+            SharedPrefs.users.user == getString(R.string.invitado)
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
-        } else
-            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
+        }
+        navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
     
     }
 

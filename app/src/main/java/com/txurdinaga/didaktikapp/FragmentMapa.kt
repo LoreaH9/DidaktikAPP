@@ -1,7 +1,6 @@
 package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
@@ -52,8 +51,8 @@ class FragmentMapa : Fragment() {
             googleMap.uiSettings.isMyLocationButtonEnabled = false
             googleMap.uiSettings.isCompassEnabled = false
 
-            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
-            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+            SharedPrefs.puntopartida.partida = "2" //se pone la partida por la que va el alumno
+            cambiarMarcador(SharedPrefs.puntopartida.partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
 
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
@@ -80,10 +79,10 @@ class FragmentMapa : Fragment() {
             val distancia=FloatArray(3)
 
             //Distancia con las paradas
-            if (SharedPrefs.puntopartida.Partida == "0"){
-                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()].longitude,distancia)
-            }else if (SharedPrefs.puntopartida.Partida.toInt() in 1..7){
-                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].latitude, paradas[SharedPrefs.puntopartida.Partida.toInt()-1].longitude,distancia)
+            if (SharedPrefs.puntopartida.partida == "0"){
+                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.partida.toInt()].latitude, paradas[SharedPrefs.puntopartida.partida.toInt()].longitude,distancia)
+            }else if (SharedPrefs.puntopartida.partida.toInt() in 1..7){
+                Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.partida.toInt()-1].latitude, paradas[SharedPrefs.puntopartida.partida.toInt()-1].longitude,distancia)
             }
 
             //Distancia con CIFP Txurdinaga LHII
@@ -94,9 +93,8 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        if(SharedPrefs.users.user==""){
+        if(SharedPrefs.users.user=="" && !SharedPrefs.modolibre.modo){
             DialogNombre().show(parentFragmentManager, "LoginDialog")
-            startActivity(Intent(requireContext(), MainMenu::class.java))
         }
 
         if(SharedPrefs.tipousu.tipo=="profesor"){
@@ -112,14 +110,28 @@ class FragmentMapa : Fragment() {
         googleMap.setOnMarkerClickListener{
             println("Prueba:" + it.id)
             when (it.id) {
-                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_1),requireContext().resources.getString(R.string.titulo_actividad_1),1)
-                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_2),requireContext().resources.getString(R.string.titulo_actividad_2),2)
-                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_3),requireContext().resources.getString(R.string.titulo_actividad_3),3)
-                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_4),requireContext().resources.getString(R.string.titulo_actividad_4),4)
-                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_5),requireContext().resources.getString(R.string.titulo_actividad_5),5)
-                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_6),requireContext().resources.getString(R.string.titulo_actividad_6),6)
-                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_7),requireContext().resources.getString(R.string.titulo_actividad_7),7)
-                else -> {showErrorDialog(it,"Error","Error")}
+                "m0" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_1),
+                    requireContext().resources.getString(R.string.titulo_actividad_1),
+                    1)
+                "m1" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_2),
+                    requireContext().resources.getString(R.string.titulo_actividad_2),
+                    2)
+                "m2" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_3),
+                    requireContext().resources.getString(R.string.titulo_actividad_3),
+                    3)
+                "m3" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_4),
+                    requireContext().resources.getString(R.string.titulo_actividad_4),
+                    4)
+                "m4" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_5),
+                    requireContext().resources.getString(R.string.titulo_actividad_5),
+                    5)
+                "m5" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_6),
+                    requireContext().resources.getString(R.string.titulo_actividad_6),
+                    6)
+                "m6" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_7),
+                    requireContext().resources.getString(R.string.titulo_actividad_7),
+                    7)
+                else -> {showErrorDialog("Error", "Error")}
             }
            // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
         }
@@ -129,35 +141,34 @@ class FragmentMapa : Fragment() {
         }
     }
 
-    fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
+    fun showActivityDialog(title: String, message: String, set: Int): Boolean {
         val image = ImageView(requireContext())
         image.setImageResource(R.drawable.usuarios4)
         AlertDialog.Builder(requireContext())
             .setView(image)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton(R.string.jugar,
-                DialogInterface.OnClickListener { dialog, id ->
-                    startActivity(Intent(requireContext(),MainDialogo::class.java)
-                        .putExtra("set", set)
-                    )
-                })
+            .setPositiveButton(R.string.jugar
+            ) { _, _ ->
+                startActivity(Intent(requireContext(), MainDialogo::class.java)
+                    .putExtra("set", set)
+                )
+            }
             .setCancelable(true)
             .create()
             .show()
         return true
     }
 
-    fun showErrorDialog(marker: Marker, title: String, message:String): Boolean {
+    fun showErrorDialog(title: String, message: String): Boolean {
         AlertDialog.Builder(requireContext())
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton(R.string.si,
-                DialogInterface.OnClickListener { dialog, id ->
-                })
-            .setNegativeButton(R.string.no,
-                DialogInterface.OnClickListener { _, id ->
-                })
+            .setPositiveButton(R.string.si) { _, _ ->
+            }
+            .setNegativeButton(R.string.no
+            ) { _, _ ->
+            }
             .setCancelable(false)
             .create()
             .show()
@@ -170,7 +181,7 @@ class FragmentMapa : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
        // DialogInicio()
         binding = FragmentMapaBinding.inflate(layoutInflater)
 
