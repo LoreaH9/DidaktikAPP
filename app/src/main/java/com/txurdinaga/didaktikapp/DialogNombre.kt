@@ -13,7 +13,6 @@ class DialogNombre : DialogFragment() {
     private lateinit var binding: DialogNombreBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
         return activity?.let {
             val builder = AlertDialog.Builder(it)
             // Get the layout inflater

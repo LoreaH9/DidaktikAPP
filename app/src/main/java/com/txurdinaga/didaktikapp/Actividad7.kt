@@ -68,8 +68,6 @@ class Actividad7 :AppCompatActivity(){
 
 
 
-
-
     private val longClickListener = View.OnLongClickListener { v ->
         val item = ClipData.Item(v.tag as? CharSequence)
         seleccionada = v as ImageView
@@ -117,7 +115,6 @@ class Actividad7 :AppCompatActivity(){
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
-                    receiverView.setTextColor(Color.YELLOW)
                     binding.statusTextView.text = "Casi la tenias!"
                     v.invalidate()
                 }
@@ -150,8 +147,6 @@ class Actividad7 :AppCompatActivity(){
     fun comparar(img: ImageView?, txt:TextView):Boolean{
         return img == listaimg[listatxt.indexOf(txt)]
     }
-
-
 
 
     /*

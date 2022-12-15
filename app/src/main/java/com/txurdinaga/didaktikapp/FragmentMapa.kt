@@ -1,8 +1,6 @@
 package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog.show
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
@@ -14,7 +12,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -77,7 +74,7 @@ class FragmentMapa : Fragment() {
 
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
             val distancia=FloatArray(3)
 
@@ -96,7 +93,8 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        DialogNombre().show(parentFragmentManager, "LoginDialog")
+        //DialogNombre().show(parentFragmentManager, "LoginDialog")
+
 
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
@@ -126,6 +124,7 @@ class FragmentMapa : Fragment() {
         binding.UbicacionButton.setOnClickListener {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
         }
+
     }
 
     fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
@@ -217,7 +216,7 @@ class FragmentMapa : Fragment() {
     fun cambiarMarcador(posicion:Int){
         marcadores.forEach {
             when {
-                marcadores.indexOf(it)<(posicion-1) -> {
+                marcadores.indexOf(it)<(posicion-0) -> {
                     it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                 }
                 marcadores.indexOf(it)==(posicion-1) -> {

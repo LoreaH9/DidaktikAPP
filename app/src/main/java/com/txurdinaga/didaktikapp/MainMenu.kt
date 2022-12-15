@@ -21,6 +21,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat
+import com.txurdinaga.didaktikapp.Constantes.modo
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
 import java.util.*
 import kotlin.system.exitProcess
@@ -95,6 +96,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 temaldatu()
 
 
+
             }
 
         drawerLayout!!.closeDrawer(GravityCompat.START)
@@ -107,9 +109,16 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .setMessage("Quieres cambiar tema?")
                 .setPositiveButton(R.string.si,
                     DialogInterface.OnClickListener { dialog, id ->
-                        setdaynight(0)
+                        modo = if(modo==0){
+                            setdaynight(1)
+                            1
+                        } else{
+                            setdaynight(0)
+                            0
+                        }
                         var intent= Intent(this,MainInicio::class.java)
                         startActivity(intent)
+
                     })
                 .setNegativeButton(R.string.no,
                     DialogInterface.OnClickListener { _, id ->
@@ -202,7 +211,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     fun setdaynight(mode:Int){
-        if (mode==0){
+        if (mode==1){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
         else{
