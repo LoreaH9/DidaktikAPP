@@ -16,6 +16,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
+import com.txurdinaga.didaktikapp.fragments.FragmentInformacion
+import com.txurdinaga.didaktikapp.fragments.FragmentMapa
 import kotlin.system.exitProcess
 
 

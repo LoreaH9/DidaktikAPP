@@ -1,11 +1,9 @@
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.fragments
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +25,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
-import com.txurdinaga.didaktikapp.databinding.DialogNombreBinding
+import com.txurdinaga.didaktikapp.MainDialogo
+import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
 import com.txurdinaga.didaktikapp.dialog.DialogNombre
 

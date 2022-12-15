@@ -1,11 +1,11 @@
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import com.txurdinaga.didaktikapp.R
 
 
 class FragmentInformacion : Fragment() {

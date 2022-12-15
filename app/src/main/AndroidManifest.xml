@@ -38,7 +38,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".FragmentInformacion"
+            android:name=".fragments.FragmentInformacion"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="Instantiatable">
