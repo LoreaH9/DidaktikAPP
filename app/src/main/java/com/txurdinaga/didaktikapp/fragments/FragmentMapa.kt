@@ -1,6 +1,7 @@
 package com.txurdinaga.didaktikapp.fragments
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
@@ -22,12 +23,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.txurdinaga.didaktikapp.ActividadesProvider
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
 import com.txurdinaga.didaktikapp.activities.MainDialogo
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
+import com.txurdinaga.didaktikapp.databinding.DialogActividadBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
 import com.txurdinaga.didaktikapp.dialog.DialogNombre
 
@@ -106,27 +109,13 @@ class FragmentMapa : Fragment() {
 
         googleMap.setOnMarkerClickListener{
             when (it.id) {
-                "m0" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_1),
-                    requireContext().resources.getString(R.string.titulo_actividad_1),
-                    1)
-                "m1" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_2),
-                    requireContext().resources.getString(R.string.titulo_actividad_2),
-                    2)
-                "m2" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_3),
-                    requireContext().resources.getString(R.string.titulo_actividad_3),
-                    3)
-                "m3" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_4),
-                    requireContext().resources.getString(R.string.titulo_actividad_4),
-                    4)
-                "m4" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_5),
-                    requireContext().resources.getString(R.string.titulo_actividad_5),
-                    5)
-                "m5" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_6),
-                    requireContext().resources.getString(R.string.titulo_actividad_6),
-                    6)
-                "m6" -> showActivityDialog(requireContext().resources.getString(R.string.actividad_7),
-                    requireContext().resources.getString(R.string.titulo_actividad_7),
-                    7)
+                "m0" -> showActivityDialog(it,1)
+                "m1" -> showActivityDialog(it,2)
+                "m2" -> showActivityDialog(it,3)
+                "m3" -> showActivityDialog(it,4)
+                "m4" -> showActivityDialog(it,5)
+                "m5" -> showActivityDialog(it,6)
+                "m6" -> showActivityDialog(it,7)
                 else -> {showErrorDialog("Error", "Error")}
             }
         }
@@ -137,22 +126,25 @@ class FragmentMapa : Fragment() {
 
     }
 
-    fun showActivityDialog(title: String, message: String, set: Int): Boolean {
-        val image = ImageView(requireContext())
-        image.setImageResource(R.drawable.usuarios4)
+    fun showActivityDialog(marker:Marker, set: Int): Boolean {
+        val bindingActividad : DialogActividadBinding = DialogActividadBinding.inflate(layoutInflater)
+        // val image = ImageView(requireContext())
+        //image.setImageResource(R.drawable.usuarios4)
         AlertDialog.Builder(requireContext())
-            .setView(image)
-            .setTitle(title)
-            .setMessage(message)
+            .setView(bindingActividad.root)
+            .setTitle("Actividad $set")
+            .setMessage(getString(ActividadesProvider.actividad[set].nombre))
             .setPositiveButton(R.string.jugar
             ) { _, _ ->
-                startActivity(Intent(requireContext(), MainDialogo::class.java)
-                    .putExtra("set", set)
+                startActivity(
+                    Intent(requireContext(), MainDialogo::class.java)
+                        .putExtra("set", set)
                 )
             }
             .setCancelable(true)
             .create()
             .show()
+        bindingActividad.img.setImageResource(ActividadesProvider.actividad[set].fondo)
         return true
     }
 

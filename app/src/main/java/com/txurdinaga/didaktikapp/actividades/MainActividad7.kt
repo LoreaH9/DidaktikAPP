@@ -2,6 +2,7 @@ package com.txurdinaga.didaktikapp.actividades
 
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Point
@@ -127,16 +128,14 @@ class MainActividad7 : AppCompatActivity(){
 
         when (event.action) {
             DragEvent.ACTION_DRAG_STARTED -> {
-                binding7.statusTextView.text = "Estas arrastrando una figura"
                 true
             }
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
 
-                    binding7.statusTextView.text = "Imagen Correcta!"
                 } else {
-                    binding7.statusTextView.text = "No Imagen Incorrecta!"
+
                 }
                 v.invalidate()
                 true
@@ -147,14 +146,12 @@ class MainActividad7 : AppCompatActivity(){
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
-                    binding7.statusTextView.text = "Casi la tenias!"
                     v.invalidate()
                 }
                 true
             }
 
             DragEvent.ACTION_DROP -> {
-                binding7.statusTextView.text = "Soltaste la imagen!"
                 if (comparar(seleccionada, receiverView)){
                     receiverView.setBackgroundResource(R.drawable.style_redondeado_editext_v)
                     seleccionada?.isEnabled = false
@@ -184,23 +181,23 @@ class MainActividad7 : AppCompatActivity(){
         AlertDialog.Builder(this)
             .setTitle("Actividad $set")
             .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
-            .setPositiveButton("Continuar"
-            ) { _, _ ->
-                if (SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
-                    SharedPrefs.puntopartida.partida = "$set"
-                }
-                startActivity(
-                    Intent(this, MainDialogo::class.java)
-                        .putExtra("set", 8)
-                )
-            }
-            .setNegativeButton("Repetir"
-            ) { _, _ ->
-                startActivity(
-                    Intent(this, MainContrasena::class.java)
-                        .putExtra("set", set)
-                )
-            }
+            .setPositiveButton("Continuar",
+                DialogInterface.OnClickListener { _, _ ->
+                    if(SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.partida = "$set"
+                    }
+                    startActivity(
+                        Intent(this, MainDialogo::class.java)
+                            .putExtra("set", 8)
+                    )
+                })
+            .setNegativeButton("Repetir",
+                DialogInterface.OnClickListener { _, _ ->
+                    startActivity(
+                        Intent(this, MainContrasena::class.java)
+                            .putExtra("set", set)
+                    )
+                })
             .create()
             .show()
     }
