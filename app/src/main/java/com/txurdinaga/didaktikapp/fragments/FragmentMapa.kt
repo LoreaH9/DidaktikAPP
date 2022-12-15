@@ -56,8 +56,20 @@ class FragmentMapa : Fragment() {
             googleMap.uiSettings.isMyLocationButtonEnabled = false
             googleMap.uiSettings.isCompassEnabled = false
 
-            if(!SharedPrefs.modolibre.modo)
-            cambiarMarcadores(SharedPrefs.puntopartida.partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+            if(!SharedPrefs.modolibre.modo) {
+                marcadores.forEach {
+                    cambiarMarcador(it, SharedPrefs.puntopartida.partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+                }
+            } else {
+                marcadores.forEach{
+                    if (SharedPrefs.hecho_libre[marcadores.indexOf(it)]){
+                        it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                    } else {
+                        it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                    }
+
+                }
+            }
 
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
@@ -197,22 +209,15 @@ class FragmentMapa : Fragment() {
 
     }
 
-    fun cambiarMarcadores(posicion:Int){
-        marcadores.forEach {
-            when {
-                marcadores.indexOf(it)<(posicion-0) -> {
-                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
-                }
-                marcadores.indexOf(it)==(posicion-1) -> {
-                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
-                }
-                marcadores.indexOf(it)>(posicion-1) -> {
-                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                }
-            }
-            //it.isVisible = marcadores.indexOf(it) <= (posicion)
+    fun cambiarMarcador(marker:Marker, posicion:Int){
+        if(marcadores.indexOf(marker) < posicion) {
+            marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        } else {
+            marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
         }
+        //it.isVisible = marcadores.indexOf(it) <= (posicion)
     }
+
 
 
 }

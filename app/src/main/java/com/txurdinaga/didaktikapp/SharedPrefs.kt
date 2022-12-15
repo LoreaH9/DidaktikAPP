@@ -10,6 +10,7 @@ class SharedPrefs : Application(){
         internal lateinit var modolibre: Constantes.ModoLibre
         internal lateinit var idioma: Constantes.idioma
 
+        internal var hecho_libre : Array<Boolean> = arrayOf(false, false, false, false, false, false, false)
     }
 
     override fun onCreate() {

@@ -81,4 +81,5 @@ object Constantes {
     internal const val contraseniaProfesor:String="123"
 
     internal var modo: Int = 0
+
 }

@@ -41,10 +41,14 @@ class MainActividad3 : AppCompatActivity(){
         }
 
         binding.terminarActividadBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
         binding.saltarBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 

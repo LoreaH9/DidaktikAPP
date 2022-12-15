@@ -42,10 +42,14 @@ class MainActividad1 : AppCompatActivity(){
         }
 
         binding.terminarActividadBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
         binding.saltarBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
@@ -62,13 +66,13 @@ class MainActividad1 : AppCompatActivity(){
                     }
                     startActivity(Intent(this, MainMenu::class.java))
                 })
-            .setNegativeButton("Repetir",
-                { _, _ ->
-                    startActivity(
-                        Intent(this, MainContrasena::class.java)
-                            .putExtra("set", set)
-                    )
-                })
+            .setNegativeButton("Repetir"
+            ) { _, _ ->
+                startActivity(
+                    Intent(this, MainContrasena::class.java)
+                        .putExtra("set", set)
+                )
+            }
             .create()
             .show()
     }
