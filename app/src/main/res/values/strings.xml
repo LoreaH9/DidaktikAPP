@@ -4,7 +4,6 @@
     <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
     <string name="jugar">JUGAR</string>
 
-
     <!--NUMERO DE CADA ACTIVIDAD-->
     <string name="actividad_1">Actividad 1</string>
     <string name="actividad_2">Actividad 2</string>
@@ -27,6 +26,7 @@
     <string name="error" translatable="false">ERROR</string>
     <string name="motivo_error1">Antes debes finalizar la anterior Actividad</string>
     <string name="motivo_error2">Estas fuera del rango de los 50 metros!!</string>
+    <string name="incorrecto">Usuario o contraseña incorrectas</string>
 
     <!--MODOS-->
     <string name="Modos"><u>Información de los modos</u></string>
@@ -62,6 +62,10 @@
     <string name="no">No</string>
     <string name="invitado" translatable="false">Invitado</string>
 
+    <!--LOGIN/LOGOUT PROFESOR-->
+    <string name="login_title"><u>Cerrar sesión</u></string>
+    <string name="logout">¿Seguro que quieres cerrar sesión?</string>
+
     <!--ACERCA DE-->
     <string name="descripcion">Esta aplicación ha sido desarrollada por alumnos de la Universidad del País Vasco y de CIFP Txurdinaga con el fin de ayudar a los profesores de E.P y a sus alumnas y alumnos a conocer Portugalete mediante juegos didácticos de manera que aprendan divirtiéndose.</string>
     <string name="acerca_desa">"Desarrolladores"</string>
@@ -75,7 +79,6 @@
 
     <!--NOMBRE USUARIO-->
     <string name="nombre" translatable="false">"Nombre"</string>
-
 
     <!--DIALOGO 0-->
     <string name="vacio" translatable="false"></string>
