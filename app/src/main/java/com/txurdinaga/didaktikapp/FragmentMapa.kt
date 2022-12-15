@@ -72,7 +72,7 @@ class FragmentMapa : Fragment() {
 
         googleMap.setOnMyLocationChangeListener {
             ubicacion = LatLng(it.latitude, it.longitude)
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f)) //en vez d zunzunegi se pondria ubicacion si es modo libre o guiado
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f)) //en vez d zunzunegi se pondria ubicacion si es modo libre o guiado
             val distancia = FloatArray(3)
 
             //Distancia con las paradas
