@@ -2,9 +2,9 @@ package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog.show
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -29,6 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
+import com.txurdinaga.didaktikapp.databinding.DialogActividadBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
 
 @Suppress("DEPRECATION")
@@ -96,7 +96,7 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        //DialogNombre().show(parentFragmentManager, "LoginDialog")
+        DialogNombre().show(parentFragmentManager, "LoginDialog")
 
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
@@ -111,13 +111,13 @@ class FragmentMapa : Fragment() {
         googleMap.setOnMarkerClickListener{
             println("Prueba:" + it.id)
             when (it.id) {
-                "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_1),requireContext().resources.getString(R.string.titulo_actividad_1),1)
-                "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_2),requireContext().resources.getString(R.string.titulo_actividad_2),2)
-                "m2" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_3),requireContext().resources.getString(R.string.titulo_actividad_3),3)
-                "m3" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_4),requireContext().resources.getString(R.string.titulo_actividad_4),4)
-                "m4" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_5),requireContext().resources.getString(R.string.titulo_actividad_5),5)
-                "m5" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_6),requireContext().resources.getString(R.string.titulo_actividad_6),6)
-                "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_7),requireContext().resources.getString(R.string.titulo_actividad_7),7)
+                "m0" -> showActivityDialog(it,1)
+                "m1" -> showActivityDialog(it,2)
+                "m2" -> showActivityDialog(it,3)
+                "m3" -> showActivityDialog(it,4)
+                "m4" -> showActivityDialog(it,5)
+                "m5" -> showActivityDialog(it,6)
+                "m6" -> showActivityDialog(it,7)
                 else -> {showErrorDialog(it,"Error","Error")}
             }
            // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
@@ -128,13 +128,14 @@ class FragmentMapa : Fragment() {
         }
     }
 
-    fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
-        val image = ImageView(requireContext())
-        image.setImageResource(R.drawable.usuarios4)
+    fun showActivityDialog(marker: Marker, set: Int): Boolean {
+        val bindingActividad : DialogActividadBinding = DialogActividadBinding.inflate(layoutInflater)
+       // val image = ImageView(requireContext())
+        //image.setImageResource(R.drawable.usuarios4)
         AlertDialog.Builder(requireContext())
-            .setView(image)
-            .setTitle(title)
-            .setMessage(message)
+            .setView(bindingActividad.root)
+            .setTitle("Actividad $set")
+            .setMessage(getString(ActividadesProvider.actividad[set].nombre))
             .setPositiveButton(R.string.jugar,
                 DialogInterface.OnClickListener { dialog, id ->
                     startActivity(Intent(requireContext(),MainDialogo::class.java)
@@ -144,6 +145,7 @@ class FragmentMapa : Fragment() {
             .setCancelable(true)
             .create()
             .show()
+        bindingActividad.img.setImageResource(ActividadesProvider.actividad[set].fondo)
         return true
     }
 
@@ -172,8 +174,6 @@ class FragmentMapa : Fragment() {
     ): View? {
        // DialogInicio()
         binding = FragmentMapaBinding.inflate(layoutInflater)
-
-
 
         binding.UbicacionButton.setOnClickListener {
 
