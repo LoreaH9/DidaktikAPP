@@ -1,7 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.txurdinaga.didaktikapp
 
 import com.txurdinaga.didaktikapp.dialog.DialogProfesor
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -14,7 +15,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.widget.Toolbar;
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
 import kotlin.system.exitProcess
 
@@ -40,11 +40,10 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         navigationView.setNavigationItemSelectedListener(this)
         val toggle =ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
 
-        if (toggle != null)
-            drawerLayout!!.addDrawerListener(toggle)
+        drawerLayout!!.addDrawerListener(toggle)
 
 
-        toggle?.syncState()
+        toggle.syncState()
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -55,7 +54,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         //En caso de no haber usuario pone el invitado por defecto
         if (SharedPrefs.users.user == ""){
             menu.findItem(R.id.nav_logout).isVisible = false
-            SharedPrefs.users.user == getString(R.string.invitado)
+            SharedPrefs.users.user = getString(R.string.invitado)
             navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
         }
         navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
@@ -94,13 +93,13 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             .setTitle("Cerrar sesion")
             .setMessage("¿Quieres cerrar sesion?")
             .setPositiveButton(R.string.si
-            ) { dialog, id ->
+            ) { _, _ ->
                 SharedPrefs.users.user = ""
                 SharedPrefs.tipousu.tipo = "alumno"
                 startActivity(Intent(this, MainInicio::class.java))
             }
             .setNegativeButton(R.string.no
-            ) { _, id ->
+            ) { _, _ ->
             }
             .setCancelable(false)
             .create()
@@ -182,21 +181,22 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             AlertDialog.Builder(this)
                 .setTitle("Cambiar Idioma")
                 .setMessage(R.string.seguro_cambiar_idioma)
-                .setPositiveButton(R.string.si,
-                    DialogInterface.OnClickListener { dialog, id ->
-                        SharedPrefs.idioma.aldatu("eu",resources)
-                        val intent = Intent(this, MainMenu::class.java)
-                        startActivity(intent)
-                    })
-                .setNegativeButton(R.string.no,
-                    DialogInterface.OnClickListener { _, id ->
-                    })
+                .setPositiveButton(R.string.si
+                ) { _, _ ->
+                    SharedPrefs.idioma.aldatu("eu", resources)
+                    val intent = Intent(this, MainMenu::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton(R.string.no
+                ) { _, _ ->
+                }
                 .setCancelable(false)
                 .create()
                 .show()
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (drawerLayout!!.isDrawerOpen(GravityCompat.START))
             drawerLayout!!.closeDrawer(GravityCompat.START)

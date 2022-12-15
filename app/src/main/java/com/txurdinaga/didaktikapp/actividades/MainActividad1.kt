@@ -56,13 +56,13 @@ class MainActividad1 : AppCompatActivity(){
             .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
             .setPositiveButton("Continuar",
                 DialogInterface.OnClickListener { _, _ ->
-                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
-                        SharedPrefs.puntopartida.Partida = "$set"
+                    if(SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.partida = "$set"
                     }
                     startActivity(Intent(this, MainMenu::class.java))
                 })
             .setNegativeButton("Repetir",
-                DialogInterface.OnClickListener { _, _ ->
+                { _, _ ->
                     startActivity(
                         Intent(this, MainContrasena::class.java)
                             .putExtra("set", set)

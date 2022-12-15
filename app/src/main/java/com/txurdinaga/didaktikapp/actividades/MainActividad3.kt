@@ -54,20 +54,20 @@ class MainActividad3 : AppCompatActivity(){
         AlertDialog.Builder(this)
             .setTitle("Actividad $set")
             .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
-            .setPositiveButton("Continuar",
-                DialogInterface.OnClickListener { _, _ ->
-                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
-                        SharedPrefs.puntopartida.Partida = "$set"
-                    }
-                    startActivity(Intent(this, MainMenu::class.java))
-                })
-            .setNegativeButton("Repetir",
-                DialogInterface.OnClickListener { _, _ ->
-                    startActivity(
-                        Intent(this, MainContrasena::class.java)
-                            .putExtra("set", set)
-                    )
-                })
+            .setPositiveButton("Continuar"
+            ) { _, _ ->
+                if (SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                    SharedPrefs.puntopartida.partida = "$set"
+                }
+                startActivity(Intent(this, MainMenu::class.java))
+            }
+            .setNegativeButton("Repetir"
+            ) { _, _ ->
+                startActivity(
+                    Intent(this, MainContrasena::class.java)
+                        .putExtra("set", set)
+                )
+            }
             .create()
             .show()
     }

@@ -55,17 +55,17 @@ class MainInicio : AppCompatActivity(){
 
         binding.btGuiado.setOnClickListener {
             SharedPrefs.modolibre.modo = false
-            if(SharedPrefs.puntopartida.Partida != "0"){
+            if(SharedPrefs.puntopartida.partida != "0"){
                 AlertDialog.Builder(this)
                     .setTitle("Datos guardados")
-                    .setMessage("¿Quieres continuar la partida guardada?\nProgreso: ${SharedPrefs.puntopartida.Partida}")
+                    .setMessage("¿Quieres continuar la partida guardada?\nProgreso: ${SharedPrefs.puntopartida.partida}")
                     .setPositiveButton("Continuar",
                         DialogInterface.OnClickListener { _, _ ->
                             startActivity(Intent(this,MainMenu::class.java))
                         })
                     .setNegativeButton("Nueva partida",
                         DialogInterface.OnClickListener { _, _ ->
-                            SharedPrefs.puntopartida.Partida = "0"
+                            SharedPrefs.puntopartida.partida = "0"
                             startActivity(Intent(this, MainDialogo::class.java)
                                 .putExtra("set", 0))
                         })

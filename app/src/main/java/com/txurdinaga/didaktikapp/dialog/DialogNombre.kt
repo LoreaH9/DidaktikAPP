@@ -23,7 +23,7 @@ class DialogNombre : DialogFragment() {
                 .setPositiveButton("Aceptar"
                 ) { _, _ ->
 
-                    SharedPrefs.users.user = binding.fas.text.toString()
+                    SharedPrefs.users.user = binding.nombreUsuarioET.text.toString()
                     val usuario = DataBaseRoomApp.DataBase.usuarioDao.selectUsersByName(SharedPrefs.users.user)
                     if(usuario==null){
                         val juego = Juego(1,"Actividad 1")
