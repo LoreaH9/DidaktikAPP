@@ -2,6 +2,7 @@
 
 package com.txurdinaga.didaktikapp.activities
 
+import android.content.DialogInterface
 import com.txurdinaga.didaktikapp.dialog.DialogProfesor
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.txurdinaga.didaktikapp.Constantes.modo
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
@@ -110,21 +112,29 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     private fun temaldatu(){
-            AlertDialog.Builder(this)
-                .setTitle("Cambiar Tema")
-                .setMessage("Quieres cambiar tema?")
-                .setPositiveButton(R.string.si
-                ) { _, _ ->
+        AlertDialog.Builder(this)
+            .setTitle("Cambiar Tema")
+            .setMessage("Quieres cambiar tema?")
+            .setPositiveButton(R.string.si
+            ) { _, _ ->
+                modo = if (modo == 0) {
+                    setdaynight(1)
+                    1
+                } else {
                     setdaynight(0)
-                    startActivity(Intent(this, MainInicio::class.java))
+                    0
                 }
-                .setNegativeButton(R.string.no
-                ) { _, _ ->
+                var intent = Intent(this, MainInicio::class.java)
+                startActivity(intent)
 
-                }
-                .setCancelable(false)
-                .create()
-                .show()
+            }
+            .setNegativeButton(R.string.no
+            ) { _, _ ->
+
+            }
+            .setCancelable(false)
+            .create()
+            .show()
         }
 
 
