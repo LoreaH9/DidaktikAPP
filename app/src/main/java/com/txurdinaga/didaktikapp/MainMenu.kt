@@ -67,7 +67,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->{
                 DialogProfesor().show(supportFragmentManager, "LoginDialog")
-                startActivity(Intent(this, MainMenu::class.java))
             }
             R.id.nav_desconectar ->
                 showCloseAppDialog()

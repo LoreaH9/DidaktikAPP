@@ -28,9 +28,6 @@ class MainInicio : AppCompatActivity(){
         binding = LayoutInicioBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        if (SharedPrefs.idioma.idioma==null){
-            SharedPrefs.idioma.idioma="es"
-        }
         SharedPrefs.modolibre.modo = false
         //Comprueba los permisos de navegación
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
