@@ -19,32 +19,36 @@
 
     <ImageView
         android:id="@+id/personaje1IV"
-        android:layout_width="300dp"
-        android:layout_height="260dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="300dp"
         android:layout_marginBottom="1dp"
         android:src="@drawable/nave_frontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textoTV"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bocadilloIV"
         tools:srcCompat="@drawable/ali_3" />
 
     <ImageView
         android:id="@+id/personaje2IV"
-        android:layout_width="300dp"
-        android:layout_height="260dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="300dp"
         android:layout_marginEnd="10dp"
         android:src="@drawable/nave_frontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textoTV"
+        app:layout_constraintTop_toBottomOf="@+id/bocadilloIV"
         tools:srcCompat="@drawable/ali_2" />
 
     <ImageView
         android:id="@+id/bocadilloIV"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_marginStart="160dp"
+        android:layout_width="500dp"
+        android:layout_height="160dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -54,14 +58,14 @@
         android:id="@+id/textoTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:textColor="@color/negro"
         app:layout_constraintBottom_toBottomOf="@+id/bocadilloIV"
         app:layout_constraintEnd_toEndOf="@+id/bocadilloIV"
         app:layout_constraintStart_toStartOf="@+id/bocadilloIV"
         app:layout_constraintTop_toTopOf="@+id/bocadilloIV"
-        tools:text="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" />
+        tools:text="@string/dialogo7_3" />
 
     <Button
         android:id="@+id/viewBT"
@@ -71,8 +75,10 @@
         android:textColor="@color/negro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/siguienteBT"
@@ -93,6 +99,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:clickable="true"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />

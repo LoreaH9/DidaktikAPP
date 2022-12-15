@@ -74,11 +74,11 @@
     <string name="password">"Contraseña"</string>
 
     <!--NOMBRE USUARIO-->
-    <string name="nombre">"Nombre"</string>
+    <string name="nombre" translatable="false">"Nombre"</string>
 
 
     <!--DIALOGO 0-->
-    <string name="vacio"></string>
+    <string name="vacio" translatable="false"></string>
 
     <!--DIALOGO 0-->
     <string name="dialogo0_1" translatable="false">¡Hola! Me llamo Ali y soy agente espacial.</string>
@@ -230,5 +230,8 @@
     <string name="lugar_7" translatable="false">San Roque</string>
     <string name="lugar_8" translatable="false">Basilica de Santa Maria</string>
     <string name="lugar_9" translatable="false">Victor Chavarri</string>
+
+    <string name="explicacion_contrasena">¡Fijate en las pistas y descubre la contraseña!</string>
+    <string name="quequiereshacer">¿Qué quieres hacer?</string>
 
 </resources>

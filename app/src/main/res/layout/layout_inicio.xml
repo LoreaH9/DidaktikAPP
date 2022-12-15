@@ -15,6 +15,7 @@
         android:src="@drawable/fondo_inicio" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -53,6 +54,7 @@
                 />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/btLibre"
             android:layout_width="320dp"
@@ -71,31 +73,41 @@
                 android:textColor="@color/blanco"
                 android:textSize="23dp"
                 android:textStyle="bold" />
-           <pl.droidsonroids.gif.GifImageView
-               android:layout_width="90dp"
-               android:layout_height="90dp"
-               android:layout_gravity="center"
-               android:layout_marginLeft="20dp"
-               android:src="@drawable/ic_modo_libre"/>
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_modo_libre" />
 
         </LinearLayout>
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/info_modos"
-        android:layout_width="285dp"
-        android:layout_height="57dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:clickable="true"
         android:text="@string/Modos"
         android:textAlignment="center"
         android:textColor="#FDFDFD"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.591"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/titulo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

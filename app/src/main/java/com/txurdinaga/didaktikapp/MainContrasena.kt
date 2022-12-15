@@ -94,9 +94,13 @@ class MainContrasena : AppCompatActivity() {
         binding3.continuarBT.setOnClickListener{
             var contrasena : String = binding3.contrasenaET.text.toString()
             if (contrasena.toLowerCase() == getString(ActividadesProvider.actividad[set].contrasena)){
-                startActivity(Intent(this, ActividadesProvider.actividad[set].main)
-                    .putExtra("set", set)
-                )
+                if(set == 2 || set == 5 || set == 7){
+                    startActivity(Intent(this, ActividadesProvider.actividad[set].main)
+                        .putExtra("set", set)
+                    )
+                } else {
+                    startActivity(Intent(this, MainMenu::class.java))
+                }
             }
         }
         AlertDialog.Builder(this)

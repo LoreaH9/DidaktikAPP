@@ -63,4 +63,7 @@
     <string name="password">Pasahitza</string>
     <string name="titulo_cambiar_idioma">Hizkuntza aldatu</string>
 
+    <string name="explicacion_contrasena">¡Pistetean fijatu eta pasahitza aurkitu!</string>
+    <string name="quequiereshacer">¿Zer egin nahi duzu?</string>
+
 </resources>

@@ -1,6 +1,9 @@
 package com.txurdinaga.didaktikapp.actividades
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,8 +13,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.txurdinaga.didaktikapp.ActividadesProvider
-import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.*
+import com.txurdinaga.didaktikapp.databinding.DialogEnhorabuenaBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 import kotlin.concurrent.thread
@@ -20,13 +23,15 @@ class MainActividad2 : AppCompatActivity(){
     private lateinit var binding: LayoutActividadBinding
     private lateinit var binding2: FragmentActividad2Binding
 
+    var set = 2
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fondoIV.setImageResource(ActividadesProvider.actividad[2].fondo)
-        binding.explicacionTV.text = getString(ActividadesProvider.actividad[2].explicacion)
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding.explicacionTV.text = getString(ActividadesProvider.actividad[set].explicacion)
         binding.verBT.visibility = View.INVISIBLE
 
         binding2 = FragmentActividad2Binding.inflate(layoutInflater)
@@ -51,7 +56,11 @@ class MainActividad2 : AppCompatActivity(){
         }
 
         binding.terminarActividadBT.setOnClickListener{
+            terminarActividad()
+        }
 
+        binding.saltarBT.setOnClickListener{
+            terminarActividad()
         }
 
         var listA : List<EditText> = listOf(
@@ -67,16 +76,15 @@ class MainActividad2 : AppCompatActivity(){
 
         thread {
             while(true) {
+                runOnUiThread{
                 var comprobaketa : List<Boolean> = listOf(
                     comprobatuLetra(listA, "A"),
                     comprobatuLetra(listE, "E"),
                     comprobatuLetra(listI, "I"),
                     comprobatuLetra(listO, "O"),
                     comprobatuLetra(listU, "U") )
-                runOnUiThread{
                     if (!comprobaketa.contains(false)) {
                         binding.terminarActividadBT.visibility = View.VISIBLE
-                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
                     }
                     else
                         binding.terminarActividadBT.visibility = View.INVISIBLE
@@ -87,13 +95,38 @@ class MainActividad2 : AppCompatActivity(){
 
     }
 
+    fun terminarActividad() {
+        AlertDialog.Builder(this)
+            .setTitle("Actividad $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
+            .setPositiveButton("Continuar",
+                DialogInterface.OnClickListener { _, _ ->
+                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.Partida = "$set"
+                    }
+                    startActivity(Intent(this, MainMenu::class.java))
+                })
+            .setNegativeButton("Repetir",
+                DialogInterface.OnClickListener { _, _ ->
+                    startActivity(
+                        Intent(this, MainContrasena::class.java)
+                            .putExtra("set", set)
+                    )
+                })
+            .create()
+            .show()
+    }
+
     fun comprobatuLetra(list: List<EditText>, letra: String) :Boolean{
         var ret = true
         var col: Int
         list.forEach {
             var str:String = "${it.text}".toUpperCase()
             if(str.toUpperCase() == letra){
-                col = ContextCompat.getColor(this, R.color.verdecla)
+                col = ContextCompat.getColor(this, R.color.verdeosc)
+                it.isEnabled = false
+                it.setTypeface(null, Typeface.BOLD)
+                it.setText("${it.text}".toUpperCase())
             }
             else if(str == ""){
                 col = ContextCompat.getColor(this, R.color.negro)
@@ -108,6 +141,7 @@ class MainActividad2 : AppCompatActivity(){
         }
         return ret
     }
+
 
 
 
