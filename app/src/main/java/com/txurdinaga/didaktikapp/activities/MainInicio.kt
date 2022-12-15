@@ -1,19 +1,15 @@
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.activities
 
 import android.Manifest
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.txurdinaga.didaktikapp.databinding.DialogNombreBinding
+import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.LayoutInfoModosBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutInicioBinding
 
@@ -39,13 +35,13 @@ class MainInicio : AppCompatActivity(){
         //DialogNombre().show(supportFragmentManager, "LoginDialog")
 
         binding.infoModos.setOnClickListener {
-            val intent= Intent(this,MainInfoModos::class.java)
+            val intent= Intent(this, MainInfoModos::class.java)
             startActivity(intent)
         }
 
         binding.btLibre.setOnClickListener {
             SharedPrefs.modolibre.modo = true
-            val intent= Intent(this,MainMenu::class.java)
+            val intent= Intent(this, MainMenu::class.java)
             startActivity(intent)
 
         }
@@ -58,7 +54,7 @@ class MainInicio : AppCompatActivity(){
                     .setMessage("¿Quieres continuar la partida guardada?\nProgreso: ${SharedPrefs.puntopartida.partida}")
                     .setPositiveButton("Continuar",
                         DialogInterface.OnClickListener { _, _ ->
-                            startActivity(Intent(this,MainMenu::class.java))
+                            startActivity(Intent(this, MainMenu::class.java))
                         })
                     .setNegativeButton("Nueva partida",
                         DialogInterface.OnClickListener { _, _ ->

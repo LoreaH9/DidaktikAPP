@@ -1,4 +1,4 @@
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.text.InputType.TYPE_CLASS_TEXT
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.txurdinaga.didaktikapp.ActividadesProvider
 import com.txurdinaga.didaktikapp.databinding.DialogContrasenaBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentPistaBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutContrasenaBinding

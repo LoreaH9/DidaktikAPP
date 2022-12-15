@@ -26,7 +26,7 @@
 
         <EditText
             android:id="@+id/nombre_usuarioET"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -34,8 +34,12 @@
             android:layout_marginBottom="10dp"
             android:hint="@string/nombre"
             android:minHeight="48dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/azulosc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

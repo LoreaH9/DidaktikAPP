@@ -1,4 +1,4 @@
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.activities
 
 import android.content.Intent
 import android.media.MediaPlayer
@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.txurdinaga.didaktikapp.ActividadesProvider
+import com.txurdinaga.didaktikapp.AudioController
+import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.databinding.DialogAudioBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutDialogoBinding
 

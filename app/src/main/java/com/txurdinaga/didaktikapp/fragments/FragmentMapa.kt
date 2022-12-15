@@ -25,7 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
-import com.txurdinaga.didaktikapp.MainDialogo
+import com.txurdinaga.didaktikapp.activities.MainDialogo
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding

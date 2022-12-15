@@ -2,10 +2,8 @@ package com.txurdinaga.didaktikapp.actividades
 
 import android.content.ClipData
 import android.content.ClipDescription
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
@@ -18,6 +16,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.*
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainDialogo
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 

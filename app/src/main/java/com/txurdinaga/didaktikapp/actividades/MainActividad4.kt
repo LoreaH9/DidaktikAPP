@@ -8,7 +8,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.*
-import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad4Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 

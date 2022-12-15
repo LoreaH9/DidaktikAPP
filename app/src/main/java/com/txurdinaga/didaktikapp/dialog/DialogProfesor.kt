@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.txurdinaga.didaktikapp.Constantes.contraseniaProfesor
 import com.txurdinaga.didaktikapp.Constantes.usuarioProfesor
-import com.txurdinaga.didaktikapp.MainMenu
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding

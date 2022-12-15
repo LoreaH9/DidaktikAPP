@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.activities
 
 import com.txurdinaga.didaktikapp.dialog.DialogProfesor
 import android.content.Intent
@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
 import com.txurdinaga.didaktikapp.fragments.FragmentInformacion
 import com.txurdinaga.didaktikapp.fragments.FragmentMapa
@@ -40,7 +42,9 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         //Inserta navbar con sus opciones
         navigationView.setNavigationItemSelectedListener(this)
-        val toggle =ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+        val toggle =ActionBarDrawerToggle(this, drawerLayout, toolbar,
+            R.string.open_nav,
+            R.string.close_nav)
 
         drawerLayout!!.addDrawerListener(toggle)
 
@@ -78,7 +82,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                  showIdiomaDialog()
             R.id.nav_informacion ->supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
-            R.id.nav_logout->
+            R.id.nav_logout ->
                 showLogOutDialog()
             R.id.nav_tema ->
                 temaldatu()

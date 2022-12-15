@@ -12,7 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.*
-import com.txurdinaga.didaktikapp.databinding.DialogEnhorabuenaBinding
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 import kotlin.concurrent.thread

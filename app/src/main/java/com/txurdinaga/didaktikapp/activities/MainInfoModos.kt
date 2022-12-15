@@ -1,4 +1,4 @@
-package com.txurdinaga.didaktikapp
+package com.txurdinaga.didaktikapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

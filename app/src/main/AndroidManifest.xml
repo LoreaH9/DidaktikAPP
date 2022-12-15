@@ -29,7 +29,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".MainMenu"
+            android:name=".activities.MainMenu"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -48,12 +48,12 @@
         </activity>
 
         <activity
-            android:name=".MainDialogo"
+            android:name=".activities.MainDialogo"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".MainInicio"
+            android:name=".activities.MainInicio"
             android:exported="true"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
@@ -65,7 +65,7 @@
         </activity>
 
         <activity
-            android:name=".MainContrasena"
+            android:name=".activities.MainContrasena"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -79,7 +79,7 @@
         </activity>
 
         <activity
-            android:name=".MainInfoModos"
+            android:name=".activities.MainInfoModos"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">

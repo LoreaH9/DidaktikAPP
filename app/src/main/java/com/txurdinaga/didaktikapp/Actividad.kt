@@ -11,7 +11,8 @@ data class Actividad(
     var explicacion: Int,       // la explicacion del juego
     var enhorabuena: Int,       // el texto que se les muestra para dar la enhorabuena(solo en 2,4,5,6,7)
     var main: Class<*>?,        // la clase en la que se encuentra la actividad
-    var layout: Int             // la clase en la que se encuentra la actividad
+    var layout: Int,            // la clase en la que se encuentra la actividad
+    var nombre: Int
 )
 
 class Linea(
