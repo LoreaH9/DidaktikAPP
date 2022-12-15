@@ -54,7 +54,7 @@ class FragmentMapa : Fragment() {
             googleMap.uiSettings.isCompassEnabled = false
 
             if(!SharedPrefs.modolibre.modo)
-            cambiarMarcadores(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+            cambiarMarcadores(SharedPrefs.puntopartida.partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
 
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
