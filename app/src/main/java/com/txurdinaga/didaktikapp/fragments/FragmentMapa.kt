@@ -62,7 +62,8 @@ class FragmentMapa : Fragment() {
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
                     ubicacion = LatLng(it.latitude, it.longitude)
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
+                    //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
                 }
             }
         }
@@ -73,7 +74,7 @@ class FragmentMapa : Fragment() {
                 true
             }
         }
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
+       // googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
@@ -123,7 +124,9 @@ class FragmentMapa : Fragment() {
         binding.UbicacionButton.setOnClickListener {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
         }
-
+        binding.LocationJButton.setOnClickListener {
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
+        }
     }
 
     fun showActivityDialog(marker:Marker, set: Int): Boolean {

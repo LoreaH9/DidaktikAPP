@@ -124,6 +124,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/rojo"
             android:text="SALTAR"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/terminar_actividadBT"
             app:layout_constraintEnd_toEndOf="parent" />
 
