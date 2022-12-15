@@ -81,9 +81,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showLogOutDialog()
             R.id.nav_tema ->
                 temaldatu()
-
             }
-
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
@@ -204,7 +202,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     fun setdaynight(mode:Int){
-        if (mode==0){
+        if (mode==1){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
         else{

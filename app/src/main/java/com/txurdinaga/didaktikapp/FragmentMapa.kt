@@ -72,9 +72,10 @@ class FragmentMapa : Fragment() {
         }
 
         googleMap.setOnMyLocationChangeListener {
-            ubicacion = LatLng(it.latitude, it.longitude)
-            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f)) //en vez d zunzunegi se pondria ubicacion si es modo libre o guiado
-            val distancia = FloatArray(3)
+            ubicacion= LatLng(it.latitude, it.longitude)
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
+            val distancia=FloatArray(3)
 
             //Distancia con las paradas
             if (SharedPrefs.puntopartida.partida == "0"){
@@ -203,10 +204,16 @@ class FragmentMapa : Fragment() {
 
     fun cambiarMarcadores(posicion:Int){
         marcadores.forEach {
-            if(marcadores.indexOf(it) < posicion) {
-                it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
-            } else {
-                it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+            when {
+                marcadores.indexOf(it)<(posicion-0) -> {
+                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                }
+                marcadores.indexOf(it)==(posicion-1) -> {
+                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+                }
+                marcadores.indexOf(it)>(posicion-1) -> {
+                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                }
             }
             //it.isVisible = marcadores.indexOf(it) <= (posicion)
         }
