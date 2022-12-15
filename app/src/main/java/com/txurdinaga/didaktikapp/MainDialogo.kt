@@ -41,9 +41,13 @@ class MainDialogo : AppCompatActivity(), AudioController {
         }
 
         binding.siguienteBT.setOnClickListener{
-            startActivity(Intent(this, MainContrasena::class.java)
-                .putExtra("set", set)
-            )
+            if(set != 0 && set != 8){
+                startActivity(Intent(this, MainContrasena::class.java)
+                    .putExtra("set", set)
+                )
+            } else {
+                startActivity(Intent(this, MainMenu::class.java))
+            }
         }
 
 

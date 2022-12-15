@@ -2,6 +2,8 @@ package com.txurdinaga.didaktikapp.actividades
 
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Point
@@ -12,10 +14,10 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.txurdinaga.didaktikapp.ActividadesProvider
-import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.*
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
@@ -26,13 +28,15 @@ class MainActividad7 : AppCompatActivity(){
     private lateinit var foto_list:List<ImageView>
     private lateinit var text_list:List<TextView>
 
+    var set = 7
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fondoIV.setImageResource(ActividadesProvider.actividad[7].fondo)
-        binding.explicacionTV.text = getString(ActividadesProvider.actividad[7].explicacion)
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding.explicacionTV.text = getString(ActividadesProvider.actividad[set].explicacion)
         binding.verBT.visibility = View.INVISIBLE
 
         binding7 = FragmentActividad7Binding.inflate(layoutInflater)
@@ -46,6 +50,14 @@ class MainActividad7 : AppCompatActivity(){
                 binding.explicacionTV.visibility = View.INVISIBLE
                 binding.ayudaBT.setImageResource(R.drawable.ic_help)
             }
+        }
+
+        binding.terminarActividadBT.setOnClickListener{
+            terminarActividad()
+        }
+
+        binding.saltarBT.setOnClickListener{
+            terminarActividad()
         }
 
         binding7.foto71.setOnLongClickListener(longClickListener)
@@ -166,6 +178,31 @@ class MainActividad7 : AppCompatActivity(){
                 false
             }
         }
+    }
+
+    fun terminarActividad() {
+        AlertDialog.Builder(this)
+            .setTitle("Actividad $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
+            .setPositiveButton("Continuar",
+                DialogInterface.OnClickListener { _, _ ->
+                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.Partida = "$set"
+                    }
+                    startActivity(
+                            Intent(this, MainDialogo::class.java)
+                                .putExtra("set", 8)
+                            )
+                })
+            .setNegativeButton("Repetir",
+                DialogInterface.OnClickListener { _, _ ->
+                    startActivity(
+                        Intent(this, MainContrasena::class.java)
+                            .putExtra("set", set)
+                    )
+                })
+            .create()
+            .show()
     }
 
     fun comparar(img: ImageView?, txt:TextView) :Boolean {

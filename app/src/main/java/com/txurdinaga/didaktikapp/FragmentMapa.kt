@@ -1,12 +1,11 @@
 package com.txurdinaga.didaktikapp
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog.show
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.setFragmentResult
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -29,18 +27,17 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
+import com.txurdinaga.didaktikapp.databinding.DialogNombreBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
 
 @Suppress("DEPRECATION")
 class FragmentMapa : Fragment() {
 
-    lateinit var ubicacion:LatLng
+    lateinit var ubicacion: LatLng
     lateinit var binding: FragmentMapaBinding
     private lateinit var fusedLocation: FusedLocationProviderClient
     lateinit var googleMap: GoogleMap
-    var marcadores:ArrayList<Marker> = arrayListOf()
-
-
+    var marcadores: ArrayList<Marker> = arrayListOf()
 
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
@@ -48,14 +45,15 @@ class FragmentMapa : Fragment() {
             val marcador = googleMap.addMarker(MarkerOptions().position(it).title(nombre_paradas[index]))
             if (marcador != null) marcadores.add(marcador)
         }
+        googleMap.mapType = GoogleMap.MAP_TYPE_HYBRID
 
         if (SharedPrefs.tipousu.tipo == "alumno") {
             googleMap.isMyLocationEnabled = true
             googleMap.uiSettings.isMyLocationButtonEnabled = false
             googleMap.uiSettings.isCompassEnabled = false
 
-            SharedPrefs.puntopartida.Partida = "2" //se pone la partida por la que va el alumno
-            cambiarMarcador(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
+            if(!SharedPrefs.modolibre.modo)
+            cambiarMarcadores(SharedPrefs.puntopartida.Partida.toInt()) // cambia el color del marcador dependiendo por cual vaya
 
             fusedLocation.lastLocation.addOnSuccessListener {
                 if (it != null) {
@@ -66,20 +64,16 @@ class FragmentMapa : Fragment() {
         }
 
         if(SharedPrefs.modolibre.modo){
-            //ubicacion = LatLng(43.321841, -3.019356)
             googleMap.setOnMarkerClickListener { marker ->
-                //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador
-                println("Prueba: "+marker.id)
                 setFragmentResult("libre", bundleOf("punto" to marker.id.substring(1,2).toInt()))
                 true
             }
         }
 
         googleMap.setOnMyLocationChangeListener {
-            ubicacion= LatLng(it.latitude, it.longitude)
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
-            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
-            val distancia=FloatArray(3)
+            ubicacion = LatLng(it.latitude, it.longitude)
+            //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f)) //en vez d zunzunegi se pondria ubicacion si es modo libre o guiado
+            val distancia = FloatArray(3)
 
             //Distancia con las paradas
             if (SharedPrefs.puntopartida.Partida == "0"){
@@ -96,20 +90,15 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        DialogNombre().show(parentFragmentManager, "LoginDialog")
-
         if(SharedPrefs.tipousu.tipo=="profesor"){
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15f))
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
             googleMap.setOnMarkerClickListener { marker ->
-                //Genera un mensaje "Prueba: "+mX .Donde X es la id del marcador
-                println("Prueba: "+marker.id)
                 setFragmentResult("libre", bundleOf("punto" to marker.id.substring(1,2).toInt()))
                 true
             }
         }
 
         googleMap.setOnMarkerClickListener{
-            println("Prueba:" + it.id)
             when (it.id) {
                 "m0" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_1),requireContext().resources.getString(R.string.titulo_actividad_1),1)
                 "m1" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_2),requireContext().resources.getString(R.string.titulo_actividad_2),2)
@@ -120,12 +109,12 @@ class FragmentMapa : Fragment() {
                 "m6" -> showActivityDialog(it,requireContext().resources.getString(R.string.actividad_7),requireContext().resources.getString(R.string.titulo_actividad_7),7)
                 else -> {showErrorDialog(it,"Error","Error")}
             }
-           // showErrorDialog(it, requireContext().resources.getString(R.string.error) , requireContext().resources.getString(R.string.motivo_error1) )
         }
 
         binding.UbicacionButton.setOnClickListener {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
         }
+
     }
 
     fun showActivityDialog(marker: Marker, title: String, message:String, set: Int): Boolean {
@@ -170,42 +159,21 @@ class FragmentMapa : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-       // DialogInicio()
         binding = FragmentMapaBinding.inflate(layoutInflater)
 
-
-
         binding.UbicacionButton.setOnClickListener {
-
             if(!SharedPrefs.modolibre.modo) {
                 fusedLocation.lastLocation.addOnSuccessListener {
                     ubicacion = LatLng(it.latitude, it.longitude)
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15f))
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
                 }
             }
         }
+
         fusedLocation = LocationServices.getFusedLocationProviderClient(requireActivity())
 
         return binding.root
     }
-
-/*
-    fun DialogInicio(){
-        AlertDialog.Builder(requireContext())
-            .setTitle("USUARIO")
-            .setMessage("INSERTA TU NOMBRE DE USUARIO")
-            .setPositiveButton("ENTRAR",
-                DialogInterface.OnClickListener { dialog, id ->
-                })
-
-            .setNeutralButton("SOY PROFESOR",
-                DialogInterface.OnClickListener { _, id ->
-                })
-            .setCancelable(false)
-            .create()
-            .show()
-    }
-*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -214,19 +182,14 @@ class FragmentMapa : Fragment() {
 
     }
 
-    fun cambiarMarcador(posicion:Int){
+    fun cambiarMarcadores(posicion:Int){
         marcadores.forEach {
-            when {
-                marcadores.indexOf(it)<(posicion-1) -> {
-                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
-                }
-                marcadores.indexOf(it)==(posicion-1) -> {
-                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
-                }
-                marcadores.indexOf(it)>(posicion-1) -> {
-                    it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                }
+            if(marcadores.indexOf(it) < posicion) {
+                it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+            } else {
+                it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
             }
+            //it.isVisible = marcadores.indexOf(it) <= (posicion)
         }
     }
 

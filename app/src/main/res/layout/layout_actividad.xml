@@ -81,7 +81,8 @@
             app:layout_constraintEnd_toStartOf="@+id/ayudaBT"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ayudaBT"
-            tools:text="@string/explicacion6" />
+            tools:text="@string/explicacion6"
+            tools:visibility="visible" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ayudaBT"
@@ -115,6 +116,15 @@
             android:text="SIGUIENTE"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/saltarBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/rojo"
+            android:text="SALTAR"
+            app:layout_constraintBottom_toTopOf="@+id/terminar_actividadBT"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

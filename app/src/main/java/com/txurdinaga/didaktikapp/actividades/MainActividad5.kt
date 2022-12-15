@@ -1,5 +1,7 @@
 package com.txurdinaga.didaktikapp.actividades
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,8 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.txurdinaga.didaktikapp.ActividadesProvider
-import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.*
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad5Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
@@ -17,13 +18,15 @@ class MainActividad5 : AppCompatActivity(){
     private lateinit var binding: LayoutActividadBinding
     private lateinit var binding5: FragmentActividad5Binding
 
+    var set = 5
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fondoIV.setImageResource(ActividadesProvider.actividad[5].fondo)
-        binding.explicacionTV.text = getString(ActividadesProvider.actividad[5].explicacion)
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding.explicacionTV.text = getString(ActividadesProvider.actividad[set].explicacion)
         binding.verBT.visibility = View.INVISIBLE
 
         binding5 = FragmentActividad5Binding.inflate(layoutInflater)
@@ -38,6 +41,15 @@ class MainActividad5 : AppCompatActivity(){
                 binding.ayudaBT.setImageResource(R.drawable.ic_help)
             }
         }
+
+        binding.terminarActividadBT.setOnClickListener{
+            terminarActividad()
+        }
+
+        binding.saltarBT.setOnClickListener{
+            terminarActividad()
+        }
+
 
         binding.verBT.visibility = View.VISIBLE
         binding.verBT.setOnClickListener{
@@ -89,6 +101,28 @@ class MainActividad5 : AppCompatActivity(){
                 Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    fun terminarActividad() {
+        AlertDialog.Builder(this)
+            .setTitle("Actividad $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
+            .setPositiveButton("Continuar",
+                DialogInterface.OnClickListener { _, _ ->
+                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.Partida = "$set"
+                    }
+                    startActivity(Intent(this, MainMenu::class.java))
+                })
+            .setNegativeButton("Repetir",
+                DialogInterface.OnClickListener { _, _ ->
+                    startActivity(
+                        Intent(this, MainContrasena::class.java)
+                            .putExtra("set", set)
+                    )
+                })
+            .create()
+            .show()
     }
 
     fun formarRespuesta(list:List<EditText>) : String{

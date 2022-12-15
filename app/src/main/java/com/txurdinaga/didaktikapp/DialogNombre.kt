@@ -17,8 +17,7 @@ class DialogNombre : DialogFragment() {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
             // Get the layout inflater
-            val inflater = requireActivity().layoutInflater;
-
+            val inflater = requireActivity().layoutInflater
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
             binding = DialogNombreBinding.inflate(layoutInflater)
@@ -26,15 +25,14 @@ class DialogNombre : DialogFragment() {
                 // Add action buttons
                 .setPositiveButton("Aceptar",
                     DialogInterface.OnClickListener { _, _ ->
-                        var nombre:String = "${binding.fas.text}"
-                        val telefono: String = binding.fas.getText().toString()
-                        Log.i("i", telefono)
-                        SharedPrefs.users.user = nombre
+                        var nombre:String = "${binding.nombreUsuarioET.text}"
+                        Log.i("i", "$nombre +++")
+                        SharedPrefs.users.user = "nombre"
+                        Log.i("i", "shared ${SharedPrefs.users.user}")
                     })
                 .setTitle("¿CUAL ES TU NOMBRE?")
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
-
 
 }
