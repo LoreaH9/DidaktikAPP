@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.txurdinaga.didaktikapp.ActividadesProvider
+import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.DialogContrasenaBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentPistaBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutContrasenaBinding
@@ -19,6 +20,7 @@ class MainContrasena : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutContrasenaBinding.inflate(layoutInflater)
         binding2 = FragmentPistaBinding.inflate(layoutInflater)
         setContentView(binding.root)

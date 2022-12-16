@@ -20,23 +20,23 @@ class DialogProfesor : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
+            SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
             val builder = AlertDialog.Builder(it)
-            val inflater = requireActivity().layoutInflater;
             binding = DialogProfesorBinding.inflate(layoutInflater)
             builder.setView(binding.root)
                 // Add action buttons
-                .setPositiveButton("aceptar",
+                .setPositiveButton(R.string.aceptar,
                     DialogInterface.OnClickListener { _, _ ->
                         if (binding.nombreUsuario.text.toString() == usuarioProfesor &&
                             binding.contraUsuario.text.toString() == contraseniaProfesor){
                             SharedPrefs.users.user = usuarioProfesor
                             SharedPrefs.tipousu.tipo="profesor"
                             startActivity(Intent(context, MainMenu::class.java))
-                        }else{
+                        } else {
                             Toast.makeText(context, R.string.incorrecto, Toast.LENGTH_LONG).show()
                         }
                     })
-                .setNegativeButton("cancelar",
+                .setNegativeButton(R.string.cancelar,
                     DialogInterface.OnClickListener { _, _ ->
                         dialog?.cancel()
                     })

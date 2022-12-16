@@ -26,7 +26,7 @@ object Constantes {
         private val SHARED_NAME = "Partida"
         val name: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
         var partida: String
-            get() = name.getString(SHARED_NAME, "").toString()
+            get() = name.getString(SHARED_NAME, "0").toString()
             set(value) = name.edit().putString(SHARED_NAME, value).apply()
     }
 

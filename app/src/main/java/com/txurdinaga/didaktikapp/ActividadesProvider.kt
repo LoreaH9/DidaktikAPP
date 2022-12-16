@@ -14,7 +14,8 @@ class ActividadesProvider {
                     Linea(R.string.dialogo0_1, R.drawable.bocadillo_1, R.drawable.ali_2),
                     Linea(R.string.dialogo0_2, R.drawable.bocadillo_1, R.drawable.ali_3),
                     Linea(R.string.dialogo0_3, R.drawable.bocadillo_1, R.drawable.ali_3),
-                    Linea(R.string.dialogo0_4, R.drawable.bocadillo_1, R.drawable.ali_2)
+                    Linea(R.string.dialogo0_4, R.drawable.bocadillo_1, R.drawable.ali_3),
+                    Linea(R.string.dialogo0_5, R.drawable.bocadillo_1, R.drawable.ali_2)
                 ),
                 pistas = listOf(),
                 enunciado = R.string.vacio,

@@ -33,6 +33,7 @@ class MainActividad7 : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -162,7 +163,6 @@ class MainActividad7 : AppCompatActivity(){
                     seleccionada?.alpha = 0.65F
                     if(comprobacionFinal7(foto_list)) {
                         binding.terminarActividadBT.visibility = View.VISIBLE
-                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
                     }
                 }else
                     receiverView.setBackgroundResource(R.drawable.style_redondeado_editext)
@@ -183,9 +183,10 @@ class MainActividad7 : AppCompatActivity(){
 
     fun terminarActividad() {
         AlertDialog.Builder(this)
-            .setTitle("Actividad $set")
-            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
-            .setPositiveButton("Continuar",
+            .setTitle("${getString(R.string.actividad)} $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}")
+            .setView(R.layout.dialog_enhorabuena)
+            .setPositiveButton(getString(R.string.continuar),
                 DialogInterface.OnClickListener { _, _ ->
                     if(SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
                         SharedPrefs.puntopartida.partida = "$set"
@@ -195,7 +196,7 @@ class MainActividad7 : AppCompatActivity(){
                             .putExtra("set", 8)
                     )
                 })
-            .setNegativeButton("Repetir"
+            .setNegativeButton(getString(R.string.repetir)
             ) { _, _ ->
                 startActivity(
                     Intent(this, MainContrasena::class.java)

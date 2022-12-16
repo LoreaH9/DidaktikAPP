@@ -49,6 +49,7 @@ class FragmentMapa : Fragment() {
             val marcador = googleMap.addMarker(MarkerOptions().position(it).title(nombre_paradas[index]))
             if (marcador != null) marcadores.add(marcador)
         }
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         googleMap.mapType = GoogleMap.MAP_TYPE_HYBRID
 
         if (SharedPrefs.tipousu.tipo == "alumno") {
@@ -96,7 +97,7 @@ class FragmentMapa : Fragment() {
             //Distancia con las paradas
             if (SharedPrefs.puntopartida.partida == "0"){
                 Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.partida.toInt()].latitude, paradas[SharedPrefs.puntopartida.partida.toInt()].longitude,distancia)
-            }else if (SharedPrefs.puntopartida.partida.toInt() in 1..7){
+            } else if (SharedPrefs.puntopartida.partida.toInt() in 1..7){
                 Location.distanceBetween(ubicacion.latitude, ubicacion.longitude, paradas[SharedPrefs.puntopartida.partida.toInt()-1].latitude, paradas[SharedPrefs.puntopartida.partida.toInt()-1].longitude,distancia)
             }
 
@@ -108,9 +109,9 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        if(SharedPrefs.users.user=="" && !SharedPrefs.modolibre.modo){
+        /*if(SharedPrefs.users.user=="" && !SharedPrefs.modolibre.modo){
             DialogNombre().show(parentFragmentManager, "LoginDialog")
-        }
+        }*/
 
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
@@ -147,7 +148,7 @@ class FragmentMapa : Fragment() {
         //image.setImageResource(R.drawable.usuarios4)
         AlertDialog.Builder(requireContext())
             .setView(bindingActividad.root)
-            .setTitle("Actividad $set")
+            .setTitle("${getString(R.string.actividad)} $set")
             .setMessage(getString(ActividadesProvider.actividad[set].nombre))
             .setPositiveButton(R.string.jugar
             ) { _, _ ->

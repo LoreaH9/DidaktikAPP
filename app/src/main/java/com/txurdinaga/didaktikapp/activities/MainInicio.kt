@@ -20,6 +20,7 @@ class MainInicio : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(1000)
         setTheme(R.style.Theme_DidaktikAPP)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         super.onCreate(savedInstanceState)
         binding = LayoutInicioBinding.inflate(layoutInflater)
 
@@ -50,13 +51,13 @@ class MainInicio : AppCompatActivity(){
             SharedPrefs.modolibre.modo = false
             if(SharedPrefs.puntopartida.partida != "0"){
                 AlertDialog.Builder(this)
-                    .setTitle("Datos guardados")
-                    .setMessage("¿Quieres continuar la partida guardada?\nProgreso: ${SharedPrefs.puntopartida.partida}")
-                    .setPositiveButton("Continuar",
+                    .setTitle(R.string.datos_guardados)
+                    .setMessage("${getString(R.string.continuar_partida_guardad)}\n${getString(R.string.progreso)}: ${SharedPrefs.puntopartida.partida}")
+                    .setPositiveButton(R.string.continuar,
                         DialogInterface.OnClickListener { _, _ ->
                             startActivity(Intent(this, MainMenu::class.java))
                         })
-                    .setNegativeButton("Nueva partida",
+                    .setNegativeButton(R.string.nueva_partida,
                         DialogInterface.OnClickListener { _, _ ->
                             SharedPrefs.puntopartida.partida = "0"
                             startActivity(Intent(this, MainDialogo::class.java)
