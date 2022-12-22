@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".SharedPrefs"
@@ -28,7 +29,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".MainMenu"
+            android:name=".activities.MainMenu"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -37,21 +38,22 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".FragmentInformacion"
+            android:name=".fragments.FragmentInformacion"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
 
         <activity
-            android:name=".MainDialogo"
+            android:name=".activities.MainDialogo"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".MainInicio"
+            android:name=".activities.MainInicio"
             android:exported="true"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
@@ -63,7 +65,7 @@
         </activity>
 
         <activity
-            android:name=".MainContrasena"
+            android:name=".activities.MainContrasena"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -77,7 +79,7 @@
         </activity>
 
         <activity
-            android:name=".MainInfoModos"
+            android:name=".activities.MainInfoModos"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DidaktikAPP.NoActionBar">

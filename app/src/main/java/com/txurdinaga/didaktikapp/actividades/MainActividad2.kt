@@ -1,20 +1,19 @@
 package com.txurdinaga.didaktikapp.actividades
 
-import android.content.DialogInterface
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.*
-import com.txurdinaga.didaktikapp.databinding.DialogEnhorabuenaBinding
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad2Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 import kotlin.concurrent.thread
@@ -25,8 +24,10 @@ class MainActividad2 : AppCompatActivity(){
 
     var set = 2
 
+    @SuppressLint("InflateParams", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -56,28 +57,32 @@ class MainActividad2 : AppCompatActivity(){
         }
 
         binding.terminarActividadBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
         binding.saltarBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
-        var listA : List<EditText> = listOf(
+        val listA : List<EditText> = listOf(
             binding2.a1, binding2.a2, binding2.a3, binding2.a4, binding2.a5, binding2.a6, binding2.a7)
-        var listE : List<EditText> = listOf(
+        val listE : List<EditText> = listOf(
             binding2.e1, binding2.e2, binding2.e3, binding2.e4, binding2.e5, binding2.e6, binding2.e7, binding2.e8)
-        var listI : List<EditText> = listOf(
+        val listI : List<EditText> = listOf(
             binding2.i1, binding2.i2, binding2.i3, binding2.i4, binding2.i5, binding2.i6)
-        var listO : List<EditText> = listOf(
+        val listO : List<EditText> = listOf(
             binding2.o1, binding2.o2, binding2.o3, binding2.o4, binding2.o5, binding2.o6, binding2.o7)
-        var listU : List<EditText> = listOf(
+        val listU : List<EditText> = listOf(
             binding2.u1, binding2.u2, binding2.u3, binding2.u4)
 
         thread {
             while(true) {
                 runOnUiThread{
-                var comprobaketa : List<Boolean> = listOf(
+                val comprobaketa : List<Boolean> = listOf(
                     comprobatuLetra(listA, "A"),
                     comprobatuLetra(listE, "E"),
                     comprobatuLetra(listI, "I"),
@@ -97,22 +102,23 @@ class MainActividad2 : AppCompatActivity(){
 
     fun terminarActividad() {
         AlertDialog.Builder(this)
-            .setTitle("Actividad $set")
-            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
-            .setPositiveButton("Continuar",
-                DialogInterface.OnClickListener { _, _ ->
-                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
-                        SharedPrefs.puntopartida.Partida = "$set"
-                    }
-                    startActivity(Intent(this, MainMenu::class.java))
-                })
-            .setNegativeButton("Repetir",
-                DialogInterface.OnClickListener { _, _ ->
-                    startActivity(
-                        Intent(this, MainContrasena::class.java)
-                            .putExtra("set", set)
-                    )
-                })
+            .setTitle("${getString(R.string.actividad)} $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}")
+            .setView(R.layout.dialog_enhorabuena)
+            .setPositiveButton(getString(R.string.continuar)
+            ) { _, _ ->
+                if (SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                    SharedPrefs.puntopartida.partida = "$set"
+                }
+                startActivity(Intent(this, MainMenu::class.java))
+            }
+            .setNegativeButton(getString(R.string.repetir)
+            ) { _, _ ->
+                startActivity(
+                    Intent(this, MainContrasena::class.java)
+                        .putExtra("set", set)
+                )
+            }
             .create()
             .show()
     }

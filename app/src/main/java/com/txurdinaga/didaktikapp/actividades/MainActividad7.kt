@@ -5,7 +5,6 @@ import android.content.ClipDescription
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
@@ -18,6 +17,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.*
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainDialogo
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
@@ -32,6 +34,7 @@ class MainActividad7 : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -53,10 +56,14 @@ class MainActividad7 : AppCompatActivity(){
         }
 
         binding.terminarActividadBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
         binding.saltarBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
             terminarActividad()
         }
 
@@ -127,16 +134,14 @@ class MainActividad7 : AppCompatActivity(){
 
         when (event.action) {
             DragEvent.ACTION_DRAG_STARTED -> {
-                binding7.statusTextView.text = "Estas arrastrando una figura"
                 true
             }
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
 
-                    binding7.statusTextView.text = "Imagen Correcta!"
                 } else {
-                    binding7.statusTextView.text = "No Imagen Incorrecta!"
+
                 }
                 v.invalidate()
                 true
@@ -147,21 +152,18 @@ class MainActividad7 : AppCompatActivity(){
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
-                    binding7.statusTextView.text = "Casi la tenias!"
                     v.invalidate()
                 }
                 true
             }
 
             DragEvent.ACTION_DROP -> {
-                binding7.statusTextView.text = "Soltaste la imagen!"
                 if (comparar(seleccionada, receiverView)){
                     receiverView.setBackgroundResource(R.drawable.style_redondeado_editext_v)
                     seleccionada?.isEnabled = false
                     seleccionada?.alpha = 0.65F
                     if(comprobacionFinal7(foto_list)) {
                         binding.terminarActividadBT.visibility = View.VISIBLE
-                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
                     }
                 }else
                     receiverView.setBackgroundResource(R.drawable.style_redondeado_editext)
@@ -182,25 +184,28 @@ class MainActividad7 : AppCompatActivity(){
 
     fun terminarActividad() {
         AlertDialog.Builder(this)
-            .setTitle("Actividad $set")
-            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}\n\n${getString(R.string.quequiereshacer)}")
-            .setPositiveButton("Continuar",
+            .setTitle("${getString(R.string.actividad)} $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}")
+            .setView(R.layout.dialog_enhorabuena7)
+            .setPositiveButton(getString(R.string.continuar),
                 DialogInterface.OnClickListener { _, _ ->
-                    if(SharedPrefs.puntopartida.Partida.toInt() < set && !SharedPrefs.modolibre.modo) {
-                        SharedPrefs.puntopartida.Partida = "$set"
+                    if(SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.partida = "$set"
                     }
-                    startActivity(
-                            Intent(this, MainDialogo::class.java)
-                                .putExtra("set", 8)
-                            )
+                    if(!SharedPrefs.modolibre.modo) {
+                        startActivity(Intent(this, MainDialogo::class.java)
+                                .putExtra("set", 8))
+                    } else {
+                        startActivity(Intent(this, MainMenu::class.java))
+                    }
                 })
-            .setNegativeButton("Repetir",
-                DialogInterface.OnClickListener { _, _ ->
-                    startActivity(
-                        Intent(this, MainContrasena::class.java)
-                            .putExtra("set", set)
-                    )
-                })
+            .setNegativeButton(getString(R.string.repetir)
+            ) { _, _ ->
+                startActivity(
+                    Intent(this, MainContrasena::class.java)
+                        .putExtra("set", set)
+                )
+            }
             .create()
             .show()
     }
