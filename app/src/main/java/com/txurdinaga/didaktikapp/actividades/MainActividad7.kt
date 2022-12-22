@@ -67,34 +67,21 @@ class MainActividad7 : AppCompatActivity(){
             terminarActividad()
         }
 
-        binding7.foto71.setOnLongClickListener(longClickListener)
-        binding7.foto72.setOnLongClickListener(longClickListener)
-        binding7.foto73.setOnLongClickListener(longClickListener)
-        binding7.foto74.setOnLongClickListener(longClickListener)
-        binding7.foto75.setOnLongClickListener(longClickListener)
-        binding7.foto76.setOnLongClickListener(longClickListener)
-        binding7.foto77.setOnLongClickListener(longClickListener)
-        binding7.foto78.setOnLongClickListener(longClickListener)
-        binding7.foto79.setOnLongClickListener(longClickListener)
-
-        binding7.text71.setOnDragListener(dragListener)
-        binding7.text72.setOnDragListener(dragListener)
-        binding7.text73.setOnDragListener(dragListener)
-        binding7.text74.setOnDragListener(dragListener)
-        binding7.text75.setOnDragListener(dragListener)
-        binding7.text76.setOnDragListener(dragListener)
-        binding7.text77.setOnDragListener(dragListener)
-        binding7.text78.setOnDragListener(dragListener)
-        binding7.text79.setOnDragListener(dragListener)
-
         foto_list = listOf(
             binding7.foto71, binding7.foto72, binding7.foto73, binding7.foto74, binding7.foto75,
             binding7.foto76, binding7.foto77, binding7.foto78, binding7.foto79
         )
+        foto_list.forEach{
+            it.setOnLongClickListener(longClickListener)
+        }
+
         text_list = listOf(
-            binding7.text71, binding7.text72, binding7.text73, binding7.text74, binding7.text75,
-            binding7.text76, binding7.text77, binding7.text78, binding7.text79
+                binding7.text71, binding7.text72, binding7.text73, binding7.text74, binding7.text75,
+                binding7.text76, binding7.text77, binding7.text78, binding7.text79
         )
+        text_list.forEach{
+            it.setOnDragListener(dragListener)
+        }
 
     }
 
