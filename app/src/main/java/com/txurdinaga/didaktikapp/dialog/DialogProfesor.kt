@@ -36,17 +36,18 @@ class DialogProfesor : DialogFragment() {
                         SharedPrefs.users.user = usuarioProfesor
                         SharedPrefs.tipousu.tipo = "profesor"
                         startActivity(Intent(context, MainMenu::class.java))
+
+                        /*val juego = Juego(1,"Actividad 1")
+                        DataBaseRoomApp.DataBase.usuarioDao.addUser(Usuario(SharedPrefs.users.user,1,2,
+                            juego))
+                        val userList = DataBaseRoomApp.DataBase.usuarioDao.selectAllUsers()
+                        for (user in userList){
+                            Toast.makeText(context, user.nombre, Toast.LENGTH_LONG).show()
+                        }*/
                     } else {
                         Toast.makeText(context, R.string.incorrecto, Toast.LENGTH_LONG).show()
                     }
-                    val juego = Juego(1,"Actividad 1")
 
-                    DataBaseRoomApp.DataBase.usuarioDao.addUser(Usuario(SharedPrefs.users.user,1,2,
-                        juego))
-                    val asigList = DataBaseRoomApp.DataBase.usuarioDao.selectAllUsers()
-                    for (asig in asigList){
-                        Toast.makeText(context, asig.nombre, Toast.LENGTH_LONG).show()
-                    }
                 }
                 .setNegativeButton("cancelar"
                 ) { _, _ ->

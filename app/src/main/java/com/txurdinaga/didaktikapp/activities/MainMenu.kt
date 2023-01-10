@@ -62,13 +62,14 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         }
 
         //En caso de no haber usuario pone el invitado por defecto
-        if (SharedPrefs.users.user == ""){
+        if (SharedPrefs.users.user === "" || SharedPrefs.users.user === getString(R.string.invitado)){
             menu.findItem(R.id.nav_logout).isVisible = false
             SharedPrefs.users.user = getString(R.string.invitado)
-            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
+            SharedPrefs.puntopartida.partida = "0"
         }
         navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
-    
+        navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = SharedPrefs.puntopartida.partida
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -90,7 +91,10 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showLogOutDialog()
             R.id.nav_tema ->
                 temaldatu()
-            }
+            R.id.room ->
+                startActivity(Intent(this, Room::class.java))
+        }
+
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
