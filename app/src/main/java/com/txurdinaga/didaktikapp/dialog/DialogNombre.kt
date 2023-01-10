@@ -22,7 +22,6 @@ class DialogNombre : DialogFragment() {
             builder.setView(binding.root)
                 .setPositiveButton("Aceptar"
                 ) { _, _ ->
-
                     SharedPrefs.users.user = binding.nombreUsuarioET.text.toString()
                     val usuario = DataBaseRoomApp.DataBase.usuarioDao.selectUsersByName(SharedPrefs.users.user)
                     if(usuario==null){
@@ -33,8 +32,6 @@ class DialogNombre : DialogFragment() {
                     }else{
                         SharedPrefs.puntopartida.partida = usuario.juegosCompletados.id as String
                     }
-
-
                 }
                 .setTitle("¿CUAL ES TU NOMBRE?")
             builder.create()

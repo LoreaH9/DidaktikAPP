@@ -13,6 +13,9 @@ import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding
+import com.txurdinaga.didaktikapp.room.DataBaseRoomApp
+import com.txurdinaga.didaktikapp.room.Juego
+import com.txurdinaga.didaktikapp.room.Usuario
 
 
 class DialogProfesor : DialogFragment() {
@@ -21,25 +24,33 @@ class DialogProfesor : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-            val inflater = requireActivity().layoutInflater;
             binding = DialogProfesorBinding.inflate(layoutInflater)
             builder.setView(binding.root)
                 // Add action buttons
-                .setPositiveButton("aceptar",
-                    DialogInterface.OnClickListener { _, _ ->
-                        if (binding.nombreUsuario.text.toString() == usuarioProfesor &&
-                            binding.contraUsuario.text.toString() == contraseniaProfesor){
-                            SharedPrefs.users.user = usuarioProfesor
-                            SharedPrefs.tipousu.tipo="profesor"
-                            startActivity(Intent(context, MainMenu::class.java))
-                        }else{
-                            Toast.makeText(context, R.string.incorrecto, Toast.LENGTH_LONG).show()
-                        }
-                    })
-                .setNegativeButton("cancelar",
-                    DialogInterface.OnClickListener { _, _ ->
-                        dialog?.cancel()
-                    })
+                .setPositiveButton("aceptar"
+                ) { _, _ ->
+                    if (binding.nombreUsuario.text.toString() == usuarioProfesor &&
+                        binding.contraUsuario.text.toString() == contraseniaProfesor
+                    ) {
+                        SharedPrefs.users.user = usuarioProfesor
+                        SharedPrefs.tipousu.tipo = "profesor"
+                        startActivity(Intent(context, MainMenu::class.java))
+                    } else {
+                        Toast.makeText(context, R.string.incorrecto, Toast.LENGTH_LONG).show()
+                    }
+                    val juego = Juego(1,"Actividad 1")
+
+                    DataBaseRoomApp.DataBase.usuarioDao.addUser(Usuario(SharedPrefs.users.user,1,2,
+                        juego))
+                    val asigList = DataBaseRoomApp.DataBase.usuarioDao.selectAllUsers()
+                    for (asig in asigList){
+                        Toast.makeText(context, asig.nombre, Toast.LENGTH_LONG).show()
+                    }
+                }
+                .setNegativeButton("cancelar"
+                ) { _, _ ->
+                    dialog?.cancel()
+                }
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
