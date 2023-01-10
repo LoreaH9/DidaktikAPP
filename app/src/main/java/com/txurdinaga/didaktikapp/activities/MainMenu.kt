@@ -22,6 +22,7 @@ import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
 import com.txurdinaga.didaktikapp.fragments.FragmentInformacion
 import com.txurdinaga.didaktikapp.fragments.FragmentMapa
+import java.util.*
 import kotlin.system.exitProcess
 
 
@@ -32,6 +33,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -95,8 +97,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     private fun showLogOutDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Cerrar sesion")
-            .setMessage("¿Quieres cerrar sesion?")
+            .setTitle(R.string.cerrar_sesion)
+            .setMessage(R.string.quieres_cerrar_sesion)
             .setPositiveButton(R.string.si
             ) { _, _ ->
                 SharedPrefs.users.user = ""
@@ -113,8 +115,8 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     private fun temaldatu(){
         AlertDialog.Builder(this)
-            .setTitle("Cambiar Tema")
-            .setMessage("Quieres cambiar tema?")
+            .setTitle(R.string.cambiar_tema)
+            .setMessage(R.string.quieres_cambiar_tema)
             .setPositiveButton(R.string.si
             ) { _, _ ->
                 modo = if (modo == 0) {
@@ -192,7 +194,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         } else {
             AlertDialog.Builder(this)
-                .setTitle("Cambiar Idioma")
+                .setTitle(R.string.titulo_cambiar_idioma)
                 .setMessage(R.string.seguro_cambiar_idioma)
                 .setPositiveButton(R.string.si
                 ) { _, _ ->

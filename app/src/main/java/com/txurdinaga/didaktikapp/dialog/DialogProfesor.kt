@@ -23,6 +23,7 @@ class DialogProfesor : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
+            SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
             val builder = AlertDialog.Builder(it)
             binding = DialogProfesorBinding.inflate(layoutInflater)
             builder.setView(binding.root)

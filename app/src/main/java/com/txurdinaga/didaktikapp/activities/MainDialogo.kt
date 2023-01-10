@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.txurdinaga.didaktikapp.ActividadesProvider
 import com.txurdinaga.didaktikapp.AudioController
 import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.DialogAudioBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutDialogoBinding
+import com.txurdinaga.didaktikapp.dialog.DialogNombre
 
 class MainDialogo : AppCompatActivity(), AudioController {
     private lateinit var binding: LayoutDialogoBinding
@@ -20,6 +22,7 @@ class MainDialogo : AppCompatActivity(), AudioController {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutDialogoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -33,6 +36,8 @@ class MainDialogo : AppCompatActivity(), AudioController {
 
         binding.viewBT.setOnClickListener{
             setDialogo(set, line)
+            if(set == 0 && line == 3)
+                DialogNombre().show(supportFragmentManager, "LoginDialog")
             line++
         }
 

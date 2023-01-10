@@ -17,6 +17,7 @@ class DialogNombre : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         return activity?.let {
+            SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
             val builder = AlertDialog.Builder(it)
             binding = DialogNombreBinding.inflate(layoutInflater)
             builder.setView(binding.root)
@@ -34,6 +35,7 @@ class DialogNombre : DialogFragment() {
                     }
                 }
                 .setTitle("¿CUAL ES TU NOMBRE?")
+                .setCancelable(false)
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }

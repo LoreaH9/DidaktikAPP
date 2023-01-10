@@ -87,7 +87,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/azulosc"
-        android:text="SIGUIENTE"
+        android:text="@string/siguiente"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -25,7 +25,7 @@ class DialogActividad: DialogFragment() {
             binding = DialogActividadBinding.inflate(layoutInflater)
             builder.setView(inflater.inflate(R.layout.dialog_nombre, null))
                 // Add action buttons
-                .setPositiveButton("Jugar",
+                .setPositiveButton(R.string.jugar,
                     DialogInterface.OnClickListener { dialog, id ->
                         startActivity(
                             Intent(requireContext(), MainDialogo::class.java)
