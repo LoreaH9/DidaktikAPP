@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Aliventuras en Portu</string>
+    <string name="app_name">Ali eta bere Abenturak Portun</string>
     <string name="jugar">JOLASTU</string>
 
     <!--NUMERO DE CADA ACTIVIDAD-->
@@ -12,16 +12,44 @@
     <string name="actividad_6">6.Aktibitatea</string>
     <string name="actividad_7">7.Aktibitatea</string>
 
+    <!--PALABRAS UTILES-->
+    <string name="nombre">"Izena"</string>
+    <string name="contraseña">Pasahitza</string>
+    <string name="continuar">Jarraitu</string>
+    <string name="siguiente">Hurrengoa</string>
+    <string name="aceptar">Onartu</string>
+    <string name="cancelar">Ezeztatu</string>
+    <string name="si">Bai</string>
+    <string name="no">Ez</string>
+    <string name="invitado">Gonbidatua</string>
+    <string name="repetir">Berriro</string>
+    <string name="actividad">Aktibitate</string>
+    <string name="quequiereshacer">Zer egin nahi duzu?</string>
+
     <!--ERROR DIALOG MODO-->
     <string name="motivo_error1">Lehenik aurreko jarduera amaitu behar duzu</string>
     <string name="motivo_error2">50 metroko rangotik kanpo zaude!!</string>
-    <string name="incorrecto">Erabiltzailea edo pasahitza okerra</string>
+
+    <!--DIALOG CONTINUAR PARTIDA-->
+    <string name="datos_guardados">Gordetako datuak</string>
+    <string name="continuar_partida_guardad">Gordetako partida jarraitu nahi duzu?</string>
+    <string name="progreso">Progresua</string>
+    <string name="nueva_partida">Partida berria</string>
+
+    <!--DIALOG LOG OUT-->
+    <string name="cerrar_sesion">Itxi Saioa</string>
+    <string name="quieres_cerrar_sesion">Saioa itxi nahi duzu?</string>
+
+    <!--DIALOG CAMBIAR TEMA-->
+    <string name="cambiar_tema">Tema Aldatu</string>
+    <string name="quieres_cambiar_tema">Tema aldatu nahi duzu?</string>
 
     <!--MODOS-->
     <string name="Modos"><u>Moduen Informazioa</u></string>
     <string name="modo_guiado">MODU GIDATUA</string>
     <string name="modo_libre">MODU LIBREA</string>
     <string name="modo_profesor">"IRAKASLEEN MODUA "</string>
+
 
     <!--INFO MODOS-->
     <string name="info_modo_guiado">Ibilbide zehatz bati jarraituz jokatu nahi du. Aktibatuta dagoen puntua bakarrik jolastu ahal izango da, eta bertara sartzeko, gutxienez tokitik 50 metrora egon beharko dugu.Partida jostatzen ari garen azken puntuan gordeko da.</string>
@@ -42,16 +70,11 @@
     <string name="nav_logout">Itxi Saioa</string>
     <string name="salir">Irten</string>
 
-    <!--LOGIN/LOGOUT PROFESOR-->
-    <string name="login_title"><u>Saioa itxi</u></string>
-    <string name="logout">¿Zihur zaude saioa itxi nahi duzula?</string>
-
     <!--DIALOGS MENU-->
     <string name="seguro_salir">¿Aplikaziotik atera nahi duzu?</string>
     <string name="seguro_salir_home">Hasierako menura irten nahi duzu?</string>
     <string name="seguro_cambiar_idioma">¿Hizkuntza aldatu nahi duzu?</string>
-    <string name="si">Bai</string>
-    <string name="no">Ez</string>
+
 
     <!--ACERCA DE/GURI BURUZ-->
     <string name="descripcion">Aplikazio hau Euskal Herriko Unibertsitateko eta Txurdinaga LHIIko ikasleek garatu dute, LHko irakasleei eta ikasleei Portugalete jolas didaktikoen bidez ezagutzen laguntzeko, modu horretan dibertitzen ikas dezaten.</string>

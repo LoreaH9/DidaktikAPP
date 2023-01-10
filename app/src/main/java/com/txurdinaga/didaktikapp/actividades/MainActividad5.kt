@@ -1,29 +1,37 @@
 package com.txurdinaga.didaktikapp.actividades
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.txurdinaga.didaktikapp.ActividadesProvider
-import com.txurdinaga.didaktikapp.R
+import com.google.android.material.internal.ViewUtils.hideKeyboard
+import com.txurdinaga.didaktikapp.*
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad5Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
+import kotlin.concurrent.thread
 
 class MainActividad5 : AppCompatActivity(){
     private lateinit var binding: LayoutActividadBinding
     private lateinit var binding5: FragmentActividad5Binding
 
+    var set = 5
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fondoIV.setImageResource(ActividadesProvider.actividad[5].fondo)
-        binding.explicacionTV.text = getString(ActividadesProvider.actividad[5].explicacion)
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding.explicacionTV.text = getString(ActividadesProvider.actividad[set].explicacion)
         binding.verBT.visibility = View.INVISIBLE
 
         binding5 = FragmentActividad5Binding.inflate(layoutInflater)
@@ -38,6 +46,19 @@ class MainActividad5 : AppCompatActivity(){
                 binding.ayudaBT.setImageResource(R.drawable.ic_help)
             }
         }
+
+        binding.terminarActividadBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
+            terminarActividad()
+        }
+
+        binding.saltarBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
+            terminarActividad()
+        }
+
 
         binding.verBT.visibility = View.VISIBLE
         binding.verBT.setOnClickListener{
@@ -82,13 +103,49 @@ class MainActividad5 : AppCompatActivity(){
         val solucciones: List<String> = listOf("tres", "monumental", "medio", "chavarri",
             "empinadas", "piedras", "metalurgia")
 
-        binding.terminarActividadBT.visibility = View.VISIBLE
+        thread {
+            while(true) {
+                runOnUiThread{
+                    if (comprobar(respuestas, solucciones)) {
+                        binding.terminarActividadBT.visibility = View.VISIBLE
+                    }
+                    else
+                        binding.terminarActividadBT.visibility = View.INVISIBLE
+                }
+                Thread.sleep(1000)
+            }
+        }
+
+        /*binding.terminarActividadBT.visibility = View.VISIBLE
         binding.terminarActividadBT.setOnClickListener{
             if(comprobar5(respuestas, solucciones)){
                 binding.terminarActividadBT.visibility = View.VISIBLE
                 Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
             }
-        }
+        }*/
+    }
+
+    fun terminarActividad() {
+        AlertDialog.Builder(this)
+            .setTitle("${getString(R.string.actividad)} $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}")
+            .setView(R.layout.dialog_enhorabuena)
+            .setPositiveButton(getString(R.string.continuar)
+            ) { _, _ ->
+                if (SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                    SharedPrefs.puntopartida.partida = "$set"
+                }
+                startActivity(Intent(this, MainMenu::class.java))
+            }
+            .setNegativeButton(getString(R.string.repetir)
+            ) { _, _ ->
+                startActivity(
+                    Intent(this, MainContrasena::class.java)
+                        .putExtra("set", set)
+                )
+            }
+            .create()
+            .show()
     }
 
     fun formarRespuesta(list:List<EditText>) : String{
@@ -100,8 +157,28 @@ class MainActividad5 : AppCompatActivity(){
     fun comprobar5(resp: List<List<EditText>>, solu: List<String>) : Boolean{
         var r = true
         for(i in resp.indices)
-            if(formarRespuesta(resp[i]) != solu[i])
+            if(formarRespuesta(resp[i]) != solu[i]) {
                 r = false
+            }
+        return r
+    }
+
+    fun comprobar(resp: List<List<EditText>>, solu: List<String>) : Boolean {
+        var r = true
+        for(i in resp.indices) {
+            var soluChar = solu[i].toCharArray()
+            for(i2 in resp[i].indices) {
+                if ("${resp[i][i2].text}".equals(soluChar[i2].toString(), ignoreCase = true)) {
+                    resp[i][i2].isEnabled = false
+                    resp[i][i2].setTypeface(null, Typeface.BOLD)
+                    resp[i][i2].setText("${resp[i][i2].text}".toUpperCase())
+                    resp[i][i2].setTextColor(getColor(R.color.verdeosc))
+                } else if (resp[i][i2].isEnabled) {
+                    resp[i][i2].setTextColor(getColor(R.color.rojo))
+                    r = false
+                }
+            }
+        }
         return r
     }
 }

@@ -1,7 +1,9 @@
-package com.txurdinaga.didaktikapp
+@file:Suppress("DEPRECATION")
 
-import com.txurdinaga.didaktikapp.dialog.DialogProfesor
+package com.txurdinaga.didaktikapp.activities
+
 import android.content.DialogInterface
+import com.txurdinaga.didaktikapp.dialog.DialogProfesor
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -14,8 +16,13 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.widget.Toolbar;
+import com.txurdinaga.didaktikapp.Constantes.modo
+import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.LayoutMenuBinding
+import com.txurdinaga.didaktikapp.fragments.FragmentInformacion
+import com.txurdinaga.didaktikapp.fragments.FragmentMapa
+import java.util.*
 import kotlin.system.exitProcess
 
 
@@ -26,6 +33,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -38,13 +46,14 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         //Inserta navbar con sus opciones
         navigationView.setNavigationItemSelectedListener(this)
-        val toggle =ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+        val toggle =ActionBarDrawerToggle(this, drawerLayout, toolbar,
+            R.string.open_nav,
+            R.string.close_nav)
 
-        if (toggle != null)
-            drawerLayout!!.addDrawerListener(toggle)
+        drawerLayout!!.addDrawerListener(toggle)
 
 
-        toggle?.syncState()
+        toggle.syncState()
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -53,13 +62,14 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         }
 
         //En caso de no haber usuario pone el invitado por defecto
-        if (SharedPrefs.users.user == ""){
+        if (SharedPrefs.users.user === "" || SharedPrefs.users.user === getString(R.string.invitado)){
             menu.findItem(R.id.nav_logout).isVisible = false
-            SharedPrefs.users.user == getString(R.string.invitado)
-            navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = "0"
+            SharedPrefs.users.user = getString(R.string.invitado)
+            SharedPrefs.puntopartida.partida = "0"
         }
         navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerApodo).text = SharedPrefs.users.user
-    
+        navigationView.getHeaderView(0).findViewById<TextView>(R.id.headerPunto).text = SharedPrefs.puntopartida.partida
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -68,7 +78,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 .replace(R.id.fragment_container, FragmentMapa()).commit()
             R.id.nav_profesor ->{
                 DialogProfesor().show(supportFragmentManager, "LoginDialog")
-                startActivity(Intent(this, MainMenu::class.java))
             }
             R.id.nav_desconectar ->
                 showCloseAppDialog()
@@ -78,12 +87,13 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                  showIdiomaDialog()
             R.id.nav_informacion ->supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FragmentInformacion()).commit()
-            R.id.nav_logout->
+            R.id.nav_logout ->
                 showLogOutDialog()
             R.id.nav_tema ->
                 temaldatu()
-
-            }
+            R.id.room ->
+                startActivity(Intent(this, Room::class.java))
+        }
 
         drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
@@ -91,16 +101,16 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
     private fun showLogOutDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Cerrar sesion")
-            .setMessage("¿Quieres cerrar sesion?")
+            .setTitle(R.string.cerrar_sesion)
+            .setMessage(R.string.quieres_cerrar_sesion)
             .setPositiveButton(R.string.si
-            ) { dialog, id ->
+            ) { _, _ ->
                 SharedPrefs.users.user = ""
                 SharedPrefs.tipousu.tipo = "alumno"
                 startActivity(Intent(this, MainInicio::class.java))
             }
             .setNegativeButton(R.string.no
-            ) { _, id ->
+            ) { _, _ ->
             }
             .setCancelable(false)
             .create()
@@ -108,21 +118,29 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     private fun temaldatu(){
-            AlertDialog.Builder(this)
-                .setTitle("Cambiar Tema")
-                .setMessage("Quieres cambiar tema?")
-                .setPositiveButton(R.string.si
-                ) { _, _ ->
+        AlertDialog.Builder(this)
+            .setTitle(R.string.cambiar_tema)
+            .setMessage(R.string.quieres_cambiar_tema)
+            .setPositiveButton(R.string.si
+            ) { _, _ ->
+                modo = if (modo == 0) {
+                    setdaynight(1)
+                    1
+                } else {
                     setdaynight(0)
-                    startActivity(Intent(this, MainInicio::class.java))
+                    0
                 }
-                .setNegativeButton(R.string.no
-                ) { _, _ ->
+                var intent = Intent(this, MainInicio::class.java)
+                startActivity(intent)
 
-                }
-                .setCancelable(false)
-                .create()
-                .show()
+            }
+            .setNegativeButton(R.string.no
+            ) { _, _ ->
+
+            }
+            .setCancelable(false)
+            .create()
+            .show()
         }
 
 
@@ -180,23 +198,24 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         } else {
             AlertDialog.Builder(this)
-                .setTitle("Cambiar Idioma")
+                .setTitle(R.string.titulo_cambiar_idioma)
                 .setMessage(R.string.seguro_cambiar_idioma)
-                .setPositiveButton(R.string.si,
-                    DialogInterface.OnClickListener { dialog, id ->
-                        SharedPrefs.idioma.aldatu("eu",resources)
-                        val intent = Intent(this, MainMenu::class.java)
-                        startActivity(intent)
-                    })
-                .setNegativeButton(R.string.no,
-                    DialogInterface.OnClickListener { _, id ->
-                    })
+                .setPositiveButton(R.string.si
+                ) { _, _ ->
+                    SharedPrefs.idioma.aldatu("eu", resources)
+                    val intent = Intent(this, MainMenu::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton(R.string.no
+                ) { _, _ ->
+                }
                 .setCancelable(false)
                 .create()
                 .show()
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (drawerLayout!!.isDrawerOpen(GravityCompat.START))
             drawerLayout!!.closeDrawer(GravityCompat.START)
@@ -204,7 +223,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     fun setdaynight(mode:Int){
-        if (mode==0){
+        if (mode==1){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
         else{

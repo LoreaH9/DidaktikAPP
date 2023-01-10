@@ -4,7 +4,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".FragmentMapa" >
+tools:context=".fragments.FragmentMapa" >
 
 <androidx.fragment.app.FragmentContainerView
     android:id="@+id/map"
@@ -15,7 +15,7 @@ tools:context=".FragmentMapa" >
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context=".FragmentMapa" />
+    tools:context=".fragments.FragmentMapa" />
 
 <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/UbicacionButton"
@@ -28,5 +28,18 @@ tools:context=".FragmentMapa" >
     android:src="@drawable/ic_location"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/LocationJButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/blanco"
+        android:clickable="true"
+        android:src="@drawable/ic_ubi_juegos"
+        android:tint="?attr/colorControlNormal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UbicacionButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

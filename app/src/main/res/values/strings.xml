@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Aliventuras en Portu</string>
+    <string name="app_name">Ali y sus Aventuras en Portu</string>
     <string name="app_version" translatable="false">v0.0.1</string>
     <string name="google_maps_key" templatedMergeStrategy="preserve" translatable="false">AIzaSyAMQRbm_8waZsz6gfwkKwkWiVvUOz3_-FY</string>
     <string name="jugar">JUGAR</string>
+
 
     <!--NUMERO DE CADA ACTIVIDAD-->
     <string name="actividad_1">Actividad 1</string>
@@ -12,6 +13,25 @@
     <string name="actividad_5">Actividad 5</string>
     <string name="actividad_6">Actividad 6</string>
     <string name="actividad_7">Actividad 7</string>
+
+    <!--PALABRAS UTILES-->
+    <string name="nombre">"Nombre"</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="continuar">Continuar</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="invitado">Invitado</string>
+    <string name="repetir">Repetir</string>
+    <string name="actividad">Actividad</string>
+    <string name="quequiereshacer">¿Qué quires hacer?</string>
+    <string name="vacio" translatable="false"></string>
+
+
+    <!--INCORRECTO        TEMPORAL-->
+    <string name="incorrecto" translatable="false">Incorrecto</string>
 
     <!--TITULOS DE CADA ACTIVIDAD-->
     <string name="titulo_actividad_1" translatable="false">Basilica Santa Maria</string>
@@ -26,7 +46,20 @@
     <string name="error" translatable="false">ERROR</string>
     <string name="motivo_error1">Antes debes finalizar la anterior Actividad</string>
     <string name="motivo_error2">Estas fuera del rango de los 50 metros!!</string>
-    <string name="incorrecto">Usuario o contraseña incorrectas</string>
+
+    <!--DIALOG CONTINUAR PARTIDA-->
+    <string name="datos_guardados">Datos guardados</string>
+    <string name="continuar_partida_guardad">¿Quieres continuar la partida guardada?</string>
+    <string name="progreso">Progreso</string>
+    <string name="nueva_partida">Nueva partida</string>
+
+    <!--DIALOG LOG OUT-->
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="quieres_cerrar_sesion">¿Quieres cerrar sesión?</string>
+
+    <!--DIALOG CAMBIAR TEMA-->
+    <string name="cambiar_tema">Cambiar Tema</string>
+    <string name="quieres_cambiar_tema">¿Quieres cambiar tema?</string>
 
     <!--MODOS-->
     <string name="Modos"><u>Información de los modos</u></string>
@@ -55,16 +88,8 @@
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
     <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
-    <string name="titulo_cambiar_idioma" >Cambiar Idioma</string>
+    <string name="titulo_cambiar_idioma">Cambiar Idioma</string>
     <string name="seguro_cambiar_idioma">¿Quieres cambiar el idioma a <b>EUSKERA</b>?</string>
-
-    <string name="si">Si</string>
-    <string name="no">No</string>
-    <string name="invitado" translatable="false">Invitado</string>
-
-    <!--LOGIN/LOGOUT PROFESOR-->
-    <string name="login_title"><u>Cerrar sesión</u></string>
-    <string name="logout">¿Seguro que quieres cerrar sesión?</string>
 
     <!--ACERCA DE-->
     <string name="descripcion">Esta aplicación ha sido desarrollada por alumnos de la Universidad del País Vasco y de CIFP Txurdinaga con el fin de ayudar a los profesores de E.P y a sus alumnas y alumnos a conocer Portugalete mediante juegos didácticos de manera que aprendan divirtiéndose.</string>
@@ -77,17 +102,12 @@
     <string name="username">"Usuario"</string>
     <string name="password">"Contraseña"</string>
 
-    <!--NOMBRE USUARIO-->
-    <string name="nombre">"Nombre"</string>
-
-    <!--DIALOGO 0-->
-    <string name="vacio"></string>
-
     <!--DIALOGO 0-->
     <string name="dialogo0_1" translatable="false">¡Hola! Me llamo Ali y soy agente espacial.</string>
-    <string name="dialogo0_2" translatable="false">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
-    <string name="dialogo0_3" translatable="false">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
-    <string name="dialogo0_4" translatable="false">¡Venga, montaos en mi nave!</string>
+    <string name="dialogo0_2" translatable="false">Y tú, ¿Cómo te llamas?</string>
+    <string name="dialogo0_3" translatable="false">El rey de la galaxia me ha encargado una misión y para ello, tengo que llegar a Getxo.</string>
+    <string name="dialogo0_4" translatable="false">Me han dicho que es un pueblo pequeño en la costa del País Vasco, pero no sé nada más. ¿Me ayudáis a llegar?</string>
+    <string name="dialogo0_5" translatable="false">¡Venga, montaos en mi nave!</string>
 
     <!--DIALOGO 1-->
     <string name="dialogo1_1" translatable="false">Vaya… Parece que se me ha roto la nave… ¿Qué hacemos ahora? ¿Cómo voy a llegar a Getxo?</string>

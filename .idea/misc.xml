@@ -3,36 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/ic_launcher_background.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_boton.xml" value="0.2" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_cuadrado_bordes.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_redondeado.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_redondeado_bordes.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_redondeado_editext.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_redondeado_editext_v.xml" value="0.194" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/style_redondeao.xml" value="0.191" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/drawable/transparente.xml" value="0.191" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/style_redondeado.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/style_redondeado_bordes.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/style_redondeado_editext.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/drawable/vacio.xml" value="0.123" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/activity_room.xml" value="0.20863616930312098" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/fragment_mapa.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/layout_actividad.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/layout_inicio.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/layout/layout_menu.xml" value="0.1" />
+        <entry key="..\:/2DAM3/DidaktikAPP/app/src/main/res/menu/nav_menu.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/dialog_audio.xml" value="0.536" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/dialog_audio_volume.xml" value="0.253125" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/dialog_contrasena.xml" value="0.536" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/dialog_info.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_1.xml" value="0.2" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_2.xml" value="0.4" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_2_2.xml" value="0.253125" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_3.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_4.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_5.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_5_2.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_6.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_7.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_actividad_7_2.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/fragment_pista.xml" value="0.31927083333333334" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_actividad.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_contrasena.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/layout_dialogo.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2DM3/Documents/GitHub/DidaktikAPP/app/src/main/res/layout/uwu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

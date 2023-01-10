@@ -2,8 +2,9 @@ package com.txurdinaga.didaktikapp.actividades
 
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
@@ -12,10 +13,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.txurdinaga.didaktikapp.ActividadesProvider
-import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.*
+import com.txurdinaga.didaktikapp.activities.MainContrasena
+import com.txurdinaga.didaktikapp.activities.MainDialogo
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
@@ -26,13 +29,16 @@ class MainActividad7 : AppCompatActivity(){
     private lateinit var foto_list:List<ImageView>
     private lateinit var text_list:List<TextView>
 
+    var set = 7
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutActividadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fondoIV.setImageResource(ActividadesProvider.actividad[7].fondo)
-        binding.explicacionTV.text = getString(ActividadesProvider.actividad[7].explicacion)
+        binding.fondoIV.setImageResource(ActividadesProvider.actividad[set].fondo)
+        binding.explicacionTV.text = getString(ActividadesProvider.actividad[set].explicacion)
         binding.verBT.visibility = View.INVISIBLE
 
         binding7 = FragmentActividad7Binding.inflate(layoutInflater)
@@ -46,6 +52,18 @@ class MainActividad7 : AppCompatActivity(){
                 binding.explicacionTV.visibility = View.INVISIBLE
                 binding.ayudaBT.setImageResource(R.drawable.ic_help)
             }
+        }
+
+        binding.terminarActividadBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
+            terminarActividad()
+        }
+
+        binding.saltarBT.setOnClickListener{
+            if (SharedPrefs.modolibre.modo)
+                SharedPrefs.hecho_libre[set-1] = true
+            terminarActividad()
         }
 
         binding7.foto71.setOnLongClickListener(longClickListener)
@@ -115,16 +133,14 @@ class MainActividad7 : AppCompatActivity(){
 
         when (event.action) {
             DragEvent.ACTION_DRAG_STARTED -> {
-                binding7.statusTextView.text = "Estas arrastrando una figura"
                 true
             }
 
             DragEvent.ACTION_DRAG_ENTERED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
 
-                    binding7.statusTextView.text = "Imagen Correcta!"
                 } else {
-                    binding7.statusTextView.text = "No Imagen Incorrecta!"
+
                 }
                 v.invalidate()
                 true
@@ -135,21 +151,18 @@ class MainActividad7 : AppCompatActivity(){
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if(event.clipDescription.label == receiverView.tag as? String) {
-                    binding7.statusTextView.text = "Casi la tenias!"
                     v.invalidate()
                 }
                 true
             }
 
             DragEvent.ACTION_DROP -> {
-                binding7.statusTextView.text = "Soltaste la imagen!"
                 if (comparar(seleccionada, receiverView)){
                     receiverView.setBackgroundResource(R.drawable.style_redondeado_editext_v)
                     seleccionada?.isEnabled = false
                     seleccionada?.alpha = 0.65F
                     if(comprobacionFinal7(foto_list)) {
                         binding.terminarActividadBT.visibility = View.VISIBLE
-                        Toast.makeText(applicationContext, "HAS FINALIZADO EL JUEGO", Toast.LENGTH_LONG).show()
                     }
                 }else
                     receiverView.setBackgroundResource(R.drawable.style_redondeado_editext)
@@ -166,6 +179,32 @@ class MainActividad7 : AppCompatActivity(){
                 false
             }
         }
+    }
+
+    fun terminarActividad() {
+        AlertDialog.Builder(this)
+            .setTitle("${getString(R.string.actividad)} $set")
+            .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}")
+            .setView(R.layout.dialog_enhorabuena)
+            .setPositiveButton(getString(R.string.continuar),
+                DialogInterface.OnClickListener { _, _ ->
+                    if(SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.partida = "$set"
+                    }
+                    startActivity(
+                        Intent(this, MainDialogo::class.java)
+                            .putExtra("set", 8)
+                    )
+                })
+            .setNegativeButton(getString(R.string.repetir)
+            ) { _, _ ->
+                startActivity(
+                    Intent(this, MainContrasena::class.java)
+                        .putExtra("set", set)
+                )
+            }
+            .create()
+            .show()
     }
 
     fun comparar(img: ImageView?, txt:TextView) :Boolean {

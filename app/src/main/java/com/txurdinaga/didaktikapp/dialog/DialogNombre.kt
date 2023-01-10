@@ -17,13 +17,13 @@ class DialogNombre : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         return activity?.let {
+            SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
             val builder = AlertDialog.Builder(it)
             binding = DialogNombreBinding.inflate(layoutInflater)
             builder.setView(binding.root)
                 .setPositiveButton("Aceptar"
                 ) { _, _ ->
-
-                    SharedPrefs.users.user = binding.fas.text.toString()
+                    SharedPrefs.users.user = binding.nombreUsuarioET.text.toString()
                     val usuario = DataBaseRoomApp.DataBase.usuarioDao.selectUsersByName(SharedPrefs.users.user)
                     if(usuario==null){
                         val juego = Juego(1,"Actividad 1")
@@ -33,10 +33,9 @@ class DialogNombre : DialogFragment() {
                     }else{
                         SharedPrefs.puntopartida.partida = usuario.juegosCompletados.id as String
                     }
-
-
                 }
                 .setTitle("¿CUAL ES TU NOMBRE?")
+                .setCancelable(false)
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }

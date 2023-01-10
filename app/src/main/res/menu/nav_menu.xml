@@ -40,6 +40,10 @@
                 android:icon="@drawable/ic_desconectar"
                 android:title="@string/nav_desconectar"/>
             <item
+                android:id="@+id/room"
+                android:icon="@drawable/ic_desconectar"
+                android:title="ROOM"/>
+            <item
                 android:id="@+id/nav_home"
                 android:icon="@drawable/ic_home"
                 android:title="@string/nav_home"/>
