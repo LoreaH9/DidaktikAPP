@@ -54,10 +54,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
-<<<<<<< HEAD
     //ROOM
-=======
->>>>>>> 8a5e7b8d3c6437d90169f2f42a5b625216f4ff3e
     implementation "androidx.room:room-runtime:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
 }
