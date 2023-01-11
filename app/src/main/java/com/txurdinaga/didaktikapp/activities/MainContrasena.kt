@@ -97,7 +97,7 @@ class MainContrasena : AppCompatActivity() {
         binding3.continuarBT.setOnClickListener{
             var contrasena : String = binding3.contrasenaET.text.toString()
             if (contrasena.toLowerCase() == getString(ActividadesProvider.actividad[set].contrasena)){
-                if(set == 2 || set == 5 || set == 7){
+                if(set == 2 || set == 3 || set == 5 || set == 7){
                     startActivity(Intent(this, ActividadesProvider.actividad[set].main)
                         .putExtra("set", set)
                     )
