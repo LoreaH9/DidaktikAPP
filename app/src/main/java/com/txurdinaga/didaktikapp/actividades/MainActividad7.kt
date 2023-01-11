@@ -19,6 +19,7 @@ import androidx.core.view.isVisible
 import com.txurdinaga.didaktikapp.*
 import com.txurdinaga.didaktikapp.activities.MainContrasena
 import com.txurdinaga.didaktikapp.activities.MainDialogo
+import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.databinding.FragmentActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.LayoutActividadBinding
 
@@ -185,16 +186,18 @@ class MainActividad7 : AppCompatActivity(){
         AlertDialog.Builder(this)
             .setTitle("${getString(R.string.actividad)} $set")
             .setMessage("${getString(ActividadesProvider.actividad[set].enhorabuena)}")
-            .setView(R.layout.dialog_enhorabuena)
+            .setView(R.layout.dialog_enhorabuena7)
             .setPositiveButton(getString(R.string.continuar),
                 DialogInterface.OnClickListener { _, _ ->
                     if(SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
                         SharedPrefs.puntopartida.partida = "$set"
                     }
-                    startActivity(
-                        Intent(this, MainDialogo::class.java)
-                            .putExtra("set", 8)
-                    )
+                    if(!SharedPrefs.modolibre.modo) {
+                        startActivity(Intent(this, MainDialogo::class.java)
+                                .putExtra("set", 8))
+                    } else {
+                        startActivity(Intent(this, MainMenu::class.java))
+                    }
                 })
             .setNegativeButton(getString(R.string.repetir)
             ) { _, _ ->

@@ -61,6 +61,9 @@
     <string name="cambiar_tema">Cambiar Tema</string>
     <string name="quieres_cambiar_tema">¿Quieres cambiar tema?</string>
 
+    <!--DIALOG CUAL ES TU NOMBRE-->
+    <string name="cual_es_tu_nombre">¿CUAL ES TU NOMBRE?</string>
+
     <!--MODOS-->
     <string name="Modos"><u>Información de los modos</u></string>
     <string name="modo_guiado">MODO GUIADO</string>
@@ -88,7 +91,7 @@
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
     <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
-    <string name="titulo_cambiar_idioma">Cambiar Idioma</string>
+    <string name="titulo_cambiar_idioma" >Cambiar Idioma</string>
     <string name="seguro_cambiar_idioma">¿Quieres cambiar el idioma a <b>EUSKERA</b>?</string>
 
     <!--ACERCA DE-->
@@ -179,17 +182,17 @@
     <string name="dialogo8_2" translatable="false">¡AGUUUR!</string>
 
     <!--PISTA 1-->
-    <string name="pista1_1" translatable="false">La iglesia de Santa María de Portugalete la mandé construir en <b><u>1322</u></b>. Portugalete era entonces un pueblo muy pequeño, y su población creció tanto que fue necesario construir una nueva iglesia.</string>
-    <string name="pista1_2" translatable="false">Las obras empezaron en <b><u>1492</u></b> y duraron más de cien años, hasta <b><u>1600</u></b>. Familias como los Salazar ayudaron en la construcción con donaciones.</string>
-    <string name="pista1_3" translatable="false">Durante la guerra carlista de <b><u>1873</u></b> la parte superior fue bombardeada y tuvo que rehacerse.</string>
+    <string name="pista1_1" translatable="false">La iglesia de Santa María de Portugalete la mandé construir en <b><u>[1322]</u></b>. Portugalete era entonces un pueblo muy pequeño, y su población creció tanto que fue necesario construir una nueva iglesia.</string>
+    <string name="pista1_2" translatable="false">Las obras empezaron en <b><u>[1492]</u></b> y duraron más de cien años, hasta <b><u>[1600]</u></b>. Familias como los Salazar ayudaron en la construcción con donaciones.</string>
+    <string name="pista1_3" translatable="false">Durante la guerra carlista de <b><u>[1873]</u></b> la parte superior fue bombardeada y tuvo que rehacerse.</string>
     <string name="enunciado1" translatable="false">Ahora suma todas las cifras que aparecen en los textos y el resultado será la contraseña.</string>
     <string name="contrasena1" translatable="false">6287</string>
     <string name="explicacion1" translatable="false">Tendréis que escapar de este laberinto para conseguir el premio.</string>
 
     <!--PISTA 2-->
-    <string name="pista2_1" translatable="false">Las fiestas empiezan el 14 de <b><u>agosto</u></b> con un chupinazo y una lectura desde los <b><u>balcones</u></b> del Ayuntamiento. Después hay mucha <b><u>música</u></b> y espectáculos de todo tipo.</string>
-    <string name="pista2_2" translatable="false">El día 15 de agosto, a primera <b><u>hora</u></b> de la mañana, ocurre la llamada <b><u>Diana</u></b> Portugaluja, con el objetivo de que todos los vecinos se despierten y vayan a la fiesta.</string>
-    <string name="pista2_3" translatable="false">Y por <b><u>último</u></b>, el día 16 de agosto, el día <b><u>principal</u></b> de las fiestas, es mi día: la festividad del <b><u>patrón</u></b> San Roque. Durante ese día hay una bajada, un “<b><u>Aurresku</u></b>”, y mucha <b><u>fiesta</u></b>.</string>
+    <string name="pista2_1" translatable="false">Las fiestas empiezan el 14 de <b><u>[agosto]</u></b> con un chupinazo y una lectura desde los <b><u>[balcones]</u></b> del Ayuntamiento. Después hay mucha <b><u>[música]</u></b> y espectáculos de todo tipo.</string>
+    <string name="pista2_2" translatable="false">El día 15 de agosto, a primera <b><u>[hora]</u></b> de la mañana, ocurre la llamada <b><u>[Diana]</u></b> Portugaluja, con el objetivo de que todos los vecinos se despierten y vayan a la fiesta.</string>
+    <string name="pista2_3" translatable="false">Y por <b><u>[último]</u></b>, el día 16 de agosto, el día <b><u>[principal]</u></b> de las fiestas, es mi día: la festividad del <b><u>[patrón]</u></b> San Roque. Durante ese día hay una bajada, un “<b><u>[Aurresku]</u></b>”, y mucha <b><u>[fiesta]</u></b>.</string>
     <string name="enunciado2" translatable="false">¿Qué palabra de las señaladas tiene 4 vocales?</string>
     <string name="contrasena2" translatable="false">aurresku</string>
     <string name="explicacion2" translatable="false">¡Descifrad el siguiente mensaje para conseguir el premio!</string>
@@ -197,9 +200,9 @@
     <string name="enhorabuena2" translatable="false">¡Listo! Esa es una parte de la Diana Portugaluja. Lo has hecho muy bien Ali, has conseguido otra pieza para el puzzle, mira en el mapa cuál es el siguiente punto y ve hacia allí.</string>
 
     <!--PISTA 3-->
-    <string name="pista3_1" translatable="false"><b><u>3sta</u></b> casa-torre fue construida por mi padre en 1379, y más tarde, al ser yo el hijo mayor, pasó a ser mía. Con el paso <b><u>de1</u></b> tiempo, el edificio pasó de ser una torre defensiva a convertirse en una residencia familiar, es decir, en nuestra casa.</string>
-    <string name="pista3_2" translatable="false">En 1934, con la Revolución de Octubre, la casa se incendió; y no fue hasta 1958 cuando se volvió a construir. <b><u>4unque</u></b>, la última reconstrucción fue hace poco, en el 2003, para poder añadir en su interior el museo y restaurante que hay hoy en día.</string>
-    <string name="pista3_3" translatable="false">La casa tiene cuatro plantas. La primera, tiene vistas a la ría. La <b><u>se9unda</u></b>, contiene un arco impresionante con el escudo de la familia. Y por último, la tercera y cuarta planta está llena de troneras.</string>
+    <string name="pista3_1" translatable="false"><b><u>[3sta]</u></b> casa-torre fue construida por mi padre en 1379, y más tarde, al ser yo el hijo mayor, pasó a ser mía. Con el paso <b><u>[de1]</u></b> tiempo, el edificio pasó de ser una torre defensiva a convertirse en una residencia familiar, es decir, en nuestra casa.</string>
+    <string name="pista3_2" translatable="false">En 1934, con la Revolución de Octubre, la casa se incendió; y no fue hasta 1958 cuando se volvió a construir. <b><u>[4unque]</u></b>, la última reconstrucción fue hace poco, en el 2003, para poder añadir en su interior el museo y restaurante que hay hoy en día.</string>
+    <string name="pista3_3" translatable="false">La casa tiene cuatro plantas. La primera, tiene vistas a la ría. La <b><u>[se9unda]</u></b>, contiene un arco impresionante con el escudo de la familia. Y por último, la tercera y cuarta planta está llena de troneras.</string>
     <string name="enunciado3" translatable="false">¿En qué año se incendió la casa?</string>
     <string name="contrasena3" translatable="false">1934</string>
     <string name="explicacion3" translatable="false">¡Encontrad las 5 piezas ocultas en esta imagen para formar la Torre Salazar y conseguir el premio!</string>
@@ -226,18 +229,18 @@
     <string name="enhorabuena5" translatable="false">¡Muy bien! Has conseguido otra pieza para el puzzle, ahora continúa a la siguiente parada.</string>
 
     <!--PISTA 6-->
-    <string name="pista6_1" translatable="false">Nací un 21 de diciembre en el nº 2 de la calle Casilda Iturrízar en un hogar de la burguesía vizcaína, siendo yo el único chico entre los 7 hermanos que tenía. Usando la narración, destaqué <b><u>P</u></b>or mis dotes de observador de paisajes y ambientes de mi tierra.</string>
-    <string name="pista6_2" translatable="false">Mis ob<b><u>R</u></b>as reflejan la vida contemporánea española. En 1926 publiqué mi prim<b><u>E</u></b>r libro, Vida y paisaje de Bilbao, al que siguió la novela Chiripi (1931), que trata de la historia de un jugador de fútbol. Lo que más utilizo en mis obras es el humor, bueno, más bien, el sarcas<b><u>M</u></b>o.</string>
-    <string name="pista6_3" translatable="false">Las novelas que publ<b><u>I</u></b>qué hasta 1950 se ambientan en Bilbao y sus alrededores, mientras que a partir de esa fecha el escenari<b><u>O</u></b> principal es Madrid. En Portugalete hay un instituto que lleva mi nombre, el I.E.<b><u>S</u></b>. Juan Antonio Zunzunegui.</string>
+    <string name="pista6_1" translatable="false">Nací un 21 de diciembre en el nº 2 de la calle Casilda Iturrízar en un hogar de la burguesía vizcaína, siendo yo el único chico entre los 7 hermanos que tenía. Usando la narración, destaqué <b><u>[P]</u></b>or mis dotes de observador de paisajes y ambientes de mi tierra.</string>
+    <string name="pista6_2" translatable="false">Mis ob<b><u>[R]</u></b>as reflejan la vida contemporánea española. En 1926 publiqué mi prim<b><u>[E]</u></b>r libro, Vida y paisaje de Bilbao, al que siguió la novela Chiripi (1931), que trata de la historia de un jugador de fútbol. Lo que más utilizo en mis obras es el humor, bueno, más bien, el sarcas<b><u>[M]</u></b>o.</string>
+    <string name="pista6_3" translatable="false">Las novelas que publ<b><u>[I]</u></b>qué hasta 1950 se ambientan en Bilbao y sus alrededores, mientras que a partir de esa fecha el escenari<b><u>[O]</u></b> principal es Madrid. En Portugalete hay un instituto que lleva mi nombre, el I.E.<b><u>[S]</u></b>. Juan Antonio Zunzunegui.</string>
     <string name="enunciado6" translatable="false">¿Qué es lo que ha recibido Zunzunegi con muchas de sus obras?</string>
     <string name="contrasena6" translatable="false">premios</string>
     <string name="explicacion6" translatable="false">¡Haced un dibujo de Zunzunegui y poned el año en el que nació en los huecos que aparecen en la parte inferior para conseguir el premio!</string>
     <string name="enhorabuena6" translatable="false">¡Muy bien! Has conseguido la última pieza del puzzle. Ahora vete al apartado “carpeta” y ordena las piezas, formando la imagen correcta. Esa imagen será el último punto del mapa.</string>
 
     <!--PISTA 7-->
-    <string name="pista7_1" translatable="false">El <b><u>1</u></b>3 de julio de 200<b><u>6</u></b>, la UNESC<b><u>0</u></b> decidió declarar al Puente Bizkaia Patrimonio de la Humanidad.</string>
-    <string name="pista7_2" translatable="false">Junto con Ferdinand <b><u>4</u></b>rnodin, ideamos la manera de unir las d<b><u>0</u></b>s or<b><u>1</u></b>llas sin interrumpir el tráfico marítimo.</string>
-    <string name="pista7_3" translatable="false">Se puede pasar el puente en la barqui<b><u>11</u></b>a, que transporta personas y vehículo<b><u>2</u></b> y también existe la pos<b><u>1</u></b>bilidad de recorrer el Puente C<b><u>0</u></b>lgante sobre la pasarela peatonal.</string>
+    <string name="pista7_1" translatable="false">El <b><u>[1]</u></b>3 de julio de 200<b><u>[6]</u></b>, la UNESC<b><u>[0]</u></b> decidió declarar al Puente Bizkaia Patrimonio de la Humanidad.</string>
+    <string name="pista7_2" translatable="false">Junto con Ferdinand <b><u>[4]</u></b>rnodin, ideamos la manera de unir las d<b><u>[0]</u></b>s or<b><u>[1]</u></b>llas sin interrumpir el tráfico marítimo.</string>
+    <string name="pista7_3" translatable="false">Se puede pasar el puente en la barqui<b><u>[11]</u></b>a, que transporta personas y vehículo<b><u>[2]</u></b> y también existe la pos<b><u>[1]</u></b>bilidad de recorrer el Puente C<b><u>[0]</u></b>lgante sobre la pasarela peatonal.</string>
     <string name="enunciado7" translatable="false">¿Cuántos metros mide el puente aproximadamente?</string>
     <string name="contrasena7" translatable="false">61</string>
     <string name="explicacion7" translatable="false">Une las fotos con sus nombres correspondientes:</string>
@@ -253,5 +256,7 @@
     <string name="lugar_7" translatable="false">San Roque</string>
     <string name="lugar_8" translatable="false">Basilica de Santa Maria</string>
     <string name="lugar_9" translatable="false">Victor Chavarri</string>
+
+    <string name="enhorabuena_def" translatable="false">¡Bien hecho! Toma esta pieza de puzzle como recompensa.</string>
 
 </resources>
