@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
@@ -30,6 +31,7 @@ import com.txurdinaga.didaktikapp.Constantes.paradas
 import com.txurdinaga.didaktikapp.activities.MainDialogo
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
+import com.txurdinaga.didaktikapp.databinding.DialogActividad7Binding
 import com.txurdinaga.didaktikapp.databinding.DialogActividadBinding
 import com.txurdinaga.didaktikapp.databinding.FragmentMapaBinding
 import com.txurdinaga.didaktikapp.dialog.DialogNombre
@@ -130,6 +132,15 @@ class FragmentMapa : Fragment() {
             }
         }
 
+        if(!SharedPrefs.modolibre.modo){
+            binding.piezasTV.visibility = View.VISIBLE
+            binding.piezasIV.visibility = View.VISIBLE
+            binding.piezasTV.setText("${SharedPrefs.puntopartida.partida}/6")
+            if(SharedPrefs.puntopartida.partida == "7")
+                binding.piezasTV.setText("6/6")
+
+        }
+
         binding.UbicacionButton.setOnClickListener {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
         }
@@ -139,11 +150,10 @@ class FragmentMapa : Fragment() {
     }
 
     fun showActivityDialog(marker:Marker, set: Int): Boolean {
-        val bindingActividad : DialogActividadBinding = DialogActividadBinding.inflate(layoutInflater)
         // val image = ImageView(requireContext())
         //image.setImageResource(R.drawable.usuarios4)
         AlertDialog.Builder(requireContext())
-            .setView(bindingActividad.root)
+            .setView(getView(set))
             .setTitle("${getString(R.string.actividad)} $set")
             .setMessage(getString(ActividadesProvider.actividad[set].nombre))
             .setPositiveButton(R.string.jugar
@@ -170,8 +180,23 @@ class FragmentMapa : Fragment() {
             .setCancelable(true)
             .create()
             .show()
-        bindingActividad.img.setImageResource(ActividadesProvider.actividad[set].fondo)
         return true
+    }
+
+    fun getView(set:Int): FrameLayout {
+        if(!SharedPrefs.modolibre.modo && set==7){
+            val bindingActividad7 : DialogActividad7Binding = DialogActividad7Binding.inflate(layoutInflater)
+            val list = listOf(bindingActividad7.fondo7IV1, bindingActividad7.fondo7IV2, bindingActividad7.fondo7IV3,
+                bindingActividad7.fondo7IV4, bindingActividad7.fondo7IV5, bindingActividad7.fondo7IV6)
+            list.forEach { it.alpha = 0.6F }
+            for(i in 0 until SharedPrefs.puntopartida.partida.toInt())
+                list[i].alpha = 1F
+            return bindingActividad7.root
+        } else{
+            val bindingActividad : DialogActividadBinding = DialogActividadBinding.inflate(layoutInflater)
+            bindingActividad.img.setImageResource(ActividadesProvider.actividad[set].fondo)
+            return bindingActividad.root
+        }
     }
 
     fun showErrorDialog(title: String, message: String): Boolean {
