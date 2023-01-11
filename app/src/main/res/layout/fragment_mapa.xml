@@ -6,18 +6,20 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".fragments.FragmentMapa" >
 
-<androidx.fragment.app.FragmentContainerView
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/size_none"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:context=".fragments.FragmentMapa" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".fragments.FragmentMapa" />
 
-<com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/UbicacionButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -41,5 +43,37 @@ tools:context=".fragments.FragmentMapa" >
         android:tint="?attr/colorControlNormal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UbicacionButton" />
+
+    <TextView
+        android:id="@+id/piezasTV"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-20dp"
+        android:background="@drawable/style_redondeado"
+        android:backgroundTint="@color/azulcla"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/negro"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/piezasIV"
+        app:layout_constraintTop_toTopOf="@+id/UbicacionButton"
+        tools:text="3/6"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/piezasIV"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/puzzle"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/piezasTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/piezasTV"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

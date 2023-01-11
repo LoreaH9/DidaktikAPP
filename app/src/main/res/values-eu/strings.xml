@@ -44,6 +44,9 @@
     <string name="cambiar_tema">Tema Aldatu</string>
     <string name="quieres_cambiar_tema">Tema aldatu nahi duzu?</string>
 
+    <!--DIALOG CUAL ES TU NOMBRE-->
+    <string name="cual_es_tu_nombre">¿ZEIN DA ZURE IZENA?</string>
+
     <!--MODOS-->
     <string name="Modos"><u>Moduen Informazioa</u></string>
     <string name="modo_guiado">MODU GIDATUA</string>

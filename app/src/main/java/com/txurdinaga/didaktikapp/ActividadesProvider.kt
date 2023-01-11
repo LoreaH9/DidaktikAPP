@@ -48,7 +48,7 @@ class ActividadesProvider {
                 enunciado = R.string.enunciado1,
                 contrasena = R.string.contrasena1,
                 explicacion = R.string.explicacion1,
-                enhorabuena = R.string.vacio,
+                enhorabuena = R.string.enhorabuena_def,
                 main = MainActividad1::class.java,
                 layout = R.layout.fragment_actividad_1,
                 nombre = R.string.titulo_actividad_1
@@ -102,7 +102,7 @@ class ActividadesProvider {
                 enunciado = R.string.enunciado3,
                 contrasena = R.string.contrasena3,
                 explicacion = R.string.explicacion3,
-                enhorabuena = R.string.vacio,
+                enhorabuena = R.string.enhorabuena_def,
                 main = MainActividad3::class.java,
                 layout = R.layout.fragment_actividad_3,
                 nombre = R.string.titulo_actividad_3
