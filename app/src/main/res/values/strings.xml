@@ -91,7 +91,7 @@
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
     <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
-    <string name="titulo_cambiar_idioma" >Cambiar Idioma</string>
+    <string name="titulo_cambiar_idioma">Cambiar Idioma</string>
     <string name="seguro_cambiar_idioma">¿Quieres cambiar el idioma a <b>EUSKERA</b>?</string>
 
     <!--ACERCA DE-->

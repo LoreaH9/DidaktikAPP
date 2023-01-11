@@ -24,7 +24,7 @@ class MainActividad2 : AppCompatActivity(){
 
     var set = 2
 
-    @SuppressLint("InflateParams", "SuspiciousIndentation")
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)

@@ -1,7 +1,5 @@
 package com.txurdinaga.didaktikapp.actividades
 
-import android.content.ClipData
-import android.content.ClipDescription
 import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Point
