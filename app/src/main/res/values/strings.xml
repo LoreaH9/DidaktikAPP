@@ -91,7 +91,7 @@
     <string name="salir">Salir</string>
     <string name="seguro_salir">¿Quieres salir de la aplicación?</string>
     <string name="seguro_salir_home">¿Quieres salir al menu de inicio?</string>
-    <string name="titulo_cambiar_idioma">Cambiar Idioma</string>
+    <string name="titulo_cambiar_idioma" >Cambiar Idioma</string>
     <string name="seguro_cambiar_idioma">¿Quieres cambiar el idioma a <b>EUSKERA</b>?</string>
 
     <!--ACERCA DE-->
@@ -205,7 +205,7 @@
     <string name="pista3_3" translatable="false">La casa tiene cuatro plantas. La primera, tiene vistas a la ría. La <b><u>[se9unda]</u></b>, contiene un arco impresionante con el escudo de la familia. Y por último, la tercera y cuarta planta está llena de troneras.</string>
     <string name="enunciado3" translatable="false">¿En qué año se incendió la casa?</string>
     <string name="contrasena3" translatable="false">1934</string>
-    <string name="explicacion3" translatable="false">¡Completad el puzzle de la Torre de Salazar para conseguir el premio!</string>
+    <string name="explicacion3" translatable="false">¡Encontrad las 5 piezas ocultas en esta imagen para formar la Torre Salazar y conseguir el premio!</string>
 
     <!--PISTA 4-->
     <string name="pista4_1" translatable="false">Mi fiesta es organizada por Berriztasuna Taldea el día 1 de julio. Y es  muy importante saber que se celebra en el Casco Viejo.</string>

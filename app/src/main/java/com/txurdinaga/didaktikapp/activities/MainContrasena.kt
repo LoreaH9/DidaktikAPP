@@ -102,6 +102,13 @@ class MainContrasena : AppCompatActivity() {
                         .putExtra("set", set)
                     )
                 } else {
+                    if (SharedPrefs.modolibre.modo)
+                        SharedPrefs.hecho_libre[set-1] = true
+
+                    if (SharedPrefs.puntopartida.partida.toInt() < set && !SharedPrefs.modolibre.modo) {
+                        SharedPrefs.puntopartida.partida = "$set"
+                    }
+
                     startActivity(Intent(this, MainMenu::class.java))
                 }
             }

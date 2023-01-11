@@ -10,6 +10,9 @@ class DataBaseRoomApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        DataBase = Room.databaseBuilder(applicationContext, UsuarioDb::class.java, UsuarioDb.DATABASE_NAME).build()
+        DataBase = Room
+            .databaseBuilder(this, UsuarioDb::class.java, UsuarioDb.DATABASE_NAME)
+            .allowMainThreadQueries()
+            .build()
     }
 }

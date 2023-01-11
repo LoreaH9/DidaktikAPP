@@ -9,7 +9,7 @@ import androidx.fragment.app.DialogFragment
 import com.txurdinaga.didaktikapp.activities.MainDialogo
 import com.txurdinaga.didaktikapp.databinding.DialogActividadBinding
 
-class DialogActividad: DialogFragment() {
+/*class DialogActividad: DialogFragment() {
 
     private lateinit var binding: DialogActividadBinding
 
@@ -27,13 +27,14 @@ class DialogActividad: DialogFragment() {
                 // Add action buttons
                 .setPositiveButton(R.string.jugar,
                     DialogInterface.OnClickListener { dialog, id ->
-                        startActivity(
-                            Intent(requireContext(), MainDialogo::class.java)
-                        )
+                            startActivity(
+                                Intent(requireContext(), MainDialogo::class.java)
+                            )
+
                     })
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
 
-}
+}*/

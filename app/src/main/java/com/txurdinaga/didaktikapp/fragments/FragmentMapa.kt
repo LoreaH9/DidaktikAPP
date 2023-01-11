@@ -63,7 +63,7 @@ class FragmentMapa : Fragment() {
                 }
             } else {
                 marcadores.forEach{
-                    if (SharedPrefs.hecho_libre[marcadores.indexOf(it)]){
+                    if(SharedPrefs.hecho_libre[marcadores.indexOf(it)]){
                         it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                     } else {
                         it.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
@@ -109,10 +109,6 @@ class FragmentMapa : Fragment() {
             }
         }
 
-        /*if(SharedPrefs.users.user=="" && !SharedPrefs.modolibre.modo){
-            DialogNombre().show(parentFragmentManager, "LoginDialog")
-        }*/
-
         if(SharedPrefs.tipousu.tipo=="profesor"){
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
             googleMap.setOnMarkerClickListener { marker ->
@@ -152,10 +148,24 @@ class FragmentMapa : Fragment() {
             .setMessage(getString(ActividadesProvider.actividad[set].nombre))
             .setPositiveButton(R.string.jugar
             ) { _, _ ->
-                startActivity(
-                    Intent(requireContext(), MainDialogo::class.java)
-                        .putExtra("set", set)
-                )
+                if(SharedPrefs.modolibre.modo){
+                    startActivity(Intent(requireContext(), MainDialogo::class.java)
+                            .putExtra("set", set))
+                } else {
+                    if(SharedPrefs.puntopartida.partida.toInt()+1 >= set) {
+                        startActivity(Intent(requireContext(), MainDialogo::class.java)
+                            .putExtra("set", set))
+                    } else {
+                        AlertDialog.Builder(requireContext())
+                            .setTitle(R.string.error)
+                            .setMessage(R.string.motivo_error1)
+                            .setPositiveButton(R.string.aceptar
+                            ) { _, _ ->
+                            }
+                            .create()
+                            .show()
+                    }
+                }
             }
             .setCancelable(true)
             .create()
@@ -213,6 +223,8 @@ class FragmentMapa : Fragment() {
     fun cambiarMarcador(marker:Marker, posicion:Int){
         if(marcadores.indexOf(marker) < posicion) {
             marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        } else if(marcadores.indexOf(marker) == posicion){
+            marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
         } else {
             marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
         }
