@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/construct"
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+
+        <ImageView
+            android:id="@+id/fondo7IV1"
+            android:layout_width="115dp"
+            android:layout_height="95dp"
+            app:layout_constraintEnd_toStartOf="@+id/fondo7IV2"
+            app:layout_constraintTop_toTopOf="@+id/fondo7IV2"
+            app:srcCompat="@drawable/fondo_7_1" />
+
+        <ImageView
+            android:id="@+id/fondo7IV2"
+            android:layout_width="115dp"
+            android:layout_height="95dp"
+            app:layout_constraintEnd_toEndOf="@+id/fondo7IV5"
+            app:layout_constraintStart_toStartOf="@+id/fondo7IV5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fondo_7_2" />
+
+        <ImageView
+            android:id="@+id/fondo7IV3"
+            android:layout_width="115dp"
+            android:layout_height="95dp"
+            app:layout_constraintStart_toEndOf="@+id/fondo7IV2"
+            app:layout_constraintTop_toTopOf="@+id/fondo7IV2"
+            app:srcCompat="@drawable/fondo_7_3" />
+
+        <ImageView
+            android:id="@+id/fondo7IV4"
+            android:layout_width="115dp"
+            android:layout_height="95dp"
+            app:layout_constraintEnd_toStartOf="@+id/fondo7IV5"
+            app:layout_constraintTop_toTopOf="@+id/fondo7IV5"
+            app:srcCompat="@drawable/fondo_7_4" />
+
+        <ImageView
+            android:id="@+id/fondo7IV5"
+            android:layout_width="115dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fondo7IV2"
+            app:srcCompat="@drawable/fondo_7_5" />
+
+        <ImageView
+            android:id="@+id/fondo7IV6"
+            android:layout_width="115dp"
+            android:layout_height="95dp"
+            app:layout_constraintStart_toEndOf="@+id/fondo7IV5"
+            app:layout_constraintTop_toTopOf="@+id/fondo7IV5"
+            app:srcCompat="@drawable/fondo_7_6" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Debes completar el puzzle con las piezas de las actividades anteriores"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/fondo7IV6"
+            app:layout_constraintStart_toStartOf="@+id/fondo7IV4"
+            app:layout_constraintTop_toBottomOf="@+id/fondo7IV5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
