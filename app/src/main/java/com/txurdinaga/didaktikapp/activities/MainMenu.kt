@@ -91,8 +91,11 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
                 showLogOutDialog()
             R.id.nav_tema ->
                 temaldatu()
+            R.id.nav_atencion_cliente ->
+                startActivity(Intent(this, MainAtencionCliente::class.java))
             R.id.room ->
                 startActivity(Intent(this, Room::class.java))
+
         }
 
         drawerLayout!!.closeDrawer(GravityCompat.START)

@@ -27,6 +27,10 @@
             android:id="@+id/nav_informacion"
             android:icon="@drawable/ic_informacion"
             android:title="@string/nav_informacion"/>
+        <item
+            android:id="@+id/nav_atencion_cliente"
+            android:icon="@drawable/ic_informacion"
+            android:title="Atencion cliente"/>
     </group>
     <item
         android:title="Sesion">
