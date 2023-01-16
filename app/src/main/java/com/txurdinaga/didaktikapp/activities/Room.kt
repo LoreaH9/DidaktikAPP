@@ -24,8 +24,8 @@ class Room : AppCompatActivity() {
         binding.btListar.setOnClickListener {
             binding.tvasignaturas.text=""
             userList = DataBaseRoomApp.DataBase.usuarioDao.selectAllUsers()
-            for (asig in userList){
-                binding.tvasignaturas.append("${asig.nombre}, ${asig.profesor}\n")
+            for (user in userList){
+                binding.tvasignaturas.append("${user.nombre}, ${user.profesor}\n")
             }
         }
     }
