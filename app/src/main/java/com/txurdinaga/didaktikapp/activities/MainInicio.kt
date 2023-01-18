@@ -20,6 +20,7 @@ class MainInicio : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(1000)
         setTheme(R.style.Theme_DidaktikAPP)
+
         SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         super.onCreate(savedInstanceState)
         binding = LayoutInicioBinding.inflate(layoutInflater)

@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Resources
 import com.google.android.gms.maps.model.LatLng
+import io.socket.client.IO
 import java.util.*
 
 object Constantes {
@@ -80,7 +81,7 @@ object Constantes {
     internal const val usuarioProfesor:String="Profesor"
     internal const val contraseniaProfesor:String="123"
     internal var localizacion:LatLng=LatLng(43.319806, -3.016722)
-
+    internal val mSocket = IO.socket("https://adorable-wobbly-plastic.glitch.me")
     internal var modo: Int = 0
 
 }

@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.txurdinaga.didaktikapp.Constantes.mSocket
 import com.txurdinaga.didaktikapp.Constantes.modo
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
@@ -36,6 +37,7 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mSocket.connect();
 
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)

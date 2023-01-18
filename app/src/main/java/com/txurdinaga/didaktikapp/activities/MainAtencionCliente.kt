@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.txurdinaga.didaktikapp.Constantes.localizacion
+import com.txurdinaga.didaktikapp.Constantes.mSocket
 import com.txurdinaga.didaktikapp.databinding.ActivityMainAtencionClienteBinding
-import io.socket.client.IO
-
 
 class MainAtencionCliente : AppCompatActivity() {
     lateinit var binding: ActivityMainAtencionClienteBinding
-    private val mSocket = IO.socket("https://adorable-wobbly-plastic.glitch.me")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +26,8 @@ class MainAtencionCliente : AppCompatActivity() {
                 runOnUiThread {
                     Toast.makeText(this, "$message",Toast.LENGTH_LONG).show ()
                     binding.textView8.text =message.toString()
-
                 }
             }
         }
-        mSocket.connect();
     }
 }
