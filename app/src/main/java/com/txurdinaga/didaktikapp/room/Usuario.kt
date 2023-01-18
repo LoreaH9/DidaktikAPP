@@ -10,7 +10,4 @@ class Usuario(
     var nombre:String,
     var profesor: Int,
     var modoLibre: Int,
-    @TypeConverters(JuegoTypeConverter::class)
-    var juegosCompletados: Juego
-
     )

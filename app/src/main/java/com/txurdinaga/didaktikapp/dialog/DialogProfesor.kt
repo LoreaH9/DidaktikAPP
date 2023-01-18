@@ -2,7 +2,6 @@ package com.txurdinaga.didaktikapp.dialog
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -13,9 +12,6 @@ import com.txurdinaga.didaktikapp.activities.MainMenu
 import com.txurdinaga.didaktikapp.R
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.DialogProfesorBinding
-import com.txurdinaga.didaktikapp.room.DataBaseRoomApp
-import com.txurdinaga.didaktikapp.room.Juego
-import com.txurdinaga.didaktikapp.room.Usuario
 
 
 class DialogProfesor : DialogFragment() {

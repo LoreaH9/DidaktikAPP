@@ -7,7 +7,6 @@ import androidx.fragment.app.DialogFragment
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.DialogNombreBinding
 import com.txurdinaga.didaktikapp.room.DataBaseRoomApp
-import com.txurdinaga.didaktikapp.room.Juego
 import com.txurdinaga.didaktikapp.room.Usuario
 
 class DialogNombre : DialogFragment() {
@@ -26,12 +25,10 @@ class DialogNombre : DialogFragment() {
                     SharedPrefs.users.user = binding.nombreUsuarioET.text.toString()
                     val usuario = DataBaseRoomApp.DataBase.usuarioDao.selectUsersByName(SharedPrefs.users.user)
                     if(usuario==null){
-                        val juego = Juego(1,"Actividad 1")
-                        DataBaseRoomApp.DataBase.usuarioDao.addUser(Usuario(SharedPrefs.users.user,1,2,
-                        juego))
+                        DataBaseRoomApp.DataBase.usuarioDao.addUser(Usuario(SharedPrefs.users.user,1,2))
                         SharedPrefs.puntopartida.partida = "0"
                     }else{
-                        SharedPrefs.puntopartida.partida = usuario.juegosCompletados.id as String
+                        //SharedPrefs.puntopartida.partida = usuario.juegosCompletados.id as String
                     }
                 }
                 .setTitle("¿CUAL ES TU NOMBRE?")

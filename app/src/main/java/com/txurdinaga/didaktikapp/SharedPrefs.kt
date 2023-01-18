@@ -1,7 +1,8 @@
 package com.txurdinaga.didaktikapp
 import android.app.Application
+import com.txurdinaga.didaktikapp.room.DataBaseRoomApp
 
-class SharedPrefs : Application(){
+class SharedPrefs : DataBaseRoomApp(){
     companion object {
 
         internal lateinit var users: Constantes.User

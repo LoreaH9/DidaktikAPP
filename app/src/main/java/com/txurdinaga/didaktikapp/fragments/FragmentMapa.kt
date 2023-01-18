@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.txurdinaga.didaktikapp.ActividadesProvider
 import com.txurdinaga.didaktikapp.Constantes.Zunzunegui
+import com.txurdinaga.didaktikapp.Constantes.localizacion
 import com.txurdinaga.didaktikapp.Constantes.nombre_paradas
 import com.txurdinaga.didaktikapp.Constantes.paradas
 import com.txurdinaga.didaktikapp.activities.MainDialogo
@@ -90,6 +91,7 @@ class FragmentMapa : Fragment() {
        // googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Zunzunegui, 15.5f))
         googleMap.setOnMyLocationChangeListener {
             ubicacion= LatLng(it.latitude, it.longitude)
+            localizacion=ubicacion
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.5f))
             //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 17f))
             val distancia=FloatArray(3)

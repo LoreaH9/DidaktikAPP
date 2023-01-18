@@ -79,6 +79,7 @@ object Constantes {
 
     internal const val usuarioProfesor:String="Profesor"
     internal const val contraseniaProfesor:String="123"
+    internal var localizacion:LatLng=LatLng(43.319806, -3.016722)
 
     internal var modo: Int = 0
 

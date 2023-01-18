@@ -1,35 +1,37 @@
 package com.txurdinaga.didaktikapp.activities
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.txurdinaga.didaktikapp.Constantes.localizacion
 import com.txurdinaga.didaktikapp.databinding.ActivityMainAtencionClienteBinding
-import com.txurdinaga.didaktikapp.socket.SocketHandler
-
+import io.socket.client.IO
 
 
 class MainAtencionCliente : AppCompatActivity() {
-
     lateinit var binding: ActivityMainAtencionClienteBinding
+    private val mSocket = IO.socket("https://adorable-wobbly-plastic.glitch.me")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainAtencionClienteBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val mSocket = SocketHandler.getSocket()
-        mSocket.emit("eventName", "a")
-        mSocket.on("eventName") { args ->
-            if (args[0] != null) {
-                val counter = args[0] as Int
-                Log.i("I",counter.toString())
-                runOnUiThread {
-                    // The is where you execute the actions after you receive the data
-                }
-            }}
-        // The following lines connects the Android app to the server.
-        //SocketHandler.setSocket()
-        //SocketHandler.establishConnection()
-        // The follwing line disconnects the Android app to the server.
-        //SocketHandler.closeConnection()
 
+        binding.button.setOnClickListener {
+            val message: String = binding.editText.text.toString()
+            mSocket.emit("alarma", localizacion,message)
+        }
+
+        mSocket.on("alarma") { args ->
+            if (args[0] != null) {
+                val message = args[0]
+                runOnUiThread {
+                    Toast.makeText(this, "$message",Toast.LENGTH_LONG).show ()
+                    binding.textView8.text =message.toString()
+
+                }
+            }
+        }
+        mSocket.connect();
     }
 }
