@@ -6,16 +6,16 @@ import java.nio.charset.CodingErrorAction.REPLACE
 
 @Dao
 interface UsuarioDao {
-    @Query("SELECT * FROM Usuario ")
-    fun selectAllUsers(): List<Usuario>
+    @Query("SELECT * FROM UsuarioEntity ")
+    fun selectAllUsers(): List<UsuarioEntity>
 
-    @Query("SELECT * FROM Usuario WHERE nombre=:nombre")
-    fun selectUsersByName(nombre: String): Usuario
+    @Query("SELECT * FROM UsuarioEntity WHERE nombre=:nombre")
+    fun selectUsersByName(nombre: String): UsuarioEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addUser(usuario: Usuario)
+    fun addUser(usuario: UsuarioEntity)
 
     @Delete
-    fun deleteUser(usuario: Usuario)
+    fun deleteUser(usuario: UsuarioEntity)
 
 }

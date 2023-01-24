@@ -37,7 +37,6 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         binding = LayoutMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        mSocket.connect();
 
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.txurdinaga.didaktikapp.R
+import com.txurdinaga.didaktikapp.ServicioAlerta
 import com.txurdinaga.didaktikapp.SharedPrefs
 import com.txurdinaga.didaktikapp.databinding.LayoutInfoModosBinding
 import com.txurdinaga.didaktikapp.databinding.LayoutInicioBinding
@@ -20,7 +21,7 @@ class MainInicio : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(1000)
         setTheme(R.style.Theme_DidaktikAPP)
-
+        startService(Intent(this, ServicioAlerta::class.java))
         SharedPrefs.idioma.aldatu(SharedPrefs.idioma.idioma, resources)
         super.onCreate(savedInstanceState)
         binding = LayoutInicioBinding.inflate(layoutInflater)

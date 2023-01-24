@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 
 @Entity
-class Usuario(
+class UsuarioEntity(
     @PrimaryKey
     var nombre:String,
     var profesor: Int,
