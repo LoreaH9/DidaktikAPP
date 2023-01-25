@@ -16,10 +16,11 @@ class ServicioAlerta : Service() {
     }
     override fun onCreate() {
         Constantes.mSocket.on("alarma") { args ->
-            if (args[0] != null) {
-                val message = Gson().toJson(args[0])
+            if (args[0] != null && args[1] != null) {
+                val localizacion = args[0]
+                val message = args[1]
                 Handler(Looper.getMainLooper()).post {
-                    Toast.makeText(this, "$message", Toast.LENGTH_LONG).show ()
+                    Toast.makeText(this, "$message",Toast.LENGTH_LONG).show ()
                 }
             }
         }
@@ -33,7 +34,7 @@ class ServicioAlerta : Service() {
     }
 
     override fun onDestroy() {
-
+        Constantes.mSocket.disconnect()
         super.onDestroy()
     }
 }
